@@ -1,0 +1,198 @@
+{
+  "fitLevel": {
+    "score": 83,
+    "label": "Strong",
+    "confidence": 66
+  },
+  "shouldApply": {
+    "value": "No",
+    "confidence": 74,
+    "source": "jev"
+  },
+  "skillMatch": {
+    "score": 100,
+    "label": "Strong"
+  },
+  "keywordMatch": {
+    "score": 96,
+    "label": "Excellent",
+    "confidence": 93
+  },
+  "cvTone": {
+    "value": "Technical",
+    "confidence": 78
+  },
+  "skills": [
+    {
+      "name": "Python",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- 8 years of Python; authored two internal Python libraries used across teams; write and ship production ML services in Python daily.",
+      "source": "jev",
+      "requiredLevel": {
+        "kind": "experience-depth",
+        "requiredEvidence": "Strong Python skills",
+        "threshold": "Strong"
+      },
+      "candidateLevel": "8 years; daily production use; authored internal libraries",
+      "candidateEvidence": "- 8 years of Python; authored two internal Python libraries used across teams; write and ship production ML services in Python daily.",
+      "satisfaction": "satisfied",
+      "satisfactionConfidence": 95
+    },
+    {
+      "name": "SQL",
+      "status": "demonstrated",
+      "confidence": 95,
+      "evidence": "- Took an introductory SQL course; wrote a few basic SELECT queries.",
+      "source": "jev",
+      "requiredLevel": {
+        "kind": "experience-depth",
+        "requiredEvidence": "Advanced SQL",
+        "threshold": "Advanced"
+      },
+      "candidateLevel": "introductory course; wrote basic SELECT queries",
+      "candidateEvidence": "- Took an introductory SQL course; wrote a few basic SELECT queries.",
+      "satisfaction": "insufficient",
+      "satisfactionConfidence": 95
+    },
+    {
+      "name": "Kubernetes",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Deployed our models to Kubernetes.",
+      "source": "jev",
+      "requiredLevel": {
+        "kind": "experience-depth",
+        "requiredEvidence": "Expert-level Kubernetes",
+        "threshold": "Expert-level"
+      },
+      "candidateLevel": "deployed models to Kubernetes",
+      "candidateEvidence": "- Deployed our models to Kubernetes.",
+      "satisfaction": "insufficient",
+      "satisfactionConfidence": 90
+    },
+    {
+      "name": "Docker",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Day-to-day: Docker, Git, Linux, Pandas.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Git",
+      "status": "demonstrated",
+      "confidence": 99,
+      "evidence": "- Day-to-day: Docker, Git, Linux, Pandas.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Linux",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Day-to-day: Docker, Git, Linux, Pandas.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Pandas",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Day-to-day: Docker, Git, Linux, Pandas.",
+      "source": "jev",
+      "requiredLevel": null
+    }
+  ],
+  "routing": {
+    "total": 7,
+    "escalated": 0,
+    "jevHandled": 7
+  },
+  "_jevRaw": [
+    {
+      "name": "Python",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "SQL",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 95,
+      "top": 0.95,
+      "margin": 0.92,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Kubernetes",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Docker",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Git",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 99,
+      "top": 0.99,
+      "margin": 0.98,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Linux",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Pandas",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    }
+  ],
+  "_satRaw": [
+    {
+      "name": "Python",
+      "rawSatisfaction": "satisfied",
+      "candidateLevel": "8 years; daily production use; authored internal libraries",
+      "contractViolation": false
+    },
+    {
+      "name": "SQL",
+      "rawSatisfaction": "insufficient",
+      "candidateLevel": "introductory course; wrote basic SELECT queries",
+      "contractViolation": false
+    },
+    {
+      "name": "Kubernetes",
+      "rawSatisfaction": "insufficient",
+      "candidateLevel": "deployed models to Kubernetes",
+      "contractViolation": false
+    }
+  ],
+  "summary": "Strong fit (Jev) · Strong skill coverage · excellent keyword overlap. Jev handled 7/7 routable decisions; 0 escalated to GPT."
+}

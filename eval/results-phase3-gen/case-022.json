@@ -1,0 +1,119 @@
+{
+  "fitLevel": {
+    "score": 98,
+    "label": "Strong",
+    "confidence": 96
+  },
+  "shouldApply": {
+    "value": "No",
+    "confidence": 82,
+    "source": "jev"
+  },
+  "skillMatch": {
+    "score": 100,
+    "label": "Strong"
+  },
+  "keywordMatch": {
+    "score": 97,
+    "label": "Excellent",
+    "confidence": 95
+  },
+  "cvTone": {
+    "value": "Professional",
+    "confidence": 80
+  },
+  "skills": [
+    {
+      "name": "Tableau",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Data Analyst, 2022-2024: built Tableau dashboards for the sales team, wrote SQL queries, maintained Excel trackers, occasional Power BI reports.",
+      "source": "jev",
+      "requiredLevel": {
+        "kind": "years",
+        "requiredEvidence": "4+ years of hands-on Tableau experience",
+        "threshold": "4"
+      },
+      "candidateLevel": "2 years",
+      "candidateEvidence": "- Data Analyst, 2022-2024: built Tableau dashboards for the sales team, wrote SQL queries, maintained Excel trackers, occasional Power BI reports.",
+      "satisfaction": "insufficient",
+      "satisfactionConfidence": 95
+    },
+    {
+      "name": "SQL",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Data Analyst, 2022-2024: built Tableau dashboards for the sales team, wrote SQL queries, maintained Excel trackers, occasional Power BI reports.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Excel",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Data Analyst, 2022-2024: built Tableau dashboards for the sales team, wrote SQL queries, maintained Excel trackers, occasional Power BI reports.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Power BI",
+      "status": "demonstrated",
+      "confidence": 99,
+      "evidence": "- Data Analyst, 2022-2024: built Tableau dashboards for the sales team, wrote SQL queries, maintained Excel trackers, occasional Power BI reports.",
+      "source": "jev",
+      "requiredLevel": null
+    }
+  ],
+  "routing": {
+    "total": 4,
+    "escalated": 0,
+    "jevHandled": 4
+  },
+  "_jevRaw": [
+    {
+      "name": "Tableau",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "SQL",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Excel",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Power BI",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 99,
+      "top": 0.99,
+      "margin": 0.98,
+      "gptStatus": null,
+      "gptConfidence": null
+    }
+  ],
+  "_satRaw": [
+    {
+      "name": "Tableau",
+      "rawSatisfaction": "insufficient",
+      "candidateLevel": "2 years",
+      "contractViolation": false
+    }
+  ],
+  "summary": "Strong fit (Jev) · Strong skill coverage · excellent keyword overlap. Jev handled 4/4 routable decisions; 0 escalated to GPT."
+}

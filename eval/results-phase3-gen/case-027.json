@@ -1,0 +1,156 @@
+{
+  "fitLevel": {
+    "score": 90,
+    "label": "Strong",
+    "confidence": 79
+  },
+  "shouldApply": {
+    "value": "Borderline",
+    "confidence": 57,
+    "source": "jev",
+    "reasoning": "Too close to call — Jev leans No but won’t commit to a firm recommendation."
+  },
+  "skillMatch": {
+    "score": 100,
+    "label": "Strong"
+  },
+  "keywordMatch": {
+    "score": 98,
+    "label": "Excellent",
+    "confidence": 96
+  },
+  "cvTone": {
+    "value": "Technical",
+    "confidence": 80
+  },
+  "skills": [
+    {
+      "name": "AWS",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- 9 years on AWS: architected multi-account landing zones, VPC design, EKS, RDS, and cost optimization across 40+ accounts.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Terraform",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Use Terraform to manage infrastructure.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "CI/CD",
+      "status": "demonstrated",
+      "confidence": 86,
+      "evidence": "- Familiar with CI/CD concepts; set up one simple pipeline during an internship.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Docker",
+      "status": "demonstrated",
+      "confidence": 88,
+      "evidence": "- Comfortable with Docker, Bash, Linux, and GitHub Actions.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Bash",
+      "status": "demonstrated",
+      "confidence": 87,
+      "evidence": "- Comfortable with Docker, Bash, Linux, and GitHub Actions.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Linux",
+      "status": "demonstrated",
+      "confidence": 94,
+      "evidence": "- Comfortable with Docker, Bash, Linux, and GitHub Actions.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "GitHub Actions",
+      "status": "demonstrated",
+      "confidence": 82,
+      "evidence": "- Comfortable with Docker, Bash, Linux, and GitHub Actions.",
+      "source": "jev",
+      "requiredLevel": null
+    }
+  ],
+  "routing": {
+    "total": 7,
+    "escalated": 0,
+    "jevHandled": 7
+  },
+  "_jevRaw": [
+    {
+      "name": "AWS",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Terraform",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "CI/CD",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 86,
+      "top": 0.86,
+      "margin": 0.73,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Docker",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 88,
+      "top": 0.88,
+      "margin": 0.76,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Bash",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 87,
+      "top": 0.87,
+      "margin": 0.74,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Linux",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 94,
+      "top": 0.94,
+      "margin": 0.88,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "GitHub Actions",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 82,
+      "top": 0.82,
+      "margin": 0.64,
+      "gptStatus": null,
+      "gptConfidence": null
+    }
+  ],
+  "_satRaw": [],
+  "summary": "Strong fit (Jev) · Strong skill coverage · excellent keyword overlap. Jev handled 7/7 routable decisions; 0 escalated to GPT."
+}

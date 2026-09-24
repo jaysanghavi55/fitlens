@@ -1,0 +1,153 @@
+{
+  "fitLevel": {
+    "score": 100,
+    "label": "Strong",
+    "confidence": 100
+  },
+  "shouldApply": {
+    "value": "Yes",
+    "confidence": 92,
+    "source": "jev"
+  },
+  "skillMatch": {
+    "score": 83,
+    "label": "Strong"
+  },
+  "keywordMatch": {
+    "score": 89,
+    "label": "Excellent",
+    "confidence": 78
+  },
+  "cvTone": {
+    "value": "Technical",
+    "confidence": 51
+  },
+  "skills": [
+    {
+      "name": "Java",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Senior backend engineer with 9 years building Java services in production (2015-2024).",
+      "source": "jev",
+      "requiredLevel": {
+        "kind": "years",
+        "requiredEvidence": "- 6+ years of professional Java development",
+        "threshold": "6"
+      },
+      "candidateLevel": "9 years",
+      "candidateEvidence": "Senior backend engineer with 9 years building Java services in production (2015-2024).",
+      "satisfaction": "satisfied",
+      "satisfactionConfidence": 95
+    },
+    {
+      "name": "Spring Boot",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Built REST APIs with Spring Boot, backed by PostgreSQL.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "PostgreSQL",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Built REST APIs with Spring Boot, backed by PostgreSQL.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "REST",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Built REST APIs with Spring Boot, backed by PostgreSQL.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Docker",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Packaged and shipped services with Docker.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Kafka",
+      "status": "missing",
+      "confidence": 99,
+      "evidence": null,
+      "source": "jev",
+      "requiredLevel": null
+    }
+  ],
+  "routing": {
+    "total": 6,
+    "escalated": 0,
+    "jevHandled": 6
+  },
+  "_jevRaw": [
+    {
+      "name": "Java",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Spring Boot",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "PostgreSQL",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "REST",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Docker",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Kafka",
+      "jevStatus": "missing",
+      "jevConfidence": 99,
+      "top": 0.99,
+      "margin": 0.98,
+      "gptStatus": null,
+      "gptConfidence": null
+    }
+  ],
+  "_satRaw": [
+    {
+      "name": "Java",
+      "rawSatisfaction": "satisfied",
+      "candidateLevel": "9 years",
+      "contractViolation": false
+    }
+  ],
+  "summary": "Strong fit (Jev) · Strong skill coverage · excellent keyword overlap. Jev handled 6/6 routable decisions; 0 escalated to GPT."
+}

@@ -1,0 +1,182 @@
+{
+  "fitLevel": {
+    "score": 88,
+    "label": "Strong",
+    "confidence": 76
+  },
+  "shouldApply": {
+    "value": "No",
+    "confidence": 70,
+    "source": "jev"
+  },
+  "skillMatch": {
+    "score": 100,
+    "label": "Strong"
+  },
+  "keywordMatch": {
+    "score": 97,
+    "label": "Excellent",
+    "confidence": 94
+  },
+  "cvTone": {
+    "value": "Technical",
+    "confidence": 90
+  },
+  "skills": [
+    {
+      "name": "Python",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- 10 years of Python; core maintainer of an open-source Python framework (4k GitHub stars); lead backend engineer writing Python daily.",
+      "source": "jev",
+      "requiredLevel": {
+        "kind": "experience-depth",
+        "requiredEvidence": "Strong Python",
+        "threshold": "Strong"
+      },
+      "candidateLevel": "10 years (daily use; core maintainer)",
+      "candidateEvidence": "- 10 years of Python; core maintainer of an open-source Python framework (4k GitHub stars); lead backend engineer writing Python daily.",
+      "satisfaction": "satisfied",
+      "satisfactionConfidence": 95
+    },
+    {
+      "name": "Kubernetes",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- 6 years hands-on Kubernetes: run production clusters across 3 regions, wrote custom operators, CKA certified.",
+      "source": "jev",
+      "requiredLevel": {
+        "kind": "experience-depth",
+        "requiredEvidence": "Deep Kubernetes expertise",
+        "threshold": "Deep"
+      },
+      "candidateLevel": "6 years hands-on (production clusters, custom operators, CKA certified)",
+      "candidateEvidence": "- 6 years hands-on Kubernetes: run production clusters across 3 regions, wrote custom operators, CKA certified.",
+      "satisfaction": "satisfied",
+      "satisfactionConfidence": 92
+    },
+    {
+      "name": "React",
+      "status": "demonstrated",
+      "confidence": 97,
+      "evidence": "- Built one small React demo app during a weekend tutorial.",
+      "source": "jev",
+      "requiredLevel": {
+        "kind": "experience-depth",
+        "requiredEvidence": "Advanced React",
+        "threshold": "Advanced"
+      },
+      "candidateLevel": "coursework/POC only (one small demo app)",
+      "candidateEvidence": "- Built one small React demo app during a weekend tutorial.",
+      "satisfaction": "insufficient",
+      "satisfactionConfidence": 90
+    },
+    {
+      "name": "TypeScript",
+      "status": "demonstrated",
+      "confidence": 95,
+      "evidence": "Also use TypeScript, REST APIs, and Git.",
+      "source": "llm",
+      "reasoning": "The CV explicitly states the candidate uses TypeScript and lists it in their Skills, indicating direct experience.",
+      "requiredLevel": null
+    },
+    {
+      "name": "REST",
+      "status": "demonstrated",
+      "confidence": 89,
+      "evidence": "- Also use TypeScript, REST APIs, and Git.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Git",
+      "status": "demonstrated",
+      "confidence": 96,
+      "evidence": "- Also use TypeScript, REST APIs, and Git.",
+      "source": "jev",
+      "requiredLevel": null
+    }
+  ],
+  "routing": {
+    "total": 6,
+    "escalated": 1,
+    "jevHandled": 5
+  },
+  "_jevRaw": [
+    {
+      "name": "Python",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Kubernetes",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "React",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 97,
+      "top": 0.97,
+      "margin": 0.95,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "TypeScript",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 70,
+      "top": 0.7,
+      "margin": 0.41,
+      "gptStatus": "demonstrated",
+      "gptConfidence": 95
+    },
+    {
+      "name": "REST",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 89,
+      "top": 0.89,
+      "margin": 0.78,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Git",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 96,
+      "top": 0.96,
+      "margin": 0.94,
+      "gptStatus": null,
+      "gptConfidence": null
+    }
+  ],
+  "_satRaw": [
+    {
+      "name": "Python",
+      "rawSatisfaction": "satisfied",
+      "candidateLevel": "10 years (daily use; core maintainer)",
+      "contractViolation": false
+    },
+    {
+      "name": "Kubernetes",
+      "rawSatisfaction": "satisfied",
+      "candidateLevel": "6 years hands-on (production clusters, custom operators, CKA certified)",
+      "contractViolation": false
+    },
+    {
+      "name": "React",
+      "rawSatisfaction": "insufficient",
+      "candidateLevel": "coursework/POC only (one small demo app)",
+      "contractViolation": false
+    }
+  ],
+  "summary": "Strong fit (Jev) · Strong skill coverage · excellent keyword overlap. Jev handled 5/6 routable decisions; 1 escalated to GPT."
+}

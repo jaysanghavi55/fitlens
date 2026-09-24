@@ -1,0 +1,198 @@
+{
+  "fitLevel": {
+    "score": 85,
+    "label": "Strong",
+    "confidence": 69
+  },
+  "shouldApply": {
+    "value": "No",
+    "confidence": 81,
+    "source": "jev"
+  },
+  "skillMatch": {
+    "score": 100,
+    "label": "Strong"
+  },
+  "keywordMatch": {
+    "score": 98,
+    "label": "Excellent",
+    "confidence": 95
+  },
+  "cvTone": {
+    "value": "Technical",
+    "confidence": 86
+  },
+  "skills": [
+    {
+      "name": "Apache Kafka",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Operate production Apache Kafka clusters (3 brokers, ~50k messages/sec) powering our event pipeline.",
+      "source": "jev",
+      "requiredLevel": {
+        "kind": "experience-depth",
+        "requiredEvidence": "Production experience operating Apache Kafka",
+        "threshold": "production"
+      },
+      "candidateLevel": "production (operated production Kafka clusters: 3 brokers, ~50k messages/sec)",
+      "candidateEvidence": "Operate production Apache Kafka clusters (3 brokers, ~50k messages/sec) powering our event pipeline.",
+      "satisfaction": "satisfied",
+      "satisfactionConfidence": 95
+    },
+    {
+      "name": "Apache Spark",
+      "status": "demonstrated",
+      "confidence": 80,
+      "evidence": "- Used Apache Spark for my data-engineering bootcamp capstone project; have not run Spark in production.",
+      "source": "jev",
+      "requiredLevel": {
+        "kind": "experience-depth",
+        "requiredEvidence": "Must have run Apache Spark workloads in production",
+        "threshold": "production"
+      },
+      "candidateLevel": "bootcamp capstone project (not in production)",
+      "candidateEvidence": "Used Apache Spark for my data-engineering bootcamp capstone project; have not run Spark in production.",
+      "satisfaction": "insufficient",
+      "satisfactionConfidence": 98
+    },
+    {
+      "name": "Apache Airflow",
+      "status": "demonstrated",
+      "confidence": 99,
+      "evidence": "- Have experience with Apache Airflow.",
+      "source": "jev",
+      "requiredLevel": {
+        "kind": "experience-depth",
+        "requiredEvidence": "Production experience with Apache Airflow",
+        "threshold": "production"
+      },
+      "candidateLevel": "experience with Apache Airflow (unspecified whether production)",
+      "candidateEvidence": "Have experience with Apache Airflow.",
+      "satisfaction": "unknown",
+      "satisfactionConfidence": 80
+    },
+    {
+      "name": "Python",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Write Python and SQL for data tooling; package jobs with Docker; store data in S3.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "SQL",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Write Python and SQL for data tooling; package jobs with Docker; store data in S3.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Docker",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Write Python and SQL for data tooling; package jobs with Docker; store data in S3.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Amazon S3",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Write Python and SQL for data tooling; package jobs with Docker; store data in S3.",
+      "source": "jev",
+      "requiredLevel": null
+    }
+  ],
+  "routing": {
+    "total": 7,
+    "escalated": 0,
+    "jevHandled": 7
+  },
+  "_jevRaw": [
+    {
+      "name": "Apache Kafka",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Apache Spark",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 80,
+      "top": 0.8,
+      "margin": 0.62,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Apache Airflow",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 99,
+      "top": 0.99,
+      "margin": 0.98,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Python",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "SQL",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Docker",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Amazon S3",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    }
+  ],
+  "_satRaw": [
+    {
+      "name": "Apache Kafka",
+      "rawSatisfaction": "satisfied",
+      "candidateLevel": "production (operated production Kafka clusters: 3 brokers, ~50k messages/sec)",
+      "contractViolation": false
+    },
+    {
+      "name": "Apache Spark",
+      "rawSatisfaction": "insufficient",
+      "candidateLevel": "bootcamp capstone project (not in production)",
+      "contractViolation": false
+    },
+    {
+      "name": "Apache Airflow",
+      "rawSatisfaction": "unknown",
+      "candidateLevel": "experience with Apache Airflow (unspecified whether production)",
+      "contractViolation": false
+    }
+  ],
+  "summary": "Strong fit (Jev) · Strong skill coverage · excellent keyword overlap. Jev handled 7/7 routable decisions; 0 escalated to GPT."
+}

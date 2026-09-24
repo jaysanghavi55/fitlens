@@ -8,7 +8,7 @@
 {"cv_id":"case-021","skill":"Java","expectThreshold":true,"kind":"years","threshold":"6","candidateLevel":"9 years","satisfaction":"satisfied","note":"JD \"6+ years of professional Java development\"; CV \"9 years building Java services (2015-2024)\"."}
 {"cv_id":"case-021","skill":"Spring Boot","expectThreshold":false}
 {"cv_id":"case-021","skill":"PostgreSQL","expectThreshold":false}
-{"cv_id":"case-021","skill":"REST APIs","expectThreshold":false}
+{"cv_id":"case-021","skill":"REST","expectThreshold":false,"note":"Name reconciled: emitted 'REST' (gold authored 'REST APIs')."}
 {"cv_id":"case-021","skill":"Docker","expectThreshold":false}
 {"cv_id":"case-022","skill":"Tableau","expectThreshold":true,"kind":"years","threshold":"4","candidateLevel":"2 years","satisfaction":"insufficient","note":"JD \"4+ years of hands-on Tableau\"; CV positively establishes only 2 years (2022-2024)."}
 {"cv_id":"case-022","skill":"SQL","expectThreshold":false}
@@ -19,9 +19,9 @@
 {"cv_id":"case-023","skill":"Redis","expectThreshold":false}
 {"cv_id":"case-023","skill":"Kubernetes","expectThreshold":false}
 {"cv_id":"case-023","skill":"PostgreSQL","expectThreshold":false}
-{"cv_id":"case-024","skill":"German","expectThreshold":true,"kind":"language-cefr","threshold":"B2","candidateLevel":"C1","satisfaction":"satisfied","note":"JD German B2; CV German C1 (Goethe C1)."}
-{"cv_id":"case-024","skill":"French","expectThreshold":true,"kind":"language-cefr","threshold":"C1","candidateLevel":"B1","satisfaction":"insufficient","note":"JD French C1; CV French B1."}
-{"cv_id":"case-024","skill":"Spanish","expectThreshold":true,"kind":"language-cefr","threshold":"C1","candidateLevel":null,"satisfaction":"unknown","note":"FABRICATION TEST. JD Spanish C1; CV \"Spanish - fluent\" with NO CEFR. Model must NOT map \"fluent\"->C2 and call it satisfied; candidateLevel indeterminable -> null/unknown."}
+{"cv_id":"case-024","skill":"German (B2)","expectThreshold":true,"kind":"language-cefr","threshold":"B2","candidateLevel":"C1","satisfaction":"satisfied","note":"JD German B2; CV German C1 (Goethe C1). Name reconciled: emitted 'German (B2)'."}
+{"cv_id":"case-024","skill":"French (C1)","expectThreshold":true,"kind":"language-cefr","threshold":"C1","candidateLevel":"B1","satisfaction":"insufficient","note":"JD French C1; CV French B1. Name reconciled: emitted 'French (C1)'."}
+{"cv_id":"case-024","skill":"Spanish (C1)","expectThreshold":true,"kind":"language-cefr","threshold":"C1","candidateLevel":null,"satisfaction":"unknown","note":"FABRICATION TEST. JD Spanish C1; CV \"Spanish - fluent\" with NO CEFR. Model must NOT map \"fluent\"->C2 and call it satisfied; candidateLevel indeterminable -> null/unknown. Name reconciled: emitted 'Spanish (C1)'."}
 {"cv_id":"case-024","skill":"English","expectThreshold":false,"note":"bare (native, but listed without a level requirement in the JD)."}
 {"cv_id":"case-024","skill":"Zendesk","expectThreshold":false}
 {"cv_id":"case-024","skill":"CRM software","expectThreshold":false}
@@ -31,7 +31,7 @@
 {"cv_id":"case-025","skill":"Python","expectThreshold":false}
 {"cv_id":"case-025","skill":"SQL","expectThreshold":false}
 {"cv_id":"case-025","skill":"Docker","expectThreshold":false}
-{"cv_id":"case-025","skill":"S3","expectThreshold":false}
+{"cv_id":"case-025","skill":"Amazon S3","expectThreshold":false,"note":"Name reconciled: emitted 'Amazon S3' (gold authored 'S3')."}
 {"cv_id":"case-026","skill":"Python","expectThreshold":true,"kind":"experience-depth","threshold":"strong","candidateLevel":"8 yrs, authored libraries, daily production ML","satisfaction":"satisfied","note":"JD \"Strong Python\"; CV clearly strong (8 yrs, authored internal libraries, daily production)."}
 {"cv_id":"case-026","skill":"SQL","expectThreshold":true,"kind":"experience-depth","threshold":"advanced","candidateLevel":"intro course + a few basic SELECT queries","satisfaction":"insufficient","note":"JD \"Advanced SQL\"; CV positively basic (intro course, few basic queries)."}
 {"cv_id":"case-026","skill":"Kubernetes","expectThreshold":true,"kind":"experience-depth","threshold":"expert","candidateLevel":null,"satisfaction":"unknown","note":"AMBIGUITY TEST. JD \"Expert-level Kubernetes\"; CV \"Deployed our models to Kubernetes\" - real usage, no depth/scope signal. Neither positively expert nor positively below -> unknown, NOT harsh insufficient."}
@@ -48,7 +48,7 @@
 {"cv_id":"case-027","skill":"GitHub Actions","expectThreshold":false}
 {"cv_id":"case-028","skill":"Java","expectThreshold":true,"kind":"experience-depth","threshold":"strong","candidateLevel":null,"satisfaction":"unknown","note":"AMBIGUITY TEST. JD \"Strong Java\"; CV \"Java developer; build backend services in Java\" - real usage, no depth/years/scale -> unknown."}
 {"cv_id":"case-028","skill":"distributed systems","expectThreshold":true,"kind":"experience-depth","threshold":"expert","candidateLevel":null,"satisfaction":"unknown","note":"AMBIGUITY TEST. JD \"Expert in distributed systems\"; CV \"Worked on distributed systems\" -> unknown. Reconcile name (may emit \"Distributed systems\")."}
-{"cv_id":"case-028","skill":"Kafka","expectThreshold":true,"kind":"experience-depth","threshold":"advanced","candidateLevel":null,"satisfaction":"unknown","note":"AMBIGUITY TEST. JD \"Advanced Kafka\"; CV \"Use Kafka for messaging\" -> unknown."}
+{"cv_id":"case-028","skill":"Apache Kafka","expectThreshold":true,"kind":"experience-depth","threshold":"advanced","candidateLevel":null,"satisfaction":"unknown","note":"AMBIGUITY TEST. JD \"Advanced Kafka\"; CV \"Use Kafka for messaging\" -> unknown. Name reconciled: emitted 'Apache Kafka'."}
 {"cv_id":"case-028","skill":"Spring","expectThreshold":false}
 {"cv_id":"case-028","skill":"MySQL","expectThreshold":false}
 {"cv_id":"case-028","skill":"Git","expectThreshold":false}
@@ -57,7 +57,7 @@
 {"cv_id":"case-029","skill":"Kubernetes","expectThreshold":true,"kind":"experience-depth","threshold":"deep","candidateLevel":"6 yrs, custom operators, CKA, prod across 3 regions","satisfaction":"satisfied","note":"OVER-REJECTION GUARD. JD \"Deep Kubernetes expertise\"; CV clearly deep."}
 {"cv_id":"case-029","skill":"React","expectThreshold":true,"kind":"experience-depth","threshold":"advanced","candidateLevel":"one small weekend demo app","satisfaction":"insufficient","note":"JD \"Advanced React\"; CV positively minimal (one weekend demo)."}
 {"cv_id":"case-029","skill":"TypeScript","expectThreshold":false}
-{"cv_id":"case-029","skill":"REST APIs","expectThreshold":false}
+{"cv_id":"case-029","skill":"REST","expectThreshold":false,"note":"Name reconciled: emitted 'REST' (gold authored 'REST APIs')."}
 {"cv_id":"case-029","skill":"Git","expectThreshold":false}
 {"cv_id":"case-030","skill":"Python","expectThreshold":true,"kind":"years","threshold":"3","candidateLevel":"5 years","satisfaction":"satisfied","note":"JD \"3+ years of Python\"; CV \"5 years of Python (2019-2024)\"."}
 {"cv_id":"case-030","skill":"Django","expectThreshold":false}

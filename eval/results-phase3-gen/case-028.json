@@ -1,0 +1,199 @@
+{
+  "fitLevel": {
+    "score": 98,
+    "label": "Strong",
+    "confidence": 96
+  },
+  "shouldApply": {
+    "value": "Borderline",
+    "confidence": 51,
+    "source": "jev",
+    "reasoning": "Too close to call — Jev leans Yes but won’t commit to a firm recommendation."
+  },
+  "skillMatch": {
+    "score": 100,
+    "label": "Strong"
+  },
+  "keywordMatch": {
+    "score": 98,
+    "label": "Excellent",
+    "confidence": 95
+  },
+  "cvTone": {
+    "value": "Generic",
+    "confidence": 68
+  },
+  "skills": [
+    {
+      "name": "Java",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Java developer; build backend services in Java.",
+      "source": "jev",
+      "requiredLevel": {
+        "kind": "experience-depth",
+        "requiredEvidence": "Strong Java",
+        "threshold": "Strong"
+      },
+      "candidateLevel": "Java developer; build backend services in Java.",
+      "candidateEvidence": "- Java developer; build backend services in Java.",
+      "satisfaction": "unknown",
+      "satisfactionConfidence": 70
+    },
+    {
+      "name": "Distributed systems",
+      "status": "demonstrated",
+      "confidence": 99,
+      "evidence": "- Worked on distributed systems.",
+      "source": "jev",
+      "requiredLevel": {
+        "kind": "experience-depth",
+        "requiredEvidence": "Expert in distributed systems",
+        "threshold": "Expert"
+      },
+      "candidateLevel": "Worked on distributed systems.",
+      "candidateEvidence": "- Worked on distributed systems.",
+      "satisfaction": "unknown",
+      "satisfactionConfidence": 80
+    },
+    {
+      "name": "Apache Kafka",
+      "status": "demonstrated",
+      "confidence": 97,
+      "evidence": "Use Kafka for messaging between services.",
+      "source": "jev",
+      "requiredLevel": {
+        "kind": "experience-depth",
+        "requiredEvidence": "Advanced Kafka",
+        "threshold": "Advanced"
+      },
+      "candidateLevel": "Use Kafka for messaging between services.",
+      "candidateEvidence": "- Use Kafka for messaging between services.",
+      "satisfaction": "unknown",
+      "satisfactionConfidence": 75
+    },
+    {
+      "name": "Spring",
+      "status": "demonstrated",
+      "confidence": 92,
+      "evidence": "- Familiar with Spring, MySQL, Git, and Maven.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "MySQL",
+      "status": "demonstrated",
+      "confidence": 91,
+      "evidence": "- Familiar with Spring, MySQL, Git, and Maven.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Git",
+      "status": "demonstrated",
+      "confidence": 95,
+      "evidence": "- Familiar with Spring, MySQL, Git, and Maven.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Maven",
+      "status": "demonstrated",
+      "confidence": 94,
+      "evidence": "- Familiar with Spring, MySQL, Git, and Maven.",
+      "source": "jev",
+      "requiredLevel": null
+    }
+  ],
+  "routing": {
+    "total": 7,
+    "escalated": 0,
+    "jevHandled": 7
+  },
+  "_jevRaw": [
+    {
+      "name": "Java",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Distributed systems",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 99,
+      "top": 0.99,
+      "margin": 0.98,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Apache Kafka",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 97,
+      "top": 0.97,
+      "margin": 0.95,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Spring",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 92,
+      "top": 0.92,
+      "margin": 0.84,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "MySQL",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 91,
+      "top": 0.91,
+      "margin": 0.82,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Git",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 95,
+      "top": 0.95,
+      "margin": 0.9,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Maven",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 94,
+      "top": 0.94,
+      "margin": 0.88,
+      "gptStatus": null,
+      "gptConfidence": null
+    }
+  ],
+  "_satRaw": [
+    {
+      "name": "Java",
+      "rawSatisfaction": "unknown",
+      "candidateLevel": "Java developer; build backend services in Java.",
+      "contractViolation": false
+    },
+    {
+      "name": "Distributed systems",
+      "rawSatisfaction": "unknown",
+      "candidateLevel": "Worked on distributed systems.",
+      "contractViolation": false
+    },
+    {
+      "name": "Apache Kafka",
+      "rawSatisfaction": "unknown",
+      "candidateLevel": "Use Kafka for messaging between services.",
+      "contractViolation": false
+    }
+  ],
+  "summary": "Strong fit (Jev) · Strong skill coverage · excellent keyword overlap. Jev handled 7/7 routable decisions; 0 escalated to GPT."
+}
