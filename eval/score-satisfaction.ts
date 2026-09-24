@@ -62,6 +62,7 @@ const gold: GoldRow[] = readFileSync(join(HERE, GOLD_FILE), "utf8")
 const resultsDir = join(HERE, process.env.RESULTS_DIR ?? "results-phase3");
 const predByKey = new Map<string, PredSkill>();
 const rawByKey = new Map<string, SatRaw>();
+const satUnmatched: string[] = []; // Stage-3.5 join dropouts reported by the pipeline (_satUnmatched)
 let resultFiles: string[] = [];
 try {
   resultFiles = readdirSync(resultsDir).filter((x) => x.endsWith(".json"));
@@ -71,9 +72,10 @@ try {
 }
 for (const f of resultFiles) {
   const cv_id = basename(f, ".json");
-  const data = JSON.parse(readFileSync(join(resultsDir, f), "utf8")) as { skills?: PredSkill[]; _satRaw?: SatRaw[] };
+  const data = JSON.parse(readFileSync(join(resultsDir, f), "utf8")) as { skills?: PredSkill[]; _satRaw?: SatRaw[]; _satUnmatched?: string[] };
   for (const s of data.skills ?? []) predByKey.set(jkey(cv_id, s.name), s);
   for (const r of data._satRaw ?? []) rawByKey.set(jkey(cv_id, r.name), r);
+  for (const name of data._satUnmatched ?? []) satUnmatched.push(`${cv_id}/${name}`);
 }
 
 // ── join gold ⟕ predictions ──
@@ -222,6 +224,8 @@ console.log(`      contract violations (candidateLevel=null ⇒ ≠unknown), RAW
 for (const r of rawViolations) console.log(`        · ${r.name}: raw=${r.rawSatisfaction} (coerced → unknown)`);
 console.log(`      guardrail leaks (post-coercion violations, should be 0) : ${postViolations.length}`);
 for (const m of postViolations) console.log(`        · ${m}`);
+console.log(`      Stage-3.5 join dropouts (_satUnmatched, should be 0) : ${satUnmatched.length}`);
+for (const m of satUnmatched) console.log(`        · ${m}`);
 
 console.log(`\n  MODEL vs SYSTEM satisfaction accuracy (the guardrail's effect, n=${satPairs.length})`);
 console.log(`      model  (raw, pre-coercion)      : ${show(modelAcc)}  (${modelOk}/${satPairs.length})`);

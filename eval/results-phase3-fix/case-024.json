@@ -1,0 +1,183 @@
+{
+  "fitLevel": {
+    "score": 51,
+    "label": "Moderate",
+    "confidence": 71
+  },
+  "shouldApply": {
+    "value": "No",
+    "confidence": 66,
+    "source": "jev"
+  },
+  "skillMatch": {
+    "score": 100,
+    "label": "Strong"
+  },
+  "keywordMatch": {
+    "score": 66,
+    "label": "Good",
+    "confidence": 46
+  },
+  "cvTone": {
+    "value": "Professional",
+    "confidence": 96
+  },
+  "skills": [
+    {
+      "name": "German",
+      "status": "demonstrated",
+      "confidence": 96,
+      "evidence": "- German — C1 (Goethe-Zertifikat C1)",
+      "source": "jev",
+      "requiredLevel": {
+        "kind": "language-cefr",
+        "requiredEvidence": "German: B2",
+        "threshold": "B2"
+      },
+      "candidateLevel": "C1",
+      "candidateEvidence": "- German — C1 (Goethe-Zertifikat C1)",
+      "satisfaction": "satisfied",
+      "satisfactionConfidence": 100
+    },
+    {
+      "name": "French",
+      "status": "demonstrated",
+      "confidence": 83,
+      "evidence": "- French — B1",
+      "source": "jev",
+      "requiredLevel": {
+        "kind": "language-cefr",
+        "requiredEvidence": "French: C1",
+        "threshold": "C1"
+      },
+      "candidateLevel": "B1",
+      "candidateEvidence": "- French — B1",
+      "satisfaction": "insufficient",
+      "satisfactionConfidence": 100
+    },
+    {
+      "name": "Spanish",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Spanish — fluent",
+      "source": "llm",
+      "reasoning": "The CV explicitly lists \"Spanish — fluent\" under Languages, directly demonstrating the skill.",
+      "requiredLevel": {
+        "kind": "language-cefr",
+        "requiredEvidence": "Spanish: C1",
+        "threshold": "C1"
+      },
+      "candidateLevel": null,
+      "candidateEvidence": "- Spanish — fluent",
+      "satisfaction": "unknown",
+      "satisfactionConfidence": 100
+    },
+    {
+      "name": "English",
+      "status": "demonstrated",
+      "confidence": 93,
+      "evidence": "- English — native",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Zendesk",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Managed international accounts; daily work in Zendesk and other CRM software.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "CRM software",
+      "status": "demonstrated",
+      "confidence": 96,
+      "evidence": "- Managed international accounts; daily work in Zendesk and other CRM software.",
+      "source": "jev",
+      "requiredLevel": null
+    }
+  ],
+  "routing": {
+    "total": 6,
+    "escalated": 1,
+    "jevHandled": 5
+  },
+  "_jevRaw": [
+    {
+      "name": "German",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 96,
+      "top": 0.96,
+      "margin": 0.92,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "French",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 83,
+      "top": 0.83,
+      "margin": 0.73,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Spanish",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 75,
+      "top": 0.75,
+      "margin": 0.51,
+      "gptStatus": "demonstrated",
+      "gptConfidence": 100
+    },
+    {
+      "name": "English",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 93,
+      "top": 0.93,
+      "margin": 0.87,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Zendesk",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "CRM software",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 96,
+      "top": 0.96,
+      "margin": 0.92,
+      "gptStatus": null,
+      "gptConfidence": null
+    }
+  ],
+  "_satRaw": [
+    {
+      "name": "German",
+      "rawSatisfaction": "satisfied",
+      "candidateLevel": "C1 (Goethe-Zertifikat C1)",
+      "contractViolation": false
+    },
+    {
+      "name": "French",
+      "rawSatisfaction": "insufficient",
+      "candidateLevel": "B1",
+      "contractViolation": false
+    },
+    {
+      "name": "Spanish",
+      "rawSatisfaction": "unknown",
+      "candidateLevel": "fluent",
+      "contractViolation": false
+    }
+  ],
+  "_satUnmatched": [],
+  "summary": "Moderate fit (Jev) · Strong skill coverage · good keyword overlap. Jev handled 5/6 routable decisions; 1 escalated to GPT."
+}

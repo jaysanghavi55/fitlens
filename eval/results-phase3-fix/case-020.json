@@ -1,0 +1,319 @@
+{
+  "fitLevel": {
+    "score": 99,
+    "label": "Strong",
+    "confidence": 97
+  },
+  "shouldApply": {
+    "value": "Yes",
+    "confidence": 87,
+    "source": "jev"
+  },
+  "skillMatch": {
+    "score": 74,
+    "label": "Strong"
+  },
+  "keywordMatch": {
+    "score": 80,
+    "label": "Excellent",
+    "confidence": 62
+  },
+  "cvTone": {
+    "value": "Technical",
+    "confidence": 76
+  },
+  "skills": [
+    {
+      "name": "Kubernetes",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Experienced Kubernetes engineer.",
+      "source": "jev",
+      "requiredLevel": {
+        "kind": "years",
+        "requiredEvidence": "5+ years of hands-on Kubernetes experience",
+        "threshold": "5"
+      },
+      "candidateLevel": null,
+      "candidateEvidence": null,
+      "satisfaction": "unknown",
+      "satisfactionConfidence": 80
+    },
+    {
+      "name": "Kubernetes cluster operations",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Operate multi-tenant Kubernetes clusters in production, including rollouts, autoscaling, and cluster upgrades.",
+      "source": "jev",
+      "requiredLevel": {
+        "kind": "experience-depth",
+        "requiredEvidence": "Operate and scale our production Kubernetes clusters.",
+        "threshold": "production"
+      },
+      "candidateLevel": "production (operational experience)",
+      "candidateEvidence": "I run production Kubernetes clusters, design their networking and autoscaling, and handle upgrades and incident response for the platform team.",
+      "satisfaction": "satisfied",
+      "satisfactionConfidence": 95
+    },
+    {
+      "name": "Kubernetes cluster scaling",
+      "status": "demonstrated",
+      "confidence": 98,
+      "evidence": "I run production Kubernetes clusters, design their networking and autoscaling, and handle upgrades and incident response for the platform team.",
+      "source": "jev",
+      "requiredLevel": {
+        "kind": "experience-depth",
+        "requiredEvidence": "Operate and scale our production Kubernetes clusters.",
+        "threshold": "production"
+      },
+      "candidateLevel": "production (autoscaling in production)",
+      "candidateEvidence": "- Operate multi-tenant Kubernetes clusters in production, including rollouts, autoscaling, and cluster upgrades.",
+      "satisfaction": "satisfied",
+      "satisfactionConfidence": 95
+    },
+    {
+      "name": "Docker",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Containerize services with Docker and manage build pipelines.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Terraform",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Manage cloud infrastructure as code using Terraform.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Infrastructure as Code (IaC)",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Manage cloud infrastructure as code using Terraform.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "CI/CD pipeline implementation",
+      "status": "demonstrated",
+      "confidence": 91,
+      "evidence": "Containerize services with Docker and manage build pipelines.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "CI/CD pipeline maintenance",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Maintain CI/CD pipelines for application and platform teams.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Linux systems administration",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Administer Linux servers day to day.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Observability",
+      "status": "unverified",
+      "confidence": 90,
+      "evidence": "I run production Kubernetes clusters, design their networking and autoscaling, and handle upgrades and incident response for the platform team.",
+      "source": "llm",
+      "reasoning": "The CV describes incident response and platform operations which imply some observability work, but it does not mention observability, monitoring, alerting, or specific tools (e.g., Prometheus/Grafana), so the exact capability is unverified.",
+      "requiredLevel": null
+    },
+    {
+      "name": "On-call/incident response",
+      "status": "demonstrated",
+      "confidence": 97,
+      "evidence": "I run production Kubernetes clusters, design their networking and autoscaling, and handle upgrades and incident response for the platform team.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Helm",
+      "status": "missing",
+      "confidence": 91,
+      "evidence": null,
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Prometheus",
+      "status": "missing",
+      "confidence": 90,
+      "evidence": null,
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Grafana",
+      "status": "missing",
+      "confidence": 94,
+      "evidence": null,
+      "source": "jev",
+      "requiredLevel": null
+    }
+  ],
+  "routing": {
+    "total": 14,
+    "escalated": 1,
+    "jevHandled": 13
+  },
+  "_jevRaw": [
+    {
+      "name": "Kubernetes",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Kubernetes cluster operations",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Kubernetes cluster scaling",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 98,
+      "top": 0.98,
+      "margin": 0.97,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Docker",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Terraform",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Infrastructure as Code (IaC)",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "CI/CD pipeline implementation",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 91,
+      "top": 0.91,
+      "margin": 0.83,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "CI/CD pipeline maintenance",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Linux systems administration",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Observability",
+      "jevStatus": "missing",
+      "jevConfidence": 63,
+      "top": 0.63,
+      "margin": 0.27,
+      "gptStatus": "unverified",
+      "gptConfidence": 90
+    },
+    {
+      "name": "On-call/incident response",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 97,
+      "top": 0.97,
+      "margin": 0.95,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Helm",
+      "jevStatus": "missing",
+      "jevConfidence": 91,
+      "top": 0.91,
+      "margin": 0.82,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Prometheus",
+      "jevStatus": "missing",
+      "jevConfidence": 90,
+      "top": 0.9,
+      "margin": 0.8,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Grafana",
+      "jevStatus": "missing",
+      "jevConfidence": 94,
+      "top": 0.94,
+      "margin": 0.88,
+      "gptStatus": null,
+      "gptConfidence": null
+    }
+  ],
+  "_satRaw": [
+    {
+      "name": "Kubernetes",
+      "rawSatisfaction": "unknown",
+      "candidateLevel": null,
+      "contractViolation": false
+    },
+    {
+      "name": "Kubernetes cluster operations",
+      "rawSatisfaction": "satisfied",
+      "candidateLevel": "production (operational experience)",
+      "contractViolation": false
+    },
+    {
+      "name": "Kubernetes cluster scaling",
+      "rawSatisfaction": "satisfied",
+      "candidateLevel": "production (autoscaling in production)",
+      "contractViolation": false
+    }
+  ],
+  "_satUnmatched": [],
+  "summary": "Strong fit (Jev) · Strong skill coverage · excellent keyword overlap. Jev handled 13/14 routable decisions; 1 escalated to GPT."
+}

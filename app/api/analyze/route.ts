@@ -1,5 +1,6 @@
 import { experimental_evaluate as evaluate, generateObject } from 'ai';
 import { z } from 'zod';
+import { compareCefr, cefrToken } from '@/lib/cefr';
 
 export const maxDuration = 30;
 
@@ -456,6 +457,9 @@ export async function POST(req: Request) {
     // "model accuracy" from "system accuracy after the candidateLevel==null⇒unknown guardrail".
     type SatRaw = { name: string; rawSatisfaction: Satisfaction; candidateLevel: string | null; contractViolation: boolean };
     const _satRaw: SatRaw[] = [];
+    // Eval-only: threshold-bearing skills whose satisfaction answer never joined (id + name both
+    // missed). Empty in the healthy case; a non-empty list is a reliability signal, not silence.
+    const _satUnmatched: string[] = [];
     const withThreshold = skills.filter((s) => s.requiredLevel != null);
     if (withThreshold.length > 0) {
       try {
@@ -464,6 +468,7 @@ export async function POST(req: Request) {
           schema: z.object({
             satisfactions: z.array(
               z.object({
+                id: z.number().int(),
                 name: z.string(),
                 candidateLevel: z.string().nullable(),
                 candidateEvidence: z.string().nullable(),
@@ -477,6 +482,8 @@ export async function POST(req: Request) {
             `For each requirement below, the JOB DESCRIPTION sets a required level (given). Using ONLY ` +
             `the CANDIDATE CV, decide whether the candidate's evidenced level SATISFIES that requirement.\n\n` +
             `Return for each:\n` +
+            `- id: echo the [n] number of the requirement, UNCHANGED (this is how we join your ` +
+            `answer back — the human-readable name may be paraphrased, the id must not be).\n` +
             `- candidateLevel: what the CV POSITIVELY establishes on this dimension (e.g. "7 years", ` +
             `"B1", "coursework / POC only"), or null if the CV gives no level information.\n` +
             `- candidateEvidence: the EXACT CV sentence (verbatim) that justifies candidateLevel, or null.\n` +
@@ -493,31 +500,86 @@ export async function POST(req: Request) {
             `candidateLevel:null).\n` +
             `• "satisfied" only when the CV positively establishes a level AT or ABOVE the requirement.\n` +
             `• If candidateLevel is null, satisfaction MUST be "unknown".\n\n` +
-            `REQUIRED LEVELS (from the JD):\n` +
+            `REQUIRED LEVELS (from the JD) — keep the [n] id with each:\n` +
             withThreshold
-              .map((s) => `- ${s.name}: requires ${s.requiredLevel!.threshold} (${s.requiredLevel!.kind}) — "${s.requiredLevel!.requiredEvidence}"`)
+              .map((s, i) => `- [${i}] ${s.name}: requires ${s.requiredLevel!.threshold} (${s.requiredLevel!.kind}) — "${s.requiredLevel!.requiredEvidence}"`)
               .join('\n') +
             `\n\nCANDIDATE CV:\n${resume}`,
         });
         const norm = (t: string) => t.replace(/\s+/g, ' ').trim().toLowerCase();
         const cvNorm = norm(resume);
-        const satByName = new Map(sat.satisfactions.map((x) => [x.name.trim().toLowerCase(), x]));
-        for (const s of withThreshold) {
-          const v = satByName.get(s.name.trim().toLowerCase());
-          if (!v) continue;
+        const rows = sat.satisfactions;
+
+        // ── Robust join: ID is authoritative; NAME is descriptive/debugging metadata. ──
+        // Generative models paraphrase strings ("Go" → "Golang" / "Go (Golang)"), so a name-only
+        // join silently drops correct answers. We join by the stable [id] first, then fall back
+        // ONLY to conservative name equivalence — exact normalized name or an explicit known alias.
+        // NO broad containment (it would mis-join "Java"/"JavaScript", "SQL"/"SQL Server"). A wrong
+        // satisfaction attached is worse than an unmatched one, so unmatched rows are RECORDED, not
+        // guessed (see _satUnmatched below).
+        const normName = (t: string) => norm(t).replace(/\s*\([^)]*\)\s*$/, '').trim(); // drop trailing "(…)"
+        const sameSkill = (a: string, b: string) => {
+          const na = normName(a), nb = normName(b);
+          if (na === nb) return true;
+          return (SKILL_ALIASES[na] ?? []).includes(nb) || (SKILL_ALIASES[nb] ?? []).includes(na);
+        };
+        const assigned = new Map<number, (typeof rows)[number]>();
+        const usedRows = new Set<number>();
+        // pass 1 — authoritative id echo
+        withThreshold.forEach((_s, i) => {
+          const ri = rows.findIndex((r, k) => !usedRows.has(k) && r.id === i);
+          if (ri >= 0) { assigned.set(i, rows[ri]); usedRows.add(ri); }
+        });
+        // pass 2 — exact normalized name / explicit alias, over the rows id-matching left over
+        withThreshold.forEach((s, i) => {
+          if (assigned.has(i)) return;
+          const ri = rows.findIndex((r, k) => !usedRows.has(k) && sameSkill(r.name, s.name));
+          if (ri >= 0) { assigned.set(i, rows[ri]); usedRows.add(ri); }
+        });
+
+        withThreshold.forEach((s, i) => {
+          const v = assigned.get(i);
+          if (!v) {
+            // Observable failure — the model may have reasoned fine but its answer never joined.
+            _satUnmatched.push(s.name);
+            console.warn(`[analyze] Stage 3.5 unmatched: "${s.name}" (id=${i}) — no satisfaction row joined`);
+            return;
+          }
           // Invariant: candidateLevel == null ⇒ satisfaction MUST be unknown. Coerce, and record the
           // RAW pre-coercion decision + contractViolation flag in _satRaw before overwriting.
           const contractViolation = v.candidateLevel == null && v.satisfaction !== 'unknown';
-          const satisfaction: Satisfaction = contractViolation ? 'unknown' : v.satisfaction;
+          let satisfaction: Satisfaction = contractViolation ? 'unknown' : v.satisfaction;
+          let candidateLevel = v.candidateLevel;
           // Span validation: candidateEvidence must literally appear in the CV, else drop it.
           let candidateEvidence = v.candidateEvidence;
           if (candidateEvidence && !cvNorm.includes(norm(candidateEvidence))) candidateEvidence = null;
-          s.candidateLevel = v.candidateLevel;
+          let satisfactionConfidence = clampPct(v.confidence);
+
+          // ── Deterministic CEFR comparison (fix 1) — overrides the LLM for language-cefr only. ──
+          // CEFR is a closed total order (A1<…<C2); the required-vs-candidate call is a pure
+          // comparison, not a judgment. We refuse to compare unless BOTH sides carry a real CEFR
+          // token grounded in the CV, so a non-CEFR word ("fluent"/"native") → unknown, never a
+          // fabricated "satisfied". _satRaw keeps the model's raw call so the scorer's MODEL-vs-SYSTEM
+          // metric attributes the correction to this deterministic layer, not to the model.
+          if (s.requiredLevel!.kind === 'language-cefr') {
+            const groundedCandidate =
+              candidateEvidence && cefrToken(candidateEvidence)
+                ? candidateEvidence
+                : v.candidateLevel && cvNorm.includes(norm(v.candidateLevel)) && cefrToken(v.candidateLevel)
+                  ? v.candidateLevel
+                  : null;
+            const cmp = compareCefr(s.requiredLevel!.threshold, groundedCandidate);
+            satisfaction = cmp.satisfaction;
+            candidateLevel = cmp.candidateLevel;
+            satisfactionConfidence = 100; // deterministic system decision — see _satRaw for the model's raw call
+          }
+
+          s.candidateLevel = candidateLevel;
           s.candidateEvidence = candidateEvidence;
           s.satisfaction = satisfaction;
-          s.satisfactionConfidence = clampPct(v.confidence);
+          s.satisfactionConfidence = satisfactionConfidence;
           _satRaw.push({ name: s.name, rawSatisfaction: v.satisfaction, candidateLevel: v.candidateLevel, contractViolation });
-        }
+        });
       } catch {
         // Best-effort: satisfaction fields stay absent; the evidence path is unaffected.
       }
@@ -591,6 +653,7 @@ export async function POST(req: Request) {
       routing,
       _jevRaw,
       _satRaw,
+      _satUnmatched,
       summary: `${fit.label} fit (Jev) · ${skillMatch.label} skill coverage · ${kw.label.toLowerCase()} keyword overlap. Jev handled ${routing.jevHandled}/${routing.total} routable decisions; ${routing.escalated} escalated to GPT.`,
     });
 

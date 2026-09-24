@@ -92,13 +92,65 @@ Two cross-cutting fixes to weigh regardless of the Phase 3b scope decision:
 - **Stage-3.5 name-join robustness** (finding #4 / anchor case-020) — silently drops real
   satisfactions when the model echoes an aliased name; independent of the scoring decision.
 
+## Reliability fixes applied (2026-09-24) — both cross-cutting fixes shipped
+
+Both engineering defects above are now fixed. **No prompt, evidence classifier, router, or scoring
+change** — satisfaction stays report-only. These demonstrate that GenAI pipelines also fail through
+conventional software layers, and that deterministic validation *around* the model is often the
+right tool.
+
+### Fix 1 — Deterministic CEFR comparison ([lib/cefr.ts](../lib/cefr.ts))
+
+CEFR is a closed total order (A1 < A2 < B1 < B2 < C1 < C2), so required-vs-candidate is a pure
+comparison, not an LLM judgment. Stage 3.5 now overrides the model for `language-cefr` only:
+compare only when **both** sides carry a real CEFR token **grounded in the CV** (parsed from the
+span-validated `candidateEvidence`, or from `candidateLevel` iff it also appears literally in the
+CV). A non-CEFR word (`"fluent"`, `"native"`) is **not comparable → `unknown`**, never a fabricated
+`satisfied`. `_satRaw` keeps the model's raw pre-override call, so the scorer's MODEL-vs-SYSTEM
+metric attributes the correction to the deterministic layer. Deterministic outcomes report
+`confidence:100` (a *system* certainty, not model confidence — a future `decisionSource` field could
+express this more honestly; deliberately **not** added now to avoid scope creep). Offline proof:
+`node eval/cefr.test.ts` (16 assertions, no budget).
+
+### Fix 2 — Robust, observable Stage-3.5 join ([app/api/analyze/route.ts](../app/api/analyze/route.ts))
+
+**ID determines identity; name is descriptive metadata.** Each threshold-bearing requirement gets a
+stable `[id]`; Stage 3.5 echoes it. Join order: **(1) authoritative id → (2) exact normalized name
+→ (3) explicit `SKILL_ALIASES` equivalence → (4) UNMATCHED, recorded**. No broad containment (it
+would mis-join `Java`/`JavaScript`, `SQL`/`SQL Server`) — with ids as primary, fallback *precision*
+matters more than recall, and a wrong satisfaction is worse than an unmatched one. Dropouts are no
+longer a silent `continue`: they land in the eval-only `_satUnmatched[]` (+ `console.warn`) and a
+new scorer line `Stage-3.5 join dropouts (_satUnmatched, should be 0)`.
+
+### Validation — fresh `results-phase3-fix/` namespace (frozen records untouched)
+
+| Case | Property tested | Result |
+|---|---|---|
+| **023** Go | join reliability — JD says *"Go (Golang)"*, the exact alias trap | threshold present, `satisfaction:"unknown"` **present**, `_satUnmatched:[]` — the old dropout is gone |
+| **024** German | CEFR satisfied (C1 ≥ B2) | `satisfied@100` deterministic (raw candidateLevel `"C1 (Goethe…)"` → normalized `C1`) |
+| **024** French | CEFR insufficient (B1 < C1) | `insufficient@100` deterministic |
+| **024** Spanish | CEFR fabrication guard (`"fluent"`, no CEFR) | `unknown@100`, `candidateLevel:null` — refused, not fabricated |
+| **020** Kubernetes | `unknown` semantics regression (years, no duration) | `unknown`, `_satUnmatched:[]` — no regression |
+
+case-014 (CEFR B1<C1) was not re-captured — the AI gateway 500'd (`GatewayInternalServerError`) three
+times during this session; its comparison is identical to **024 French** (already deterministic), so
+the CEFR-insufficient path is covered. **Eval-join note:** this fresh capture emitted bare
+`"German"/"French"/"Spanish"` while the frozen gen gold is name-reconciled to `"German (B2)"` etc.
+from the earlier capture, so those rows don't name-join in the gen-gold scorer (n=1). The pipeline
+output is correct (verified by direct field inspection above); the frozen gen gold was left
+unmutated. This is eval-layer name-drift — the *pipeline* join is now id-robust; the *scorer* still
+joins by name (acceptable for a diagnostic harness).
+
 ## Reproduce (all offline, no API budget)
 
 ```bash
 cd ~/Desktop/FitLens
+node eval/cefr.test.ts                                                            # fix 1 logic (16 assertions)
 RESULTS_DIR=results-phase3-gen node eval/score-satisfaction.ts gold-satisfaction-gen.jsonl
+RESULTS_DIR=results-phase3-fix node eval/score-satisfaction.ts gold-satisfaction-gen.jsonl   # 023 join
+RESULTS_DIR=results-phase3-fix node eval/score-satisfaction.ts gold-satisfaction.jsonl       # 020 guard
 ```
 
 `eval/capture.ts` re-runs the live pipeline and SPENDS gateway budget — only with explicit
-go-ahead, and only to `RESULTS_DIR=results-phase3-gen` (never over the frozen `results/` or the
-Phase-3 anchor `results-phase3/`).
+go-ahead, and only to a non-frozen namespace (never over the frozen `results/` or the Phase-3 anchor
+`results-phase3/`).

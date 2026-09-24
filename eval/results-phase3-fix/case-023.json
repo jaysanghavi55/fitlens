@@ -1,0 +1,137 @@
+{
+  "fitLevel": {
+    "score": 100,
+    "label": "Strong",
+    "confidence": 99
+  },
+  "shouldApply": {
+    "value": "Yes",
+    "confidence": 87,
+    "source": "jev"
+  },
+  "skillMatch": {
+    "score": 100,
+    "label": "Strong"
+  },
+  "keywordMatch": {
+    "score": 99,
+    "label": "Excellent",
+    "confidence": 98
+  },
+  "cvTone": {
+    "value": "Technical",
+    "confidence": 84
+  },
+  "skills": [
+    {
+      "name": "Go",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Seasoned Go engineer.",
+      "source": "jev",
+      "requiredLevel": {
+        "kind": "years",
+        "requiredEvidence": "5+ years of hands-on Go (Golang) experience",
+        "threshold": "5"
+      },
+      "candidateLevel": null,
+      "candidateEvidence": null,
+      "satisfaction": "unknown",
+      "satisfactionConfidence": 95
+    },
+    {
+      "name": "gRPC",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Design and ship Go services exposing gRPC APIs.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Redis",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Use Redis for caching and PostgreSQL for storage.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Kubernetes",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Deploy to Kubernetes.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "PostgreSQL",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Use Redis for caching and PostgreSQL for storage.",
+      "source": "jev",
+      "requiredLevel": null
+    }
+  ],
+  "routing": {
+    "total": 5,
+    "escalated": 0,
+    "jevHandled": 5
+  },
+  "_jevRaw": [
+    {
+      "name": "Go",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "gRPC",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Redis",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Kubernetes",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "PostgreSQL",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    }
+  ],
+  "_satRaw": [
+    {
+      "name": "Go",
+      "rawSatisfaction": "unknown",
+      "candidateLevel": null,
+      "contractViolation": false
+    }
+  ],
+  "_satUnmatched": [],
+  "summary": "Strong fit (Jev) · Strong skill coverage · excellent keyword overlap. Jev handled 5/5 routable decisions; 0 escalated to GPT."
+}
