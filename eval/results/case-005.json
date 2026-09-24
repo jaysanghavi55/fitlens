@@ -1,0 +1,20 @@
+{
+  "fitLevel": { "score": 86, "label": "Strong", "confidence": 73 },
+  "shouldApply": { "value": "Yes", "confidence": 87, "source": "jev" },
+  "skillMatch": { "score": 47, "label": "Moderate" },
+  "keywordMatch": { "score": 11, "label": "Poor", "confidence": 82 },
+  "cvTone": { "value": "Technical", "confidence": 65 },
+  "skills": [
+    { "name": "Python", "status": "demonstrated", "confidence": 100, "evidence": "- Wrote Python across all ingestion and transformation services; authored", "source": "jev" },
+    { "name": "Apache Spark", "status": "unverified", "confidence": 97, "evidence": null, "source": "jev" },
+    { "name": "Apache Kafka", "status": "unverified", "confidence": 76, "evidence": null, "source": "jev" },
+    { "name": "Apache Airflow", "status": "unverified", "confidence": 74, "evidence": null, "source": "jev" },
+    { "name": "Snowflake", "status": "unverified", "confidence": 96, "evidence": null, "source": "jev" },
+    { "name": "dbt", "status": "unverified", "confidence": 82, "evidence": null, "source": "jev" },
+    { "name": "Docker", "status": "inferred", "confidence": 86, "evidence": "Packaged services as containers and ran them across an orchestrated cluster in production.", "source": "jev" },
+    { "name": "Kubernetes", "status": "unverified", "confidence": 72, "evidence": null, "source": "jev" },
+    { "name": "Terraform", "status": "unverified", "confidence": 95, "evidence": null, "source": "jev" },
+    { "name": "AWS/GCP/Azure", "status": "demonstrated", "confidence": 100, "evidence": "Maintained ETL jobs in Python; all infrastructure ran on GCP.", "source": "jev" }
+  ],
+  "routing": { "total": 10, "escalated": 0, "jevHandled": 10 }
+}

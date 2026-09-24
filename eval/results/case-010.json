@@ -1,0 +1,232 @@
+{
+  "fitLevel": {
+    "score": 72,
+    "label": "Moderate",
+    "confidence": 56
+  },
+  "shouldApply": {
+    "value": "No",
+    "confidence": 69,
+    "source": "jev"
+  },
+  "skillMatch": {
+    "score": 71,
+    "label": "Strong"
+  },
+  "keywordMatch": {
+    "score": 59,
+    "label": "Good",
+    "confidence": 64
+  },
+  "cvTone": {
+    "value": "Technical",
+    "confidence": 75
+  },
+  "skills": [
+    {
+      "name": "Swift",
+      "status": "demonstrated",
+      "confidence": 95,
+      "evidence": "My native iOS experience in Swift is limited to small maintenance fixes, so I wouldn't call myself a Swift developer yet.",
+      "source": "llm",
+      "reasoning": "The CV explicitly states Swift experience (albeit limited to small maintenance fixes)."
+    },
+    {
+      "name": "Kotlin",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Built and shipped the Android app in Kotlin end to end, from onboarding through checkout.",
+      "source": "jev"
+    },
+    {
+      "name": "React Native",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Developed shared cross-platform features in React Native to keep the iOS and Android experiences in sync.",
+      "source": "jev"
+    },
+    {
+      "name": "REST APIs",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Integrated backend data through versioned REST endpoints with typed client models and retry/backoff.",
+      "source": "jev"
+    },
+    {
+      "name": "Firebase Analytics",
+      "status": "unverified",
+      "confidence": 95,
+      "evidence": null,
+      "source": "jev"
+    },
+    {
+      "name": "Firebase Cloud Messaging (FCM)",
+      "status": "unverified",
+      "confidence": 92,
+      "evidence": null,
+      "source": "jev"
+    },
+    {
+      "name": "SQLite",
+      "status": "inferred",
+      "confidence": 90,
+      "evidence": "Persisted user data on-device in a lightweight embedded relational database with a migration story.",
+      "source": "llm",
+      "reasoning": "On-device lightweight embedded relational database with migrations on mobile strongly implies use of SQLite (or SQLite-backed storage)."
+    },
+    {
+      "name": "CI/CD (mobile builds)",
+      "status": "demonstrated",
+      "confidence": 95,
+      "evidence": "Automated builds, code signing, and store uploads through a mobile release pipeline on every tagged commit.",
+      "source": "llm",
+      "reasoning": "The CV explicitly describes an automated mobile release pipeline handling builds, code signing, and store uploads.},{"
+    },
+    {
+      "name": "Automated UI testing",
+      "status": "missing",
+      "confidence": 97,
+      "evidence": null,
+      "source": "jev"
+    },
+    {
+      "name": "Git",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Managed all source in Git with trunk-based development and short-lived feature branches.",
+      "source": "jev"
+    },
+    {
+      "name": "Apple App Store release",
+      "status": "unverified",
+      "confidence": 80,
+      "evidence": "Automated builds, code signing, and store uploads through a mobile release pipeline on every tagged commit.",
+      "source": "llm",
+      "reasoning": "The CV confirms automated store uploads but does not specify the Apple App Store, and the candidate notes Android-first work and limited iOS experience."
+    },
+    {
+      "name": "Google Play Store release",
+      "status": "demonstrated",
+      "confidence": 95,
+      "evidence": "Built and shipped the Android app in Kotlin end to end, from onboarding through checkout.",
+      "source": "llm",
+      "reasoning": "Candidate explicitly states they built and shipped the Android app end-to-end, which implies Play Store release experience."
+    }
+  ],
+  "routing": {
+    "total": 12,
+    "escalated": 5,
+    "jevHandled": 7
+  },
+  "_jevRaw": [
+    {
+      "name": "Swift",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 56,
+      "top": 0.56,
+      "margin": 0.14,
+      "gptStatus": "demonstrated",
+      "gptConfidence": 95
+    },
+    {
+      "name": "Kotlin",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "React Native",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "REST APIs",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Firebase Analytics",
+      "jevStatus": "unverified",
+      "jevConfidence": 95,
+      "top": 0.95,
+      "margin": 0.9,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Firebase Cloud Messaging (FCM)",
+      "jevStatus": "unverified",
+      "jevConfidence": 92,
+      "top": 0.92,
+      "margin": 0.85,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "SQLite",
+      "jevStatus": "inferred",
+      "jevConfidence": 50,
+      "top": 0.5,
+      "margin": 0.06,
+      "gptStatus": "inferred",
+      "gptConfidence": 90
+    },
+    {
+      "name": "CI/CD (mobile builds)",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 72,
+      "top": 0.72,
+      "margin": 0.45,
+      "gptStatus": "demonstrated",
+      "gptConfidence": 95
+    },
+    {
+      "name": "Automated UI testing",
+      "jevStatus": "missing",
+      "jevConfidence": 97,
+      "top": 0.97,
+      "margin": 0.94,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Git",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Apple App Store release",
+      "jevStatus": "missing",
+      "jevConfidence": 71,
+      "top": 0.71,
+      "margin": 0.52,
+      "gptStatus": "unverified",
+      "gptConfidence": 80
+    },
+    {
+      "name": "Google Play Store release",
+      "jevStatus": "inferred",
+      "jevConfidence": 76,
+      "top": 0.76,
+      "margin": 0.59,
+      "gptStatus": "demonstrated",
+      "gptConfidence": 95
+    }
+  ],
+  "summary": "Moderate fit (Jev) · Strong skill coverage · good keyword overlap. Jev handled 7/12 routable decisions; 5 escalated to GPT."
+}

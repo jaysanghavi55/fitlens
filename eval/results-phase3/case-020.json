@@ -1,0 +1,239 @@
+{
+  "fitLevel": {
+    "score": 99,
+    "label": "Strong",
+    "confidence": 98
+  },
+  "shouldApply": {
+    "value": "Yes",
+    "confidence": 85,
+    "source": "jev"
+  },
+  "skillMatch": {
+    "score": 60,
+    "label": "Moderate"
+  },
+  "keywordMatch": {
+    "score": 81,
+    "label": "Excellent",
+    "confidence": 65
+  },
+  "cvTone": {
+    "value": "Technical",
+    "confidence": 75
+  },
+  "skills": [
+    {
+      "name": "Kubernetes",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Experienced Kubernetes engineer.",
+      "source": "jev",
+      "requiredLevel": {
+        "kind": "years",
+        "requiredEvidence": "5+ years of hands-on Kubernetes experience",
+        "threshold": "5"
+      },
+      "candidateLevel": null,
+      "candidateEvidence": null,
+      "satisfaction": "unknown",
+      "satisfactionConfidence": 90
+    },
+    {
+      "name": "Kubernetes cluster operations",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Operate multi-tenant Kubernetes clusters in production, including rollouts, autoscaling, and cluster upgrades.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Docker",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Containerize services with Docker and manage build pipelines.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Terraform",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Manage cloud infrastructure as code using Terraform.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "CI/CD pipelines",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Maintain CI/CD pipelines for application and platform teams.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Linux systems administration",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Administer Linux servers day to day.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Helm",
+      "status": "missing",
+      "confidence": 87,
+      "evidence": null,
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Prometheus",
+      "status": "missing",
+      "confidence": 89,
+      "evidence": null,
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Grafana",
+      "status": "missing",
+      "confidence": 91,
+      "evidence": null,
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Observability",
+      "status": "unverified",
+      "confidence": 90,
+      "evidence": "I run production Kubernetes clusters, design their networking and autoscaling, and handle upgrades and incident response for the platform team.",
+      "source": "llm",
+      "reasoning": "The CV shows operational responsibilities and incident response (implying use of observability), but it does not name monitoring/observability tools (e.g., Prometheus/Grafana), so the exact coverage is unverified.",
+      "requiredLevel": null
+    },
+    {
+      "name": "On-call reliability (SRE practices)",
+      "status": "unverified",
+      "confidence": 80,
+      "evidence": null,
+      "source": "jev",
+      "requiredLevel": null
+    }
+  ],
+  "routing": {
+    "total": 11,
+    "escalated": 1,
+    "jevHandled": 10
+  },
+  "_jevRaw": [
+    {
+      "name": "Kubernetes",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Kubernetes cluster operations",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Docker",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Terraform",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "CI/CD pipelines",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Linux systems administration",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Helm",
+      "jevStatus": "missing",
+      "jevConfidence": 87,
+      "top": 0.87,
+      "margin": 0.74,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Prometheus",
+      "jevStatus": "missing",
+      "jevConfidence": 89,
+      "top": 0.89,
+      "margin": 0.78,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Grafana",
+      "jevStatus": "missing",
+      "jevConfidence": 91,
+      "top": 0.91,
+      "margin": 0.82,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Observability",
+      "jevStatus": "missing",
+      "jevConfidence": 64,
+      "top": 0.64,
+      "margin": 0.29,
+      "gptStatus": "unverified",
+      "gptConfidence": 90
+    },
+    {
+      "name": "On-call reliability (SRE practices)",
+      "jevStatus": "unverified",
+      "jevConfidence": 80,
+      "top": 0.8,
+      "margin": 0.63,
+      "gptStatus": null,
+      "gptConfidence": null
+    }
+  ],
+  "_satRaw": [
+    {
+      "name": "Kubernetes",
+      "rawSatisfaction": "unknown",
+      "candidateLevel": null,
+      "contractViolation": false
+    }
+  ],
+  "summary": "Strong fit (Jev) · Moderate skill coverage · excellent keyword overlap. Jev handled 10/11 routable decisions; 1 escalated to GPT."
+}

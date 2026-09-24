@@ -1,0 +1,119 @@
+// gold-phase2.jsonl — UNSEEN validation batch (cases 014–019), labeled 2026-09-24.
+// Statuses frozen in PREREG.md from CV/JD text BEFORE capture; here only mapped to emitted names.
+// Scored in ISOLATION (node eval/score.ts gold-phase2.jsonl) — do NOT pool with the 153 baseline.
+// evidence-in-text taxonomy: demonstrated / inferred / unverified / missing.
+//
+// ── case-014 · SAP FICO · Finance/SAP · language-threshold ──
+{"cv_id":"case-014","skill":"SAP S/4HANA Finance","gold":"demonstrated"}
+{"cv_id":"case-014","skill":"SAP FICO configuration","gold":"demonstrated"}
+{"cv_id":"case-014","skill":"General Ledger (FI-GL)","gold":"demonstrated"}
+{"cv_id":"case-014","skill":"Accounts Payable (AP)","gold":"demonstrated"}
+{"cv_id":"case-014","skill":"Accounts Receivable (AR)","gold":"demonstrated"}
+{"cv_id":"case-014","skill":"Asset Accounting (FI-AA)","gold":"demonstrated"}
+{"cv_id":"case-014","skill":"Cost Center Accounting","gold":"demonstrated"}
+{"cv_id":"case-014","skill":"Internal Orders","gold":"demonstrated"}
+{"cv_id":"case-014","skill":"Profitability Analysis (CO-PA)","gold":"demonstrated"}
+{"cv_id":"case-014","skill":"S/4HANA rollout","gold":"demonstrated"}
+{"cv_id":"case-014","skill":"S/4HANA migration","gold":"demonstrated","note":"led one brownfield conversion"}
+{"cv_id":"case-014","skill":"RICEFW development","gold":"missing","note":"she authors func specs and hands to ABAP devs; does not develop RICEFW herself"}
+{"cv_id":"case-014","skill":"Functional specification writing (RICEFW)","gold":"demonstrated"}
+{"cv_id":"case-014","skill":"ABAP","gold":"missing","note":"coordinates with ABAP developers; no evidence she codes ABAP"}
+{"cv_id":"case-014","skill":"Financial close system support (month-end and year-end)","gold":"demonstrated"}
+{"cv_id":"case-014","skill":"SAP Activate methodology","gold":"missing"}
+{"cv_id":"case-014","skill":"Manufacturing (discrete) industry template experience","gold":"inferred","note":"manufacturing clients present; discrete-industry 'template' not explicit"}
+{"cv_id":"case-014","skill":"SAP S/4HANA Finance certification","gold":"demonstrated"}
+{"cv_id":"case-014","skill":"German","gold":"demonstrated","note":"German B1 IS explicitly evidenced => demonstrated is CORRECT. B1<required-C1 is a satisfaction/level gap the schema cannot express: classify any miss here as taxonomy-limitation, NOT evidence-error."}
+{"cv_id":"case-014","skill":"English","gold":"demonstrated"}
+//
+// ── case-015 · SOC Analyst · Cybersecurity · overqualified ──
+{"cv_id":"case-015","skill":"SIEM","gold":"demonstrated"}
+{"cv_id":"case-015","skill":"Splunk","gold":"demonstrated"}
+{"cv_id":"case-015","skill":"Microsoft Sentinel","gold":"demonstrated"}
+{"cv_id":"case-015","skill":"SIEM alert monitoring","gold":"demonstrated"}
+{"cv_id":"case-015","skill":"Incident triage","gold":"demonstrated","note":"designed the tiered triage model"}
+{"cv_id":"case-015","skill":"First-level incident investigation","gold":"demonstrated","note":"ran SOC monitoring earlier in career"}
+{"cv_id":"case-015","skill":"Phishing investigation","gold":"inferred","note":"malware named explicitly; phishing implied by SOC leadership, not named"}
+{"cv_id":"case-015","skill":"Malware investigation","gold":"demonstrated","note":"reverse-engineered commodity malware"}
+{"cv_id":"case-015","skill":"Brute force attacks","gold":"inferred","note":"broad attack-technique expertise; brute force not named specifically"}
+{"cv_id":"case-015","skill":"SIEM detection rule tuning","gold":"demonstrated","note":"owns detection-as-code, 400+ detections"}
+{"cv_id":"case-015","skill":"Incident runbook following","gold":"demonstrated","note":"authored the runbook library (exceeds 'following')"}
+{"cv_id":"case-015","skill":"Incident containment","gold":"demonstrated","note":"incident commander"}
+{"cv_id":"case-015","skill":"Incident escalation","gold":"demonstrated","note":"tiered triage / IC role"}
+{"cv_id":"case-015","skill":"Ticketing system usage","gold":"inferred","note":"SOC work implies ticketing; not stated explicitly"}
+{"cv_id":"case-015","skill":"Incident documentation","gold":"inferred","note":"IR + runbook authorship imply documentation; not explicit"}
+{"cv_id":"case-015","skill":"TCP/IP","gold":"demonstrated"}
+{"cv_id":"case-015","skill":"DNS","gold":"demonstrated"}
+{"cv_id":"case-015","skill":"HTTP","gold":"demonstrated","note":"HTTP-based attack analysis"}
+{"cv_id":"case-015","skill":"Scripting (automation)","gold":"demonstrated","note":"Python + SOAR playbooks"}
+{"cv_id":"case-015","skill":"Security+","gold":"demonstrated"}
+{"cv_id":"case-015","skill":"SOC operations","gold":"demonstrated"}
+//
+// ── case-016 · Data Engineer · cert-held/weak-experience (inverse of 012) ──
+{"cv_id":"case-016","skill":"Python","gold":"demonstrated"}
+{"cv_id":"case-016","skill":"SQL","gold":"demonstrated"}
+{"cv_id":"case-016","skill":"Apache Spark","gold":"unverified","note":"coursework + one POC, explicitly 'not in production'"}
+{"cv_id":"case-016","skill":"Apache Airflow","gold":"unverified","note":"one hackathon DAG, 'learning-level'"}
+{"cv_id":"case-016","skill":"Snowflake","gold":"demonstrated","note":"SnowPro Core certified + warehouse use"}
+{"cv_id":"case-016","skill":"BigQuery","gold":"missing","note":"JD alternative; uses Snowflake, not BigQuery"}
+{"cv_id":"case-016","skill":"Amazon Redshift","gold":"missing"}
+{"cv_id":"case-016","skill":"SnowPro Core","gold":"demonstrated"}
+{"cv_id":"case-016","skill":"Google Professional Data Engineer","gold":"missing","note":"does not hold this cert"}
+{"cv_id":"case-016","skill":"Databricks Certified Data Engineer Associate","gold":"demonstrated"}
+{"cv_id":"case-016","skill":"Batch data pipelines","gold":"unverified","note":"a couple of small nightly scripts; explicitly did not own the pipeline platform"}
+{"cv_id":"case-016","skill":"Streaming data pipelines","gold":"missing"}
+{"cv_id":"case-016","skill":"Production pipeline operations","gold":"missing","note":"explicitly 'did not own the broader pipeline platform'"}
+{"cv_id":"case-016","skill":"Pipeline monitoring","gold":"missing"}
+{"cv_id":"case-016","skill":"Pipeline reliability","gold":"missing"}
+{"cv_id":"case-016","skill":"Data modeling","gold":"missing","note":"not evidenced"}
+{"cv_id":"case-016","skill":"Data warehouse maintenance","gold":"unverified","note":"pulls data into a warehouse (usage), not maintenance ownership"}
+{"cv_id":"case-016","skill":"Data quality","gold":"missing"}
+{"cv_id":"case-016","skill":"Large-scale distributed processing","gold":"unverified","note":"Spark POC only"}
+{"cv_id":"case-016","skill":"Workflow orchestration","gold":"unverified","note":"Airflow at learning-level"}
+{"cv_id":"case-016","skill":"dbt","gold":"missing"}
+{"cv_id":"case-016","skill":"Apache Kafka","gold":"missing"}
+//
+// ── case-017 · IT Project Manager · badly-written JD ──
+{"cv_id":"case-017","skill":"IT project management","gold":"demonstrated"}
+{"cv_id":"case-017","skill":"End-to-end project lifecycle management","gold":"demonstrated"}
+{"cv_id":"case-017","skill":"Project budgeting","gold":"demonstrated","note":"budgets up to EUR 2M"}
+{"cv_id":"case-017","skill":"Project scheduling","gold":"demonstrated","note":"roadmaps + coordinator scheduling history"}
+{"cv_id":"case-017","skill":"Project monitoring / tracking","gold":"demonstrated","note":"risk logs, status reporting"}
+{"cv_id":"case-017","skill":"Project management tools","gold":"demonstrated","note":"Jira, MS Project"}
+{"cv_id":"case-017","skill":"English","gold":"demonstrated","note":"C1"}
+//
+// ── case-018 · Salesforce Admin · very short CV ──
+{"cv_id":"case-018","skill":"Salesforce","gold":"demonstrated"}
+{"cv_id":"case-018","skill":"Salesforce Certified Administrator","gold":"demonstrated"}
+{"cv_id":"case-018","skill":"Salesforce Sales Cloud","gold":"demonstrated"}
+{"cv_id":"case-018","skill":"Salesforce Service Cloud","gold":"demonstrated"}
+{"cv_id":"case-018","skill":"Flow Builder","gold":"demonstrated","note":"'build flows'"}
+{"cv_id":"case-018","skill":"Declarative automation","gold":"demonstrated","note":"flows are declarative automation"}
+{"cv_id":"case-018","skill":"Reports","gold":"demonstrated"}
+{"cv_id":"case-018","skill":"Dashboards","gold":"demonstrated"}
+{"cv_id":"case-018","skill":"Validation Rules","gold":"missing","note":"short CV never mentions validation rules"}
+{"cv_id":"case-018","skill":"User management","gold":"demonstrated","note":"'manage users'"}
+{"cv_id":"case-018","skill":"Roles","gold":"inferred","note":"profiles/permission sets named; roles implied by SF security mgmt, not named"}
+{"cv_id":"case-018","skill":"Profiles","gold":"demonstrated"}
+{"cv_id":"case-018","skill":"Permission Sets","gold":"demonstrated"}
+{"cv_id":"case-018","skill":"Data quality","gold":"missing","note":"not mentioned in the short CV"}
+{"cv_id":"case-018","skill":"Data imports","gold":"missing","note":"not mentioned in the short CV"}
+{"cv_id":"case-018","skill":"Apex","gold":"missing"}
+{"cv_id":"case-018","skill":"Salesforce Certified Advanced Administrator","gold":"missing"}
+{"cv_id":"case-018","skill":"French","gold":"demonstrated"}
+{"cv_id":"case-018","skill":"English","gold":"demonstrated"}
+//
+// ── case-019 · Clinical Systems Manager · Healthcare IT · very verbose CV + mgmt ──
+{"cv_id":"case-019","skill":"EHR platform management","gold":"demonstrated"}
+{"cv_id":"case-019","skill":"Epic","gold":"demonstrated"}
+{"cv_id":"case-019","skill":"HL7","gold":"demonstrated"}
+{"cv_id":"case-019","skill":"FHIR","gold":"demonstrated"}
+{"cv_id":"case-019","skill":"Clinical integration platform management","gold":"demonstrated","note":"interface engine + FHIR APIs"}
+{"cv_id":"case-019","skill":"Healthcare IT","gold":"demonstrated"}
+{"cv_id":"case-019","skill":"HIPAA","gold":"demonstrated"}
+{"cv_id":"case-019","skill":"GDPR","gold":"demonstrated"}
+{"cv_id":"case-019","skill":"Clinical workflow analysis","gold":"demonstrated"}
+{"cv_id":"case-019","skill":"Vendor management","gold":"demonstrated"}
+{"cv_id":"case-019","skill":"Contract management","gold":"demonstrated"}
+{"cv_id":"case-019","skill":"Support contract management","gold":"demonstrated"}
+{"cv_id":"case-019","skill":"Project management certification","gold":"missing","note":"no PM cert held"}
+{"cv_id":"case-019","skill":"Clinical background","gold":"demonstrated","note":"MB BCh BAO; practised medicine"}

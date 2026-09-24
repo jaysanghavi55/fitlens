@@ -1,0 +1,380 @@
+{
+  "fitLevel": {
+    "score": 91,
+    "label": "Strong",
+    "confidence": 83
+  },
+  "shouldApply": {
+    "value": "Borderline",
+    "confidence": 52,
+    "source": "jev",
+    "reasoning": "Too close to call — Jev leans Yes but won’t commit to a firm recommendation."
+  },
+  "skillMatch": {
+    "score": 85,
+    "label": "Strong"
+  },
+  "keywordMatch": {
+    "score": 56,
+    "label": "Good",
+    "confidence": 60
+  },
+  "cvTone": {
+    "value": "Professional",
+    "confidence": 56
+  },
+  "skills": [
+    {
+      "name": "SIEM",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Ran day-to-day SOC monitoring, then led the team; built the first SIEM correlation content.",
+      "source": "jev"
+    },
+    {
+      "name": "Splunk",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Lead detection engineering across Splunk and Microsoft Sentinel; own the detection-as-code pipeline and 400+ maintained detections.",
+      "source": "jev"
+    },
+    {
+      "name": "Microsoft Sentinel",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Lead detection engineering across Splunk and Microsoft Sentinel; own the detection-as-code pipeline and 400+ maintained detections.",
+      "source": "jev"
+    },
+    {
+      "name": "SIEM alert monitoring",
+      "status": "demonstrated",
+      "confidence": 93,
+      "evidence": "- Ran day-to-day SOC monitoring, then led the team; built the first SIEM correlation content.",
+      "source": "jev"
+    },
+    {
+      "name": "Incident triage",
+      "status": "demonstrated",
+      "confidence": 91,
+      "evidence": "- Designed the SOC's tiered triage model and authored the runbook library the analysts follow.",
+      "source": "jev"
+    },
+    {
+      "name": "First-level incident investigation",
+      "status": "demonstrated",
+      "confidence": 95,
+      "evidence": "Ran day-to-day SOC monitoring, then led the team; built the first SIEM correlation content.",
+      "source": "llm",
+      "reasoning": "Explicit hands‑on SOC monitoring and creation of SIEM correlation content demonstrates first‑level incident investigation experience."
+    },
+    {
+      "name": "Phishing investigation",
+      "status": "unverified",
+      "confidence": 65,
+      "evidence": "Designed the SOC's tiered triage model and authored the runbook library the analysts follow.",
+      "source": "llm",
+      "reasoning": "Authoring triage runbooks implies the SOC handles alert types that may include phishing, but phishing investigation is not mentioned explicitly."
+    },
+    {
+      "name": "Malware investigation",
+      "status": "demonstrated",
+      "confidence": 98,
+      "evidence": "- Deep hands-on with TCP/IP, DNS, and HTTP-based attack analysis; reverse-engineered commodity malware.",
+      "source": "jev"
+    },
+    {
+      "name": "Brute force attacks",
+      "status": "unverified",
+      "confidence": 60,
+      "evidence": "Deep hands-on with TCP/IP, DNS, and HTTP-based attack analysis; reverse-engineered commodity malware.",
+      "source": "llm",
+      "reasoning": "Network and attack analysis skills indicate ability to analyze attacks broadly, but brute‑force attacks are not specifically cited."
+    },
+    {
+      "name": "SIEM detection rule tuning",
+      "status": "demonstrated",
+      "confidence": 80,
+      "evidence": "- Lead detection engineering across Splunk and Microsoft Sentinel; own the detection-as-code pipeline and 400+ maintained detections.",
+      "source": "jev"
+    },
+    {
+      "name": "Incident runbook following",
+      "status": "demonstrated",
+      "confidence": 90,
+      "evidence": "Designed the SOC's tiered triage model and authored the runbook library the analysts follow.",
+      "source": "llm",
+      "reasoning": "Having designed and authored the runbook library shows direct familiarity with runbooks and how analysts should follow them."
+    },
+    {
+      "name": "Incident containment",
+      "status": "demonstrated",
+      "confidence": 90,
+      "evidence": "Serve as incident commander for major incidents, including two nation-state-associated intrusions.",
+      "source": "llm",
+      "reasoning": "Serving as incident commander for major incidents inherently involves directing and executing containment actions."
+    },
+    {
+      "name": "Incident escalation",
+      "status": "demonstrated",
+      "confidence": 90,
+      "evidence": "Designed the SOC's tiered triage model and authored the runbook library the analysts follow.",
+      "source": "llm",
+      "reasoning": "Designing a tiered triage model and runbooks demonstrates knowledge and ownership of escalation paths and procedures."
+    },
+    {
+      "name": "Ticketing system usage",
+      "status": "missing",
+      "confidence": 85,
+      "evidence": null,
+      "source": "llm",
+      "reasoning": "The CV does not mention tickets, ticketing systems, or logging work in a ticketing platform."
+    },
+    {
+      "name": "Incident documentation",
+      "status": "unverified",
+      "confidence": 60,
+      "evidence": "Designed the SOC's tiered triage model and authored the runbook library the analysts follow.",
+      "source": "llm",
+      "reasoning": "Authorship of runbooks indicates documentation experience generally, but the CV does not explicitly state incident‑by‑incident documentation practices."
+    },
+    {
+      "name": "TCP/IP",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Deep hands-on with TCP/IP, DNS, and HTTP-based attack analysis; reverse-engineered commodity malware.",
+      "source": "jev"
+    },
+    {
+      "name": "DNS",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Deep hands-on with TCP/IP, DNS, and HTTP-based attack analysis; reverse-engineered commodity malware.",
+      "source": "jev"
+    },
+    {
+      "name": "HTTP",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Deep hands-on with TCP/IP, DNS, and HTTP-based attack analysis; reverse-engineered commodity malware.",
+      "source": "jev"
+    },
+    {
+      "name": "Scripting (automation)",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Built automated enrichment and response with Python and SOAR playbooks, cutting mean triage time by 60%.",
+      "source": "jev"
+    },
+    {
+      "name": "Security+",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- CompTIA Security+",
+      "source": "jev"
+    },
+    {
+      "name": "SOC operations",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "I have built and led SOC and detection functions, run major incident response, and set detection strategy across two enterprises.",
+      "source": "jev"
+    }
+  ],
+  "routing": {
+    "total": 21,
+    "escalated": 8,
+    "jevHandled": 13
+  },
+  "_jevRaw": [
+    {
+      "name": "SIEM",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Splunk",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Microsoft Sentinel",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "SIEM alert monitoring",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 93,
+      "top": 0.93,
+      "margin": 0.86,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Incident triage",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 91,
+      "top": 0.91,
+      "margin": 0.83,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "First-level incident investigation",
+      "jevStatus": "inferred",
+      "jevConfidence": 66,
+      "top": 0.66,
+      "margin": 0.44,
+      "gptStatus": "demonstrated",
+      "gptConfidence": 95
+    },
+    {
+      "name": "Phishing investigation",
+      "jevStatus": "unverified",
+      "jevConfidence": 69,
+      "top": 0.69,
+      "margin": 0.46,
+      "gptStatus": "unverified",
+      "gptConfidence": 65
+    },
+    {
+      "name": "Malware investigation",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 98,
+      "top": 0.98,
+      "margin": 0.97,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Brute force attacks",
+      "jevStatus": "unverified",
+      "jevConfidence": 56,
+      "top": 0.56,
+      "margin": 0.19,
+      "gptStatus": "unverified",
+      "gptConfidence": 60
+    },
+    {
+      "name": "SIEM detection rule tuning",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 80,
+      "top": 0.8,
+      "margin": 0.61,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Incident runbook following",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 70,
+      "top": 0.7,
+      "margin": 0.46,
+      "gptStatus": "demonstrated",
+      "gptConfidence": 90
+    },
+    {
+      "name": "Incident containment",
+      "jevStatus": "inferred",
+      "jevConfidence": 54,
+      "top": 0.54,
+      "margin": 0.3,
+      "gptStatus": "demonstrated",
+      "gptConfidence": 90
+    },
+    {
+      "name": "Incident escalation",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 45,
+      "top": 0.45,
+      "margin": 0.02,
+      "gptStatus": "demonstrated",
+      "gptConfidence": 90
+    },
+    {
+      "name": "Ticketing system usage",
+      "jevStatus": "missing",
+      "jevConfidence": 52,
+      "top": 0.52,
+      "margin": 0.15,
+      "gptStatus": "missing",
+      "gptConfidence": 85
+    },
+    {
+      "name": "Incident documentation",
+      "jevStatus": "unverified",
+      "jevConfidence": 64,
+      "top": 0.64,
+      "margin": 0.41,
+      "gptStatus": "unverified",
+      "gptConfidence": 60
+    },
+    {
+      "name": "TCP/IP",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "DNS",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "HTTP",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Scripting (automation)",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Security+",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "SOC operations",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    }
+  ],
+  "summary": "Strong fit (Jev) · Strong skill coverage · good keyword overlap. Jev handled 13/21 routable decisions; 8 escalated to GPT."
+}

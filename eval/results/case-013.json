@@ -1,0 +1,344 @@
+{
+  "fitLevel": {
+    "score": 2,
+    "label": "Weak",
+    "confidence": 97
+  },
+  "shouldApply": {
+    "value": "No",
+    "confidence": 89,
+    "source": "jev"
+  },
+  "skillMatch": {
+    "score": 37,
+    "label": "Weak"
+  },
+  "keywordMatch": {
+    "score": 2,
+    "label": "Poor",
+    "confidence": 98
+  },
+  "cvTone": {
+    "value": "Professional",
+    "confidence": 95
+  },
+  "skills": [
+    {
+      "name": "Python",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Strong in SQL, Python analytics, classical modeling, and experiment design.",
+      "source": "jev"
+    },
+    {
+      "name": "SQL",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Strong in SQL, Python analytics, classical modeling, and experiment design.",
+      "source": "jev"
+    },
+    {
+      "name": "PyTorch",
+      "status": "missing",
+      "confidence": 100,
+      "evidence": "I have not worked with deep-learning frameworks such as PyTorch or TensorFlow, and I have not owned model deployment or the container and orchestration side of production.",
+      "source": "jev"
+    },
+    {
+      "name": "TensorFlow",
+      "status": "missing",
+      "confidence": 100,
+      "evidence": "I have not worked with deep-learning frameworks such as PyTorch or TensorFlow, and I have not owned model deployment or the container and orchestration side of production.",
+      "source": "jev"
+    },
+    {
+      "name": "scikit-learn",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Analyzed behavioral data in Python with pandas and NumPy, and built predictive churn and propensity models with scikit-learn.",
+      "source": "jev"
+    },
+    {
+      "name": "MLOps",
+      "status": "missing",
+      "confidence": 97,
+      "evidence": null,
+      "source": "jev"
+    },
+    {
+      "name": "Model deployment pipelines",
+      "status": "missing",
+      "confidence": 100,
+      "evidence": null,
+      "source": "jev"
+    },
+    {
+      "name": "Model serving",
+      "status": "missing",
+      "confidence": 100,
+      "evidence": null,
+      "source": "jev"
+    },
+    {
+      "name": "Model monitoring",
+      "status": "missing",
+      "confidence": 95,
+      "evidence": null,
+      "source": "jev"
+    },
+    {
+      "name": "Docker",
+      "status": "missing",
+      "confidence": 98,
+      "evidence": null,
+      "source": "jev"
+    },
+    {
+      "name": "Kubernetes",
+      "status": "missing",
+      "confidence": 99,
+      "evidence": null,
+      "source": "jev"
+    },
+    {
+      "name": "AWS",
+      "status": "unverified",
+      "confidence": 95,
+      "evidence": "Wrote complex SQL across a cloud data warehouse to build the metrics layer behind executive dashboards.",
+      "source": "llm",
+      "reasoning": "The CV states work on a 'cloud data warehouse' but never names AWS, so a specific cloud provider cannot be confirmed."
+    },
+    {
+      "name": "GCP",
+      "status": "unverified",
+      "confidence": 95,
+      "evidence": "Wrote complex SQL across a cloud data warehouse to build the metrics layer behind executive dashboards.",
+      "source": "llm",
+      "reasoning": "The CV states work on a 'cloud data warehouse' but never names GCP or BigQuery, so the GCP provider is not confirmed."
+    },
+    {
+      "name": "Azure",
+      "status": "unverified",
+      "confidence": 95,
+      "evidence": "Wrote complex SQL across a cloud data warehouse to build the metrics layer behind executive dashboards.",
+      "source": "llm",
+      "reasoning": "The CV states work on a 'cloud data warehouse' but never names Azure, so the Azure provider is not confirmed."
+    },
+    {
+      "name": "Apache Spark",
+      "status": "unverified",
+      "confidence": 90,
+      "evidence": "Processed large event datasets to compute cohort and funnel metrics.",
+      "source": "llm",
+      "reasoning": "The candidate has processed large event datasets (suggesting large-scale data work) but never mentions Spark or another specific big-data engine."
+    },
+    {
+      "name": "Airflow",
+      "status": "inferred",
+      "confidence": 92,
+      "evidence": "Scheduled recurring data pipelines as DAGs with retries, backfills, and failure alerts.",
+      "source": "llm",
+      "reasoning": "The mention of DAGs plus 'backfills' and retries strongly implies use of Apache Airflow even though it is not explicitly named."
+    },
+    {
+      "name": "Feature pipelines",
+      "status": "unverified",
+      "confidence": 80,
+      "evidence": null,
+      "source": "jev"
+    },
+    {
+      "name": "Statistics",
+      "status": "demonstrated",
+      "confidence": 80,
+      "evidence": "Statistics — University of Pune",
+      "source": "jev"
+    },
+    {
+      "name": "Experimentation",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Designed and ran A/B tests end to end, from power analysis and randomization to significance testing and readouts.",
+      "source": "jev"
+    }
+  ],
+  "routing": {
+    "total": 19,
+    "escalated": 5,
+    "jevHandled": 14
+  },
+  "_jevRaw": [
+    {
+      "name": "Python",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "SQL",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "PyTorch",
+      "jevStatus": "missing",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "TensorFlow",
+      "jevStatus": "missing",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "scikit-learn",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "MLOps",
+      "jevStatus": "missing",
+      "jevConfidence": 97,
+      "top": 0.97,
+      "margin": 0.94,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Model deployment pipelines",
+      "jevStatus": "missing",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Model serving",
+      "jevStatus": "missing",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Model monitoring",
+      "jevStatus": "missing",
+      "jevConfidence": 95,
+      "top": 0.95,
+      "margin": 0.9,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Docker",
+      "jevStatus": "missing",
+      "jevConfidence": 98,
+      "top": 0.98,
+      "margin": 0.96,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Kubernetes",
+      "jevStatus": "missing",
+      "jevConfidence": 99,
+      "top": 0.99,
+      "margin": 0.98,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "AWS",
+      "jevStatus": "unverified",
+      "jevConfidence": 57,
+      "top": 0.57,
+      "margin": 0.14,
+      "gptStatus": "unverified",
+      "gptConfidence": 95
+    },
+    {
+      "name": "GCP",
+      "jevStatus": "missing",
+      "jevConfidence": 52,
+      "top": 0.52,
+      "margin": 0.04,
+      "gptStatus": "unverified",
+      "gptConfidence": 95
+    },
+    {
+      "name": "Azure",
+      "jevStatus": "missing",
+      "jevConfidence": 55,
+      "top": 0.55,
+      "margin": 0.1,
+      "gptStatus": "unverified",
+      "gptConfidence": 95
+    },
+    {
+      "name": "Apache Spark",
+      "jevStatus": "missing",
+      "jevConfidence": 76,
+      "top": 0.76,
+      "margin": 0.52,
+      "gptStatus": "unverified",
+      "gptConfidence": 90
+    },
+    {
+      "name": "Airflow",
+      "jevStatus": "unverified",
+      "jevConfidence": 73,
+      "top": 0.73,
+      "margin": 0.51,
+      "gptStatus": "inferred",
+      "gptConfidence": 92
+    },
+    {
+      "name": "Feature pipelines",
+      "jevStatus": "unverified",
+      "jevConfidence": 80,
+      "top": 0.8,
+      "margin": 0.64,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Statistics",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 80,
+      "top": 0.8,
+      "margin": 0.63,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Experimentation",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    }
+  ],
+  "summary": "Weak fit (Jev) · Weak skill coverage · poor keyword overlap. Jev handled 14/19 routable decisions; 5 escalated to GPT."
+}

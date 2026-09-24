@@ -1,0 +1,260 @@
+{
+  "fitLevel": {
+    "score": 100,
+    "label": "Strong",
+    "confidence": 100
+  },
+  "shouldApply": {
+    "value": "Yes",
+    "confidence": 93,
+    "source": "jev"
+  },
+  "skillMatch": {
+    "score": 93,
+    "label": "Strong"
+  },
+  "keywordMatch": {
+    "score": 94,
+    "label": "Excellent",
+    "confidence": 88
+  },
+  "cvTone": {
+    "value": "Professional",
+    "confidence": 97
+  },
+  "skills": [
+    {
+      "name": "EHR platform management",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "In the course of that journey we undertook, and I personally sponsored and directed, the full-scale implementation of our Epic electronic health record, a programme of work that consumed the better…",
+      "source": "jev"
+    },
+    {
+      "name": "Epic",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "In the course of that journey we undertook, and I personally sponsored and directed, the full-scale implementation of our Epic electronic health record, a programme of work that consumed the better…",
+      "source": "jev"
+    },
+    {
+      "name": "HL7",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Because our systems could not exist in isolation, a very substantial portion of my attention was, and remains, devoted to healthcare integration: my team and I designed, built, and continue to main…",
+      "source": "jev"
+    },
+    {
+      "name": "FHIR",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Because our systems could not exist in isolation, a very substantial portion of my attention was, and remains, devoted to healthcare integration: my team and I designed, built, and continue to main…",
+      "source": "jev"
+    },
+    {
+      "name": "Clinical integration platform management",
+      "status": "demonstrated",
+      "confidence": 95,
+      "evidence": "Because our systems could not exist in isolation, a very substantial portion of my attention was, and remains, devoted to healthcare integration: my team and I designed, built, and continue to maintain the HL7 v2 interface engine as well as the newer FHIR-based APIs through which our laboratory, radiology, pharmacy, and patient-administration systems exchange the ceaseless flow of clinical messages upon which safe care depends.",
+      "source": "llm",
+      "reasoning": "The CV explicitly states he led design, build, and ongoing maintenance of an HL7 v2 interface engine and FHIR APIs, which directly demonstrates clinical integration platform management."
+    },
+    {
+      "name": "Healthcare IT",
+      "status": "demonstrated",
+      "confidence": 96,
+      "evidence": "Because our systems could not exist in isolation, a very substantial portion of my attention was, and remains, devoted to healthcare integration: my team and I designed, built, and continue to main…",
+      "source": "jev"
+    },
+    {
+      "name": "HIPAA",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Governance, too, has been a constant companion; I established and chair the data-protection working group that ensures our handling of patient information satisfies both GDPR as it applies to speci…",
+      "source": "jev"
+    },
+    {
+      "name": "GDPR",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Governance, too, has been a constant companion; I established and chair the data-protection working group that ensures our handling of patient information satisfies both GDPR as it applies to speci…",
+      "source": "jev"
+    },
+    {
+      "name": "Clinical workflow analysis",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Team leadership and people management; Epic EHR implementation and management; HL7 v2 and FHIR healthcare integration; healthcare data privacy (GDPR health data, HIPAA); vendor and contract managem…",
+      "source": "jev"
+    },
+    {
+      "name": "Vendor management",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "I hold, and personally negotiate, the support and licensing contracts with our principal vendors, a responsibility that has taught me perhaps more about vendor management than any textbook ever could.",
+      "source": "jev"
+    },
+    {
+      "name": "Contract management",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Team leadership and people management; Epic EHR implementation and management; HL7 v2 and FHIR healthcare integration; healthcare data privacy (GDPR health data, HIPAA); vendor and contract managem…",
+      "source": "jev"
+    },
+    {
+      "name": "Support contract management",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "I hold, and personally negotiate, the support and licensing contracts with our principal vendors, a responsibility that has taught me perhaps more about vendor management than any textbook ever could.",
+      "source": "jev"
+    },
+    {
+      "name": "Project management certification",
+      "status": "missing",
+      "confidence": 97,
+      "evidence": null,
+      "source": "jev"
+    },
+    {
+      "name": "Clinical background",
+      "status": "demonstrated",
+      "confidence": 99,
+      "evidence": "I qualified and practised briefly in general medicine before moving into informatics.",
+      "source": "jev"
+    }
+  ],
+  "routing": {
+    "total": 14,
+    "escalated": 1,
+    "jevHandled": 13
+  },
+  "_jevRaw": [
+    {
+      "name": "EHR platform management",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Epic",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "HL7",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "FHIR",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Clinical integration platform management",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 57,
+      "top": 0.57,
+      "margin": 0.19,
+      "gptStatus": "demonstrated",
+      "gptConfidence": 95
+    },
+    {
+      "name": "Healthcare IT",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 96,
+      "top": 0.96,
+      "margin": 0.92,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "HIPAA",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "GDPR",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Clinical workflow analysis",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Vendor management",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Contract management",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Support contract management",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Project management certification",
+      "jevStatus": "missing",
+      "jevConfidence": 97,
+      "top": 0.97,
+      "margin": 0.94,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Clinical background",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 99,
+      "top": 0.99,
+      "margin": 0.98,
+      "gptStatus": null,
+      "gptConfidence": null
+    }
+  ],
+  "summary": "Strong fit (Jev) · Strong skill coverage · excellent keyword overlap. Jev handled 13/14 routable decisions; 1 escalated to GPT."
+}

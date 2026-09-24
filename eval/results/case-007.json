@@ -1,0 +1,281 @@
+{
+  "fitLevel": {
+    "score": 98,
+    "label": "Strong",
+    "confidence": 96
+  },
+  "shouldApply": {
+    "value": "Yes",
+    "confidence": 92,
+    "source": "jev"
+  },
+  "skillMatch": {
+    "score": 85,
+    "label": "Strong"
+  },
+  "keywordMatch": {
+    "score": 91,
+    "label": "Excellent",
+    "confidence": 82
+  },
+  "cvTone": {
+    "value": "Technical",
+    "confidence": 76
+  },
+  "skills": [
+    {
+      "name": "React",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Led the rebuild of the patient portal in React and TypeScript, owning the component library and its design-system integration.",
+      "source": "jev"
+    },
+    {
+      "name": "TypeScript",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Led the rebuild of the patient portal in React and TypeScript, owning the component library and its design-system integration.",
+      "source": "jev"
+    },
+    {
+      "name": "Next.js",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Migrated the marketing and dashboard surfaces to Next.js, using both server rendering and static generation to cut time-to-first-byte roughly in half.",
+      "source": "jev"
+    },
+    {
+      "name": "Tailwind CSS",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Styled the entire application with Tailwind CSS and a shared design-token set.",
+      "source": "jev"
+    },
+    {
+      "name": "GraphQL",
+      "status": "inferred",
+      "confidence": 95,
+      "evidence": "Fetched data from a typed graph API with a published schema and resolvers, colocating queries next to the components that used them.",
+      "source": "llm",
+      "reasoning": "The CV describes a typed graph API with a published schema and resolvers and colocated queries, which unambiguously implies GraphQL usage."
+    },
+    {
+      "name": "Redux",
+      "status": "inferred",
+      "confidence": 95,
+      "evidence": "Managed cross-page application state through a centralized store with dispatched actions and reducers.",
+      "source": "llm",
+      "reasoning": "Mention of a centralized store with dispatched actions and reducers strongly implies use of Redux or a Redux-like library."
+    },
+    {
+      "name": "State management library",
+      "status": "demonstrated",
+      "confidence": 95,
+      "evidence": "Managed cross-page application state through a centralized store with dispatched actions and reducers.",
+      "source": "llm",
+      "reasoning": "The CV explicitly describes using a centralized store with actions and reducers, demonstrating practical state-management library experience."
+    },
+    {
+      "name": "Jest",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Wrote unit tests in Jest and end-to-end suites in Playwright, gating every merge on both.",
+      "source": "jev"
+    },
+    {
+      "name": "Playwright",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Wrote unit tests in Jest and end-to-end suites in Playwright, gating every merge on both.",
+      "source": "jev"
+    },
+    {
+      "name": "Web accessibility (a11y)",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Built interactive data dashboards in React with a strong focus on WCAG accessibility and keyboard navigation.",
+      "source": "jev"
+    },
+    {
+      "name": "Component-driven UI",
+      "status": "demonstrated",
+      "confidence": 99,
+      "evidence": "Led the rebuild of the patient portal in React and TypeScript, owning the component library and its design-system integration.",
+      "source": "llm",
+      "reasoning": "Owning a component library and design-system integration while rebuilding a React app directly demonstrates component-driven UI experience."
+    },
+    {
+      "name": "Webpack",
+      "status": "unverified",
+      "confidence": 90,
+      "evidence": "Bundled and code-split the app for production, tuning chunk boundaries to keep the initial payload small.",
+      "source": "llm",
+      "reasoning": "The CV confirms production bundling and code-splitting but does not name Webpack specifically, so the exact bundler is unverified."
+    },
+    {
+      "name": "Modern bundler (esbuild/Vite/Rollup)",
+      "status": "unverified",
+      "confidence": 90,
+      "evidence": "Bundled and code-split the app for production, tuning chunk boundaries to keep the initial payload small.",
+      "source": "llm",
+      "reasoning": "Production bundling is stated, but no specific modern bundler (esbuild/Vite/Rollup) is named, so the exact tool cannot be verified."
+    },
+    {
+      "name": "Node.js",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Built a Node.js backend-for-frontend that aggregated several downstream services behind a single origin.",
+      "source": "jev"
+    },
+    {
+      "name": "CI/CD",
+      "status": "demonstrated",
+      "confidence": 98,
+      "evidence": "- Automated linting, type-checks, tests, and preview deploys with GitHub Actions on every pull request.",
+      "source": "jev"
+    }
+  ],
+  "routing": {
+    "total": 15,
+    "escalated": 6,
+    "jevHandled": 9
+  },
+  "_jevRaw": [
+    {
+      "name": "React",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "TypeScript",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Next.js",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Tailwind CSS",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "GraphQL",
+      "jevStatus": "inferred",
+      "jevConfidence": 59,
+      "top": 0.59,
+      "margin": 0.22,
+      "gptStatus": "inferred",
+      "gptConfidence": 95
+    },
+    {
+      "name": "Redux",
+      "jevStatus": "inferred",
+      "jevConfidence": 65,
+      "top": 0.65,
+      "margin": 0.33,
+      "gptStatus": "inferred",
+      "gptConfidence": 95
+    },
+    {
+      "name": "State management library",
+      "jevStatus": "inferred",
+      "jevConfidence": 75,
+      "top": 0.75,
+      "margin": 0.57,
+      "gptStatus": "demonstrated",
+      "gptConfidence": 95
+    },
+    {
+      "name": "Jest",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Playwright",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Web accessibility (a11y)",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Component-driven UI",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 50,
+      "top": 0.5,
+      "margin": 0.01,
+      "gptStatus": "demonstrated",
+      "gptConfidence": 99
+    },
+    {
+      "name": "Webpack",
+      "jevStatus": "unverified",
+      "jevConfidence": 70,
+      "top": 0.7,
+      "margin": 0.43,
+      "gptStatus": "unverified",
+      "gptConfidence": 90
+    },
+    {
+      "name": "Modern bundler (esbuild/Vite/Rollup)",
+      "jevStatus": "unverified",
+      "jevConfidence": 71,
+      "top": 0.71,
+      "margin": 0.46,
+      "gptStatus": "unverified",
+      "gptConfidence": 90
+    },
+    {
+      "name": "Node.js",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "CI/CD",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 98,
+      "top": 0.98,
+      "margin": 0.96,
+      "gptStatus": null,
+      "gptConfidence": null
+    }
+  ],
+  "summary": "Strong fit (Jev) · Strong skill coverage · excellent keyword overlap. Jev handled 9/15 routable decisions; 6 escalated to GPT."
+}

@@ -4,6 +4,10 @@ import mammoth from 'mammoth';
 export const runtime = 'nodejs';
 export const maxDuration = 30;
 
+// Reject oversized uploads before spending time parsing them.
+// Keep in sync with MAX_FILE_BYTES in components/match-analyzer.tsx.
+const MAX_FILE_BYTES = 5 * 1024 * 1024; // 5 MB
+
 export async function POST(req: Request) {
   try {
     const formData = await req.formData();
@@ -11,6 +15,13 @@ export async function POST(req: Request) {
 
     if (!(file instanceof File)) {
       return Response.json({ error: 'No file uploaded.' }, { status: 400 });
+    }
+
+    if (file.size > MAX_FILE_BYTES) {
+      return Response.json(
+        { error: 'File is larger than 5 MB. Upload a smaller PDF/DOCX or paste the text.' },
+        { status: 413 }
+      );
     }
 
     const buffer = Buffer.from(await file.arrayBuffer());

@@ -1,0 +1,53 @@
+// gold-satisfaction.jsonl — PRE-REGISTERED Phase-3 gold (Level/Satisfaction), from JD/CV TEXT only.
+// Written BEFORE any Phase-3 capture (no-leakage, as in PREREG.md). Row schema:
+//   {cv_id, skill, expectThreshold:bool, kind?, threshold?, candidateLevel?, satisfaction?, note?}
+// - expectThreshold=false rows feed threshold-detection precision/false-positive-rate (bare reqs).
+// - expectThreshold=true rows carry the full JD-derived required level + text-derived candidate level.
+// `skill` MUST match an EMITTED skill name (join key). 014/016/018 names copied from the frozen
+// results/ (join keys only — satisfaction VALUES are text-derived). case-020 names are PREDICTED from
+// its JD (not yet captured); reconcile any name-boundary drift after capture, do NOT relabel values.
+// Run: RESULTS_DIR=results-phase3 node eval/score-satisfaction.ts
+//
+// ── case-014 · SAP FICO · language-threshold (Gate C insufficient anchor = German) ──
+{"cv_id":"case-014","skill":"SAP FICO configuration","expectThreshold":true,"kind":"years","threshold":"5","candidateLevel":"7 years","satisfaction":"satisfied","note":"JD '5+ years hands-on SAP FICO configuration'; CV '7 years configuring Finance and Controlling'."}
+{"cv_id":"case-014","skill":"SAP S/4HANA Finance","expectThreshold":true,"kind":"experience-depth","threshold":"deep","candidateLevel":"3 years S/4HANA + led greenfield/brownfield","satisfaction":"satisfied","note":"DIAGNOSTIC — 'deep' is subjective; CV shows substantial S/4HANA (3 yrs + full implementations). Debatable, not a must-pass."}
+{"cv_id":"case-014","skill":"German","expectThreshold":true,"kind":"language-cefr","threshold":"C1","candidateLevel":"B1","satisfaction":"insufficient","note":"MUST-PASS (Gate C). JD 'German: business fluent (C1)'; CV 'German (B1 — currently in an intensive course)'. Evidence stays demonstrated; satisfaction is the new dimension."}
+{"cv_id":"case-014","skill":"English","expectThreshold":true,"kind":"language-cefr","threshold":"professional working proficiency","candidateLevel":"C2 (native-level)","satisfaction":"satisfied","note":"DIAGNOSTIC — JD bar phrased as 'professional working proficiency' (non-CEFR); CV C2 clearly clears it. Borderline trigger."}
+{"cv_id":"case-014","skill":"General Ledger (FI-GL)","expectThreshold":false,"note":"bare — no level word in JD."}
+{"cv_id":"case-014","skill":"Accounts Payable (AP)","expectThreshold":false}
+{"cv_id":"case-014","skill":"Accounts Receivable (AR)","expectThreshold":false}
+{"cv_id":"case-014","skill":"Asset Accounting (FI-AA)","expectThreshold":false}
+{"cv_id":"case-014","skill":"Cost Center Accounting","expectThreshold":false}
+{"cv_id":"case-014","skill":"Profitability Analysis (CO-PA)","expectThreshold":false}
+{"cv_id":"case-014","skill":"Financial close system support (month-end and year-end)","expectThreshold":false}
+{"cv_id":"case-014","skill":"SAP S/4HANA Finance certification","expectThreshold":false,"note":"certification — pass/fail by evidence, NOT a level."}
+// ── case-016 · Data Engineer · cert-held/weak-experience (Gate C insufficient anchors = Spark, Airflow) ──
+{"cv_id":"case-016","skill":"Apache Spark","expectThreshold":true,"kind":"experience-depth","threshold":"production","candidateLevel":"coursework + one POC (not in production)","satisfaction":"insufficient","note":"MUST-PASS (Gate C). Production bar derives from JD 'build and operate ... pipelines in production' / '3+ years building production data pipelines' applied to the named pipeline stack; CV 'used Spark on one proof-of-concept, not in production'. Evidence stays demonstrated. Watch: if Stage 1b treats Spark as bare (threshold FN), classify as trigger-boundary, do not tune blindly."}
+{"cv_id":"case-016","skill":"Apache Airflow","expectThreshold":true,"kind":"experience-depth","threshold":"production","candidateLevel":"learning-level / one hackathon DAG","satisfaction":"insufficient","note":"MUST-PASS (Gate C). Same production framing; CV 'wrote a small Airflow DAG during a hackathon to learn orchestration'."}
+{"cv_id":"case-016","skill":"Workflow orchestration","expectThreshold":true,"kind":"experience-depth","threshold":"production","candidateLevel":"learning-level (Airflow hackathon DAG)","satisfaction":"insufficient","note":"DIAGNOSTIC — Phase-2 model over-credited this as demonstrated@93%."}
+{"cv_id":"case-016","skill":"Batch data pipeline development","expectThreshold":true,"kind":"experience-depth","threshold":"production","candidateLevel":"small nightly scripts, did not own platform","satisfaction":"insufficient","note":"DIAGNOSTIC — JD '3+ years building production data pipelines'; CV small scripts, 'did not own the broader pipeline platform'. Name reconciled: emitted 'Batch data pipeline development' (was 'Batch data pipelines')."}
+{"cv_id":"case-016","skill":"Python","expectThreshold":true,"kind":"experience-depth","threshold":"strong","candidateLevel":"a couple of small scheduled scripts","satisfaction":"unknown","note":"DIAGNOSTIC — JD 'Strong Python'; CV shows only small scripts — neither positively 'strong' nor positively below it. Unknown is the honest call."}
+{"cv_id":"case-016","skill":"SQL","expectThreshold":true,"kind":"experience-depth","threshold":"strong","candidateLevel":"SQL queries + dashboards for marketing/product","satisfaction":"satisfied","note":"DIAGNOSTIC — JD 'Strong SQL'; CV shows sustained SQL analyst work."}
+{"cv_id":"case-016","skill":"Snowflake","expectThreshold":false,"note":"'a cloud data warehouse (Snowflake/BigQuery/Redshift)' — named tool, no level word."}
+{"cv_id":"case-016","skill":"SnowPro Core","expectThreshold":false,"note":"certification."}
+{"cv_id":"case-016","skill":"Databricks Certified Data Engineer Associate","expectThreshold":false,"note":"certification."}
+{"cv_id":"case-016","skill":"BigQuery","expectThreshold":false}
+{"cv_id":"case-016","skill":"Data quality","expectThreshold":false}
+{"cv_id":"case-016","skill":"dbt","expectThreshold":false}
+{"cv_id":"case-016","skill":"Apache Kafka","expectThreshold":false}
+// ── case-018 · Salesforce Admin · very-short CV (Gate E satisfied anchor = Salesforce 4y vs 3y) ──
+{"cv_id":"case-018","skill":"Salesforce Administration","expectThreshold":true,"kind":"years","threshold":"3","candidateLevel":"4 years","satisfaction":"satisfied","note":"MUST-PASS (Gate E). JD '3+ years as a Salesforce Administrator'; CV '4 years administering Salesforce'. Name RECONCILED post-capture: years bar landed on emitted 'Salesforce Administration' (was predicted 'Salesforce'). Value unchanged."}
+{"cv_id":"case-018","skill":"Sales Cloud","expectThreshold":false,"note":"bare trigger-negative (Gate B). Name reconciled: emitted 'Sales Cloud' (was 'Salesforce Sales Cloud')."}
+{"cv_id":"case-018","skill":"Service Cloud","expectThreshold":false,"note":"bare trigger-negative (Gate B). Name reconciled: emitted 'Service Cloud' (was 'Salesforce Service Cloud')."}
+{"cv_id":"case-018","skill":"Flow Builder","expectThreshold":false,"note":"bare trigger-negative (Gate B)."}
+{"cv_id":"case-018","skill":"Reports","expectThreshold":false,"note":"bare trigger-negative (Gate B)."}
+{"cv_id":"case-018","skill":"Dashboards","expectThreshold":false,"note":"bare trigger-negative (Gate B)."}
+{"cv_id":"case-018","skill":"User management","expectThreshold":false}
+{"cv_id":"case-018","skill":"Salesforce Certified Administrator","expectThreshold":false,"note":"certification."}
+// ── case-020 · Platform/DevOps · ENGINEERED UNKNOWN (Gate D unknown anchor = Kubernetes) ──
+// NOT YET CAPTURED — skill names predicted from the JD; reconcile boundaries post-capture.
+{"cv_id":"case-020","skill":"Kubernetes","expectThreshold":true,"kind":"years","threshold":"5","candidateLevel":null,"satisfaction":"unknown","note":"MUST-PASS (Gate D). JD '5+ years of hands-on Kubernetes'; CV clearly evidences Kubernetes (demonstrated) but states NO duration. Absence of a duration is NOT proof the bar is unmet → unknown, candidateLevel:null."}
+{"cv_id":"case-020","skill":"Docker","expectThreshold":false,"note":"bare trigger-negative (Gate B)."}
+{"cv_id":"case-020","skill":"Terraform","expectThreshold":false,"note":"bare trigger-negative (Gate B)."}
+{"cv_id":"case-020","skill":"CI/CD pipelines","expectThreshold":false,"note":"bare trigger-negative. Name reconciled: emitted 'CI/CD pipelines' (was 'CI/CD')."}
+{"cv_id":"case-020","skill":"Linux systems administration","expectThreshold":false,"note":"bare. Name reconciled: emitted 'Linux systems administration' (was 'Linux')."}

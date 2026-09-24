@@ -1,0 +1,389 @@
+{
+  "fitLevel": {
+    "score": 95,
+    "label": "Strong",
+    "confidence": 90
+  },
+  "shouldApply": {
+    "value": "No",
+    "confidence": 67,
+    "source": "jev"
+  },
+  "skillMatch": {
+    "score": 71,
+    "label": "Strong"
+  },
+  "keywordMatch": {
+    "score": 74,
+    "label": "Good",
+    "confidence": 51
+  },
+  "cvTone": {
+    "value": "Professional",
+    "confidence": 62
+  },
+  "skills": [
+    {
+      "name": "AWS",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Cloud platform engineer with 8 years designing and operating AWS infrastructure and Kubernetes platforms for product engineering teams.",
+      "source": "jev"
+    },
+    {
+      "name": "AWS multi-account architecture",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Own a multi-account AWS estate spanning compute, VPC networking, and IAM for 40+ product teams.",
+      "source": "jev"
+    },
+    {
+      "name": "AWS IAM",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Own a multi-account AWS estate spanning compute, VPC networking, and IAM for 40+ product teams.",
+      "source": "jev"
+    },
+    {
+      "name": "AWS networking",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Own a multi-account AWS estate spanning compute, VPC networking, and IAM for 40+ product teams.",
+      "source": "jev"
+    },
+    {
+      "name": "AWS compute",
+      "status": "demonstrated",
+      "confidence": 95,
+      "evidence": "Own a multi-account AWS estate spanning compute, VPC networking, and IAM for 40+ product teams.",
+      "source": "llm",
+      "reasoning": "The CV explicitly states ownership of an AWS estate 'spanning compute', demonstrating direct hands-on AWS compute experience."
+    },
+    {
+      "name": "Kubernetes",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Cloud platform engineer with 8 years designing and operating AWS infrastructure and Kubernetes platforms for product engineering teams.",
+      "source": "jev"
+    },
+    {
+      "name": "Production Kubernetes operations",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Operate production Kubernetes clusters end to end, including upgrades, capacity planning, and on-call incident response.",
+      "source": "jev"
+    },
+    {
+      "name": "Kubernetes cluster hardening",
+      "status": "unverified",
+      "confidence": 86,
+      "evidence": null,
+      "source": "jev"
+    },
+    {
+      "name": "Terraform",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Manage all infrastructure as code in Terraform, with remote state, module registries, and peer-reviewed plans on every change.",
+      "source": "jev"
+    },
+    {
+      "name": "Infrastructure as Code (IaC)",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Manage all infrastructure as code in Terraform, with remote state, module registries, and peer-reviewed plans on every change.",
+      "source": "jev"
+    },
+    {
+      "name": "Docker",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Build and maintain the container images for platform services and tune multi-stage Docker builds for size and cache reuse.",
+      "source": "jev"
+    },
+    {
+      "name": "Container image management",
+      "status": "demonstrated",
+      "confidence": 97,
+      "evidence": "Build and maintain the container images for platform services and tune multi-stage Docker builds for size and cache reuse.",
+      "source": "jev"
+    },
+    {
+      "name": "CI/CD pipeline design",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Design the GitLab CI pipelines that lint, test, and progressively deliver every platform component.",
+      "source": "jev"
+    },
+    {
+      "name": "Python",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Write operational tooling and automation in Python, from cost reports to cluster maintenance jobs.",
+      "source": "jev"
+    },
+    {
+      "name": "Go",
+      "status": "missing",
+      "confidence": 100,
+      "evidence": null,
+      "source": "jev"
+    },
+    {
+      "name": "Service mesh",
+      "status": "missing",
+      "confidence": 95,
+      "evidence": null,
+      "source": "jev"
+    },
+    {
+      "name": "FinOps",
+      "status": "unverified",
+      "confidence": 75,
+      "evidence": "Write operational tooling and automation in Python, from cost reports to cluster maintenance jobs.",
+      "source": "llm",
+      "reasoning": "The CV shows involvement in 'cost reports' automation, indicating exposure to cost-related work but not explicit FinOps responsibilities or proven cost-optimization practice."
+    },
+    {
+      "name": "AWS Certified Solutions Architect – Professional",
+      "status": "missing",
+      "confidence": 83,
+      "evidence": null,
+      "source": "jev"
+    },
+    {
+      "name": "Certified Kubernetes Administrator (CKA)",
+      "status": "missing",
+      "confidence": 96,
+      "evidence": "- Certified Kubernetes Administrator (CKA)",
+      "source": "jev"
+    },
+    {
+      "name": "HashiCorp Certified: Terraform Associate",
+      "status": "missing",
+      "confidence": 99,
+      "evidence": null,
+      "source": "jev"
+    },
+    {
+      "name": "German",
+      "status": "demonstrated",
+      "confidence": 97,
+      "evidence": "Languages: German (native), English (C1, professional)",
+      "source": "jev"
+    },
+    {
+      "name": "English",
+      "status": "demonstrated",
+      "confidence": 95,
+      "evidence": "Languages: German (native), English (C1, professional)",
+      "source": "jev"
+    }
+  ],
+  "routing": {
+    "total": 22,
+    "escalated": 2,
+    "jevHandled": 20
+  },
+  "_jevRaw": [
+    {
+      "name": "AWS",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "AWS multi-account architecture",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "AWS IAM",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "AWS networking",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "AWS compute",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 65,
+      "top": 0.65,
+      "margin": 0.43,
+      "gptStatus": "demonstrated",
+      "gptConfidence": 95
+    },
+    {
+      "name": "Kubernetes",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Production Kubernetes operations",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Kubernetes cluster hardening",
+      "jevStatus": "unverified",
+      "jevConfidence": 86,
+      "top": 0.86,
+      "margin": 0.76,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Terraform",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Infrastructure as Code (IaC)",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Docker",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Container image management",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 97,
+      "top": 0.97,
+      "margin": 0.94,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "CI/CD pipeline design",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Python",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Go",
+      "jevStatus": "missing",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Service mesh",
+      "jevStatus": "missing",
+      "jevConfidence": 95,
+      "top": 0.95,
+      "margin": 0.9,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "FinOps",
+      "jevStatus": "unverified",
+      "jevConfidence": 54,
+      "top": 0.54,
+      "margin": 0.12,
+      "gptStatus": "unverified",
+      "gptConfidence": 75
+    },
+    {
+      "name": "AWS Certified Solutions Architect – Professional",
+      "jevStatus": "missing",
+      "jevConfidence": 83,
+      "top": 0.83,
+      "margin": 0.67,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Certified Kubernetes Administrator (CKA)",
+      "jevStatus": "missing",
+      "jevConfidence": 96,
+      "top": 0.96,
+      "margin": 0.94,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "HashiCorp Certified: Terraform Associate",
+      "jevStatus": "missing",
+      "jevConfidence": 99,
+      "top": 0.99,
+      "margin": 0.98,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "German",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 97,
+      "top": 0.97,
+      "margin": 0.94,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "English",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 95,
+      "top": 0.95,
+      "margin": 0.9,
+      "gptStatus": null,
+      "gptConfidence": null
+    }
+  ],
+  "summary": "Strong fit (Jev) · Strong skill coverage · good keyword overlap. Jev handled 20/22 routable decisions; 2 escalated to GPT."
+}

@@ -1,0 +1,359 @@
+{
+  "fitLevel": {
+    "score": 92,
+    "label": "Strong",
+    "confidence": 85
+  },
+  "shouldApply": {
+    "value": "No",
+    "confidence": 73,
+    "source": "jev"
+  },
+  "skillMatch": {
+    "score": 88,
+    "label": "Strong"
+  },
+  "keywordMatch": {
+    "score": 75,
+    "label": "Good",
+    "confidence": 48
+  },
+  "cvTone": {
+    "value": "Professional",
+    "confidence": 98
+  },
+  "skills": [
+    {
+      "name": "SAP S/4HANA Finance",
+      "status": "demonstrated",
+      "confidence": 99,
+      "evidence": "- Configure SAP S/4HANA Finance: General Ledger, Accounts Payable, Accounts Receivable, and Asset Accounting for clients in manufacturing and retail.",
+      "source": "jev"
+    },
+    {
+      "name": "SAP FICO configuration",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "SAP FICO functional consultant with 7 years configuring Finance and Controlling on ECC and, for the last three years, S/4HANA.",
+      "source": "jev"
+    },
+    {
+      "name": "General Ledger (FI-GL)",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Configure SAP S/4HANA Finance: General Ledger, Accounts Payable, Accounts Receivable, and Asset Accounting for clients in manufacturing and retail.",
+      "source": "jev"
+    },
+    {
+      "name": "Accounts Payable (AP)",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Configure SAP S/4HANA Finance: General Ledger, Accounts Payable, Accounts Receivable, and Asset Accounting for clients in manufacturing and retail.",
+      "source": "jev"
+    },
+    {
+      "name": "Accounts Receivable (AR)",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Configure SAP S/4HANA Finance: General Ledger, Accounts Payable, Accounts Receivable, and Asset Accounting for clients in manufacturing and retail.",
+      "source": "jev"
+    },
+    {
+      "name": "Asset Accounting (FI-AA)",
+      "status": "demonstrated",
+      "confidence": 99,
+      "evidence": "- Configure SAP S/4HANA Finance: General Ledger, Accounts Payable, Accounts Receivable, and Asset Accounting for clients in manufacturing and retail.",
+      "source": "jev"
+    },
+    {
+      "name": "Cost Center Accounting",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Design Cost Center Accounting, Internal Orders, and Profitability Analysis (CO-PA) structures and reporting.",
+      "source": "jev"
+    },
+    {
+      "name": "Internal Orders",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Design Cost Center Accounting, Internal Orders, and Profitability Analysis (CO-PA) structures and reporting.",
+      "source": "jev"
+    },
+    {
+      "name": "Profitability Analysis (CO-PA)",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Design Cost Center Accounting, Internal Orders, and Profitability Analysis (CO-PA) structures and reporting.",
+      "source": "jev"
+    },
+    {
+      "name": "S/4HANA rollout",
+      "status": "demonstrated",
+      "confidence": 99,
+      "evidence": "- Led the FICO workstream on two full S/4HANA greenfield implementations and one brownfield conversion.",
+      "source": "jev"
+    },
+    {
+      "name": "S/4HANA migration",
+      "status": "demonstrated",
+      "confidence": 90,
+      "evidence": "- Led the FICO workstream on two full S/4HANA greenfield implementations and one brownfield conversion.",
+      "source": "jev"
+    },
+    {
+      "name": "RICEFW development",
+      "status": "demonstrated",
+      "confidence": 99,
+      "evidence": "- Run requirements workshops with finance stakeholders (in English) and author functional specifications for RICEFW objects handed to ABAP teams.",
+      "source": "jev"
+    },
+    {
+      "name": "Functional specification writing (RICEFW)",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Run requirements workshops with finance stakeholders (in English) and author functional specifications for RICEFW objects handed to ABAP teams.",
+      "source": "jev"
+    },
+    {
+      "name": "ABAP",
+      "status": "unverified",
+      "confidence": 90,
+      "evidence": "Run requirements workshops with finance stakeholders (in English) and author functional specifications for RICEFW objects handed to ABAP teams.",
+      "source": "llm",
+      "reasoning": "The CV shows she writes functional specs delivered to ABAP teams, indicating close collaboration but not ABAP development skill itself."
+    },
+    {
+      "name": "Financial close system support (month-end and year-end)",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Support month-end and year-end close activities from the configuration side.",
+      "source": "jev"
+    },
+    {
+      "name": "SAP Activate methodology",
+      "status": "missing",
+      "confidence": 85,
+      "evidence": null,
+      "source": "llm",
+      "reasoning": "The CV lists S/4HANA greenfield and brownfield projects but does not mention SAP Activate or any specific methodology."
+    },
+    {
+      "name": "Manufacturing (discrete) industry template experience",
+      "status": "unverified",
+      "confidence": 94,
+      "evidence": null,
+      "source": "jev"
+    },
+    {
+      "name": "SAP S/4HANA Finance certification",
+      "status": "demonstrated",
+      "confidence": 99,
+      "evidence": "SAP Certified Application Associate — SAP S/4HANA for Financial Accounting Associates",
+      "source": "llm",
+      "reasoning": "The Certifications section explicitly lists the SAP S/4HANA Financial Accounting Associate certification."
+    },
+    {
+      "name": "German",
+      "status": "demonstrated",
+      "confidence": 95,
+      "evidence": "Languages: English (native-level, C2), German (B1 — currently in an intensive course, improving)",
+      "source": "llm",
+      "reasoning": "The CV explicitly states German proficiency at B1 and that she is actively improving it."
+    },
+    {
+      "name": "English",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Languages: English (native-level, C2), German (B1 — currently in an intensive course, improving)",
+      "source": "jev"
+    }
+  ],
+  "routing": {
+    "total": 20,
+    "escalated": 4,
+    "jevHandled": 16
+  },
+  "_jevRaw": [
+    {
+      "name": "SAP S/4HANA Finance",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 99,
+      "top": 0.99,
+      "margin": 0.98,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "SAP FICO configuration",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "General Ledger (FI-GL)",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Accounts Payable (AP)",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Accounts Receivable (AR)",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Asset Accounting (FI-AA)",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 99,
+      "top": 0.99,
+      "margin": 0.98,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Cost Center Accounting",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Internal Orders",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Profitability Analysis (CO-PA)",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "S/4HANA rollout",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 99,
+      "top": 0.99,
+      "margin": 0.98,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "S/4HANA migration",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 90,
+      "top": 0.9,
+      "margin": 0.83,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "RICEFW development",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 99,
+      "top": 0.99,
+      "margin": 0.98,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Functional specification writing (RICEFW)",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "ABAP",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 52,
+      "top": 0.52,
+      "margin": 0.3,
+      "gptStatus": "unverified",
+      "gptConfidence": 90
+    },
+    {
+      "name": "Financial close system support (month-end and year-end)",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "SAP Activate methodology",
+      "jevStatus": "missing",
+      "jevConfidence": 66,
+      "top": 0.66,
+      "margin": 0.37,
+      "gptStatus": "missing",
+      "gptConfidence": 85
+    },
+    {
+      "name": "Manufacturing (discrete) industry template experience",
+      "jevStatus": "unverified",
+      "jevConfidence": 94,
+      "top": 0.94,
+      "margin": 0.91,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "SAP S/4HANA Finance certification",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 75,
+      "top": 0.75,
+      "margin": 0.6,
+      "gptStatus": "demonstrated",
+      "gptConfidence": 99
+    },
+    {
+      "name": "German",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 43,
+      "top": 0.43,
+      "margin": 0.06,
+      "gptStatus": "demonstrated",
+      "gptConfidence": 95
+    },
+    {
+      "name": "English",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    }
+  ],
+  "summary": "Strong fit (Jev) · Strong skill coverage · good keyword overlap. Jev handled 16/20 routable decisions; 4 escalated to GPT."
+}

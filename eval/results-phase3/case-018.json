@@ -1,0 +1,415 @@
+{
+  "fitLevel": {
+    "score": 79,
+    "label": "Strong",
+    "confidence": 59
+  },
+  "shouldApply": {
+    "value": "Yes",
+    "confidence": 90,
+    "source": "jev"
+  },
+  "skillMatch": {
+    "score": 68,
+    "label": "Moderate"
+  },
+  "keywordMatch": {
+    "score": 72,
+    "label": "Good",
+    "confidence": 53
+  },
+  "cvTone": {
+    "value": "Professional",
+    "confidence": 59
+  },
+  "skills": [
+    {
+      "name": "Salesforce Administration",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "4 years administering Salesforce Sales Cloud and Service Cloud.",
+      "source": "jev",
+      "requiredLevel": {
+        "kind": "years",
+        "requiredEvidence": "3+ years as a Salesforce Administrator",
+        "threshold": "3"
+      },
+      "candidateLevel": "4 years",
+      "candidateEvidence": "4 years administering Salesforce Sales Cloud and Service Cloud.",
+      "satisfaction": "satisfied",
+      "satisfactionConfidence": 95
+    },
+    {
+      "name": "Salesforce Certified Administrator",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Salesforce Certified Administrator.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Sales Cloud",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "4 years administering Salesforce Sales Cloud and Service Cloud.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Service Cloud",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "4 years administering Salesforce Sales Cloud and Service Cloud.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Flow Builder",
+      "status": "demonstrated",
+      "confidence": 95,
+      "evidence": "Build flows, reports, and dashboards; manage users, profiles, and permission sets.",
+      "source": "llm",
+      "reasoning": "The CV explicitly states \"Build flows,\" which directly indicates experience with Flow Builder.",
+      "requiredLevel": null
+    },
+    {
+      "name": "Declarative automation",
+      "status": "demonstrated",
+      "confidence": 90,
+      "evidence": "Build flows, reports, and dashboards; manage users, profiles, and permission sets.",
+      "source": "llm",
+      "reasoning": "Building flows is a declarative automation activity in Salesforce, so the CV demonstrates declarative automation experience.",
+      "requiredLevel": null
+    },
+    {
+      "name": "Reports",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Build flows, reports, and dashboards; manage users, profiles, and permission sets.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Dashboards",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Build flows, reports, and dashboards; manage users, profiles, and permission sets.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Validation Rules",
+      "status": "unverified",
+      "confidence": 80,
+      "evidence": "4 years administering Salesforce Sales Cloud and Service Cloud.",
+      "source": "llm",
+      "reasoning": "General Salesforce administration experience could include validation rules but the CV does not explicitly mention validation rules.",
+      "requiredLevel": null
+    },
+    {
+      "name": "Roles",
+      "status": "missing",
+      "confidence": 95,
+      "evidence": null,
+      "source": "llm",
+      "reasoning": "The CV lists users, profiles, and permission sets but does not mention roles.",
+      "requiredLevel": null
+    },
+    {
+      "name": "Profiles",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Build flows, reports, and dashboards; manage users, profiles, and permission sets.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Permission Sets",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Build flows, reports, and dashboards; manage users, profiles, and permission sets.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "User management",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Build flows, reports, and dashboards; manage users, profiles, and permission sets.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Security management",
+      "status": "demonstrated",
+      "confidence": 95,
+      "evidence": "Build flows, reports, and dashboards; manage users, profiles, and permission sets.",
+      "source": "llm",
+      "reasoning": "Managing users, profiles, and permission sets explicitly indicates security and access management experience.",
+      "requiredLevel": null
+    },
+    {
+      "name": "Data management",
+      "status": "missing",
+      "confidence": 90,
+      "evidence": null,
+      "source": "llm",
+      "reasoning": "The CV does not mention data imports, exports, or other data management activities.",
+      "requiredLevel": null
+    },
+    {
+      "name": "Data import",
+      "status": "missing",
+      "confidence": 91,
+      "evidence": null,
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Data quality",
+      "status": "missing",
+      "confidence": 90,
+      "evidence": null,
+      "source": "llm",
+      "reasoning": "The CV does not reference maintaining or improving data quality.",
+      "requiredLevel": null
+    },
+    {
+      "name": "Apex",
+      "status": "missing",
+      "confidence": 100,
+      "evidence": null,
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Salesforce Certified Advanced Administrator",
+      "status": "missing",
+      "confidence": 94,
+      "evidence": null,
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "French",
+      "status": "demonstrated",
+      "confidence": 97,
+      "evidence": "French (native), English (fluent).",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "English",
+      "status": "demonstrated",
+      "confidence": 91,
+      "evidence": "French (native), English (fluent).",
+      "source": "jev",
+      "requiredLevel": null
+    }
+  ],
+  "routing": {
+    "total": 21,
+    "escalated": 7,
+    "jevHandled": 14
+  },
+  "_jevRaw": [
+    {
+      "name": "Salesforce Administration",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Salesforce Certified Administrator",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Sales Cloud",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Service Cloud",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Flow Builder",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 66,
+      "top": 0.66,
+      "margin": 0.41,
+      "gptStatus": "demonstrated",
+      "gptConfidence": 95
+    },
+    {
+      "name": "Declarative automation",
+      "jevStatus": "inferred",
+      "jevConfidence": 53,
+      "top": 0.53,
+      "margin": 0.07,
+      "gptStatus": "demonstrated",
+      "gptConfidence": 90
+    },
+    {
+      "name": "Reports",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Dashboards",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Validation Rules",
+      "jevStatus": "unverified",
+      "jevConfidence": 46,
+      "top": 0.46,
+      "margin": 0.05,
+      "gptStatus": "unverified",
+      "gptConfidence": 80
+    },
+    {
+      "name": "Roles",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 52,
+      "top": 0.52,
+      "margin": 0.27,
+      "gptStatus": "missing",
+      "gptConfidence": 95
+    },
+    {
+      "name": "Profiles",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Permission Sets",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "User management",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Security management",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 69,
+      "top": 0.69,
+      "margin": 0.42,
+      "gptStatus": "demonstrated",
+      "gptConfidence": 95
+    },
+    {
+      "name": "Data management",
+      "jevStatus": "missing",
+      "jevConfidence": 71,
+      "top": 0.71,
+      "margin": 0.48,
+      "gptStatus": "missing",
+      "gptConfidence": 90
+    },
+    {
+      "name": "Data import",
+      "jevStatus": "missing",
+      "jevConfidence": 91,
+      "top": 0.91,
+      "margin": 0.83,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Data quality",
+      "jevStatus": "missing",
+      "jevConfidence": 71,
+      "top": 0.71,
+      "margin": 0.46,
+      "gptStatus": "missing",
+      "gptConfidence": 90
+    },
+    {
+      "name": "Apex",
+      "jevStatus": "missing",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Salesforce Certified Advanced Administrator",
+      "jevStatus": "missing",
+      "jevConfidence": 94,
+      "top": 0.94,
+      "margin": 0.88,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "French",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 97,
+      "top": 0.97,
+      "margin": 0.94,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "English",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 91,
+      "top": 0.91,
+      "margin": 0.83,
+      "gptStatus": null,
+      "gptConfidence": null
+    }
+  ],
+  "_satRaw": [
+    {
+      "name": "Salesforce Administration",
+      "rawSatisfaction": "satisfied",
+      "candidateLevel": "4 years",
+      "contractViolation": false
+    }
+  ],
+  "summary": "Strong fit (Jev) · Moderate skill coverage · good keyword overlap. Jev handled 14/21 routable decisions; 7 escalated to GPT."
+}

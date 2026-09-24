@@ -1,0 +1,107 @@
+{
+    "fitLevel": {
+        "score": 56,
+        "label": "Moderate",
+        "confidence": 83
+    },
+    "shouldApply": {
+        "value": "Borderline",
+        "confidence": 59,
+        "source": "jev",
+        "reasoning": "Too close to call — Jev leans No but won’t commit to a firm recommendation."
+    },
+    "skillMatch": {
+        "score": 68,
+        "label": "Moderate"
+    },
+    "keywordMatch": {
+        "score": 44,
+        "label": "Good",
+        "confidence": 66
+    },
+    "cvTone": {
+        "value": "Technical",
+        "confidence": 82
+    },
+    "skills": [
+        {
+            "name": "Python",
+            "status": "demonstrated",
+            "confidence": 100,
+            "evidence": "- Built LLM-powered document-analysis features in Python; own the core",
+            "source": "jev"
+        },
+        {
+            "name": "PyTorch",
+            "status": "demonstrated",
+            "confidence": 100,
+            "evidence": "- Fine-tuned and evaluated transformer models in PyTorch for classification",
+            "source": "jev"
+        },
+        {
+            "name": "FastAPI",
+            "status": "demonstrated",
+            "confidence": 100,
+            "evidence": "- Served models behind FastAPI endpoints with streaming responses and auth.",
+            "source": "jev"
+        },
+        {
+            "name": "LangChain",
+            "status": "unverified",
+            "confidence": 85,
+            "evidence": "- Orchestrated multi-step LLM workflows with tool-calling and memory, chaining prompts across several reasoning steps.",
+            "source": "llm",
+            "reasoning": "The CV describes tool-calling, memory, and prompt chaining—capabilities LangChain provides—but it does not name LangChain specifically, so the exact library is unverified."
+        },
+        {
+            "name": "Retrieval-Augmented Generation (RAG)",
+            "status": "demonstrated",
+            "confidence": 100,
+            "evidence": "- Built Retrieval-Augmented Generation (RAG) pipelines that ground answers in",
+            "source": "jev"
+        },
+        {
+            "name": "Pinecone / Vector databases",
+            "status": "unverified",
+            "confidence": 90,
+            "evidence": "- Stored document embeddings in a vector index for low-latency semantic search over millions of chunks.",
+            "source": "llm",
+            "reasoning": "The candidate explicitly describes storing embeddings in a vector index for semantic search, but no specific vector DB (e.g., Pinecone) is named, so the exact product is unverified."
+        },
+        {
+            "name": "Docker",
+            "status": "inferred",
+            "confidence": 91,
+            "evidence": "- Packaged the inference service into containers and shipped it to production.",
+            "source": "jev"
+        },
+        {
+            "name": "Kubernetes",
+            "status": "unverified",
+            "confidence": 88,
+            "evidence": "- Deployed and autoscaled the service across an orchestrated container cluster.",
+            "source": "llm",
+            "reasoning": "The CV states deployment and autoscaling across an orchestrated container cluster—which implies use of a container orchestrator (commonly Kubernetes) but does not explicitly name Kubernetes, so the exact technology is unverified."
+        },
+        {
+            "name": "AWS",
+            "status": "demonstrated",
+            "confidence": 100,
+            "evidence": "- Our platform ran mostly on GCP; I also shipped a few services to AWS",
+            "source": "jev"
+        },
+        {
+            "name": "Terraform",
+            "status": "unverified",
+            "confidence": 92,
+            "evidence": null,
+            "source": "jev"
+        }
+    ],
+    "routing": {
+        "total": 10,
+        "escalated": 3,
+        "jevHandled": 7
+    },
+    "summary": "Moderate fit (Jev) · Moderate skill coverage · good keyword overlap. Jev handled 7/10 routable decisions; 3 escalated to GPT."
+}

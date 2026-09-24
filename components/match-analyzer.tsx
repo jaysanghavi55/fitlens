@@ -1,13 +1,98 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent } from "@/components/ui/card"
 import { ResultCard } from "@/components/result-card"
+import { cn } from "@/lib/utils"
 import type { MatchAnalysis } from "@/lib/types"
-import { Loader2, Sparkles, AlertCircle, Upload } from "lucide-react"
+import {
+  Loader2,
+  Sparkles,
+  AlertCircle,
+  Upload,
+  ListChecks,
+  Zap,
+  FileSearch,
+  CheckCircle2,
+  Circle,
+} from "lucide-react"
+
+// Keep in sync with the guard in app/api/extract/route.ts.
+const MAX_FILE_BYTES = 5 * 1024 * 1024 // 5 MB
+
+// The real pipeline order, surfaced to the user. /api/analyze returns a single response
+// (it doesn't stream stage events), so these advance on estimated timings while the one
+// request is in flight — the last stage holds "in progress" until the result arrives.
+const STAGES = [
+  { icon: ListChecks, label: "Extracting required skills", detail: "gpt-5-mini reads the job description" },
+  { icon: Zap, label: "Scoring fit with Jev", detail: "one batched decision call across every skill" },
+  { icon: FileSearch, label: "Gathering evidence", detail: "quoting the CV & finalizing the verdict" },
+] as const
+
+function AnalysisProgress() {
+  const [active, setActive] = useState(0)
+
+  useEffect(() => {
+    // Walk forward on rough timings that mirror the pipeline; the final stage stays
+    // active until the response lands and this component unmounts.
+    const timers = [
+      setTimeout(() => setActive(1), 3000),
+      setTimeout(() => setActive(2), 8000),
+    ]
+    return () => timers.forEach(clearTimeout)
+  }, [])
+
+  return (
+    <Card className="animate-reveal">
+      <CardContent className="flex flex-col gap-4 px-6 py-10">
+        <p className="text-sm font-medium">Analyzing your match…</p>
+        <ol className="flex flex-col gap-3">
+          {STAGES.map((stage, i) => {
+            const state = i < active ? "done" : i === active ? "active" : "pending"
+            return (
+              <li key={stage.label} className="flex items-start gap-3">
+                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center">
+                  {state === "done" ? (
+                    <CheckCircle2 className="h-5 w-5 text-emerald-500" />
+                  ) : state === "active" ? (
+                    <Loader2 className="h-5 w-5 animate-spin text-foreground" />
+                  ) : (
+                    <Circle className="h-5 w-5 text-muted-foreground/30" />
+                  )}
+                </span>
+                <div className="min-w-0">
+                  <p
+                    className={cn(
+                      "text-sm leading-tight",
+                      state === "pending"
+                        ? "text-muted-foreground/50"
+                        : state === "active"
+                          ? "font-medium text-foreground"
+                          : "text-muted-foreground",
+                    )}
+                  >
+                    {stage.label}
+                  </p>
+                  <p
+                    className={cn(
+                      "mt-0.5 text-xs leading-tight",
+                      state === "pending" ? "text-muted-foreground/30" : "text-muted-foreground",
+                    )}
+                  >
+                    {stage.detail}
+                  </p>
+                </div>
+              </li>
+            )
+          })}
+        </ol>
+      </CardContent>
+    </Card>
+  )
+}
 
 export function MatchAnalyzer() {
   const [jobDescription, setJobDescription] = useState("")
@@ -17,7 +102,8 @@ export function MatchAnalyzer() {
   const [isUploading, setIsUploading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
-  const canAnalyze = jobDescription.trim().length >= 20 && resume.trim().length >= 20 && !isLoading
+  const canAnalyze =
+    jobDescription.trim().length >= 20 && resume.trim().length >= 20 && !isLoading && !isUploading
 
   async function handleAnalyze() {
     setIsLoading(true)
@@ -42,6 +128,11 @@ export function MatchAnalyzer() {
   async function handleFileUpload(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0]
     if (!file) return
+    if (file.size > MAX_FILE_BYTES) {
+      setError("That file is larger than 5 MB. Please upload a smaller PDF/DOCX or paste the text.")
+      e.target.value = ""
+      return
+    }
     setIsUploading(true)
     setError(null)
     try {
@@ -106,7 +197,7 @@ export function MatchAnalyzer() {
 
           <div className="mt-6 flex flex-col-reverse items-stretch gap-3 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-xs text-muted-foreground">
-              Add at least 20 characters to each field. Your text is analyzed, not stored.
+              Add at least 20 characters to each field. Text is sent to AI providers for analysis and isn&apos;t stored by this app.
             </p>
             <Button onClick={handleAnalyze} disabled={!canAnalyze} size="lg" className="sm:w-auto">
               {isLoading ? (
@@ -135,14 +226,7 @@ export function MatchAnalyzer() {
         </div>
       )}
 
-      {isLoading && (
-        <Card>
-          <CardContent className="flex flex-col items-center justify-center gap-3 py-16 text-center">
-            <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
-            <p className="text-sm text-muted-foreground">Scoring your match against the job description…</p>
-          </CardContent>
-        </Card>
-      )}
+      {isLoading && <AnalysisProgress />}
 
       {analysis && !isLoading && <ResultCard analysis={analysis} />}
     </div>

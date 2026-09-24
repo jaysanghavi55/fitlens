@@ -1,0 +1,147 @@
+{
+  "fitLevel": {
+    "score": 96,
+    "label": "Strong",
+    "confidence": 93
+  },
+  "shouldApply": {
+    "value": "Yes",
+    "confidence": 63,
+    "source": "jev"
+  },
+  "skillMatch": {
+    "score": 100,
+    "label": "Strong"
+  },
+  "keywordMatch": {
+    "score": 34,
+    "label": "Good",
+    "confidence": 51
+  },
+  "cvTone": {
+    "value": "Professional",
+    "confidence": 100
+  },
+  "skills": [
+    {
+      "name": "IT project management",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "IT project manager with 9 years delivering software and infrastructure projects in mid-sized enterprises, using both Scrum and traditional stage-gate approaches.",
+      "source": "jev"
+    },
+    {
+      "name": "End-to-end project lifecycle management",
+      "status": "demonstrated",
+      "confidence": 99,
+      "evidence": "Manage IT projects end to end, from initiation through delivery, typically 3-6 running in parallel.",
+      "source": "jev"
+    },
+    {
+      "name": "Project budgeting",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Own project budgets up to EUR 2M and report status to steering committees.",
+      "source": "jev"
+    },
+    {
+      "name": "Project scheduling",
+      "status": "demonstrated",
+      "confidence": 91,
+      "evidence": "Coordinated delivery schedules, tracked dependencies, and prepared status reporting.",
+      "source": "jev"
+    },
+    {
+      "name": "Project monitoring / tracking",
+      "status": "demonstrated",
+      "confidence": 97,
+      "evidence": "Coordinated delivery schedules, tracked dependencies, and prepared status reporting.",
+      "source": "jev"
+    },
+    {
+      "name": "Project management tools",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Project management, stakeholder management, budget management, Scrum, risk management, Jira, MS Project",
+      "source": "jev"
+    },
+    {
+      "name": "English",
+      "status": "demonstrated",
+      "confidence": 94,
+      "evidence": "Languages: German (native), English (fluent, C1)",
+      "source": "jev"
+    }
+  ],
+  "routing": {
+    "total": 7,
+    "escalated": 0,
+    "jevHandled": 7
+  },
+  "_jevRaw": [
+    {
+      "name": "IT project management",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "End-to-end project lifecycle management",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 99,
+      "top": 0.99,
+      "margin": 0.98,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Project budgeting",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Project scheduling",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 91,
+      "top": 0.91,
+      "margin": 0.84,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Project monitoring / tracking",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 97,
+      "top": 0.97,
+      "margin": 0.94,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Project management tools",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "English",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 94,
+      "top": 0.94,
+      "margin": 0.88,
+      "gptStatus": null,
+      "gptConfidence": null
+    }
+  ],
+  "summary": "Strong fit (Jev) · Strong skill coverage · good keyword overlap. Jev handled 7/7 routable decisions; 0 escalated to GPT."
+}

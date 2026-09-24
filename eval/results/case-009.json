@@ -1,0 +1,277 @@
+{
+  "fitLevel": {
+    "score": 73,
+    "label": "Moderate",
+    "confidence": 52
+  },
+  "shouldApply": {
+    "value": "Yes",
+    "confidence": 67,
+    "source": "jev"
+  },
+  "skillMatch": {
+    "score": 80,
+    "label": "Strong"
+  },
+  "keywordMatch": {
+    "score": 66,
+    "label": "Good",
+    "confidence": 45
+  },
+  "cvTone": {
+    "value": "Technical",
+    "confidence": 87
+  },
+  "skills": [
+    {
+      "name": "Java",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Built and owned core payment services in Java, handling several million transactions per day.",
+      "source": "jev"
+    },
+    {
+      "name": "Spring Boot",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Exposed REST APIs and background workers using Spring Boot, with contract tests against every consumer.",
+      "source": "jev"
+    },
+    {
+      "name": "REST APIs",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Exposed REST APIs and background workers using Spring Boot, with contract tests against every consumer.",
+      "source": "jev"
+    },
+    {
+      "name": "PostgreSQL",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Modeled ledger and account data in PostgreSQL, tuning indexes and isolation levels for correctness under contention.",
+      "source": "jev"
+    },
+    {
+      "name": "Apache Kafka",
+      "status": "inferred",
+      "confidence": 87,
+      "evidence": "Published and consumed domain events over a partitioned, replayable log with consumer groups and committed offsets.",
+      "source": "jev"
+    },
+    {
+      "name": "Event streaming",
+      "status": "inferred",
+      "confidence": 95,
+      "evidence": "Published and consumed domain events over a partitioned, replayable log with consumer groups and committed offsets.",
+      "source": "llm",
+      "reasoning": "The CV uses Kafka-specific concepts (partitioned replayable log, consumer groups, committed offsets), which strongly implies experience with Apache Kafka."
+    },
+    {
+      "name": "Redis caching",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Cached hot account state and enforced per-tenant rate limits with Redis.",
+      "source": "jev"
+    },
+    {
+      "name": "Redis rate limiting",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Cached hot account state and enforced per-tenant rate limits with Redis.",
+      "source": "jev"
+    },
+    {
+      "name": "gRPC",
+      "status": "inferred",
+      "confidence": 82,
+      "evidence": "Exposed internal service-to-service calls over a binary, schema-first RPC protocol with generated client and server stubs.",
+      "source": "jev"
+    },
+    {
+      "name": "Docker",
+      "status": "inferred",
+      "confidence": 88,
+      "evidence": "Packaged services into containers and shipped them through the delivery pipeline.",
+      "source": "jev"
+    },
+    {
+      "name": "Kubernetes",
+      "status": "unverified",
+      "confidence": 75,
+      "evidence": "Deployed onto an orchestrated container platform with rolling updates and readiness health checks.",
+      "source": "llm",
+      "reasoning": "The candidate clearly deployed to a container orchestration platform with rolling updates and health checks, but the CV does not explicitly name Kubernetes so the exact tool is ambiguous."
+    },
+    {
+      "name": "AWS",
+      "status": "unverified",
+      "confidence": 98,
+      "evidence": null,
+      "source": "jev"
+    },
+    {
+      "name": "CI/CD",
+      "status": "demonstrated",
+      "confidence": 96,
+      "evidence": "Built inventory and pricing services in Java and automated releases with a CI server on every merge to main.",
+      "source": "jev"
+    },
+    {
+      "name": "Payments / payment processing",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "Built and owned core payment services in Java, handling several million transactions per day.",
+      "source": "jev"
+    },
+    {
+      "name": "Transactional systems",
+      "status": "demonstrated",
+      "confidence": 86,
+      "evidence": "Modeled ledger and account data in PostgreSQL, tuning indexes and isolation levels for correctness under contention.",
+      "source": "jev"
+    }
+  ],
+  "routing": {
+    "total": 15,
+    "escalated": 2,
+    "jevHandled": 13
+  },
+  "_jevRaw": [
+    {
+      "name": "Java",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Spring Boot",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "REST APIs",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "PostgreSQL",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Apache Kafka",
+      "jevStatus": "inferred",
+      "jevConfidence": 87,
+      "top": 0.87,
+      "margin": 0.79,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Event streaming",
+      "jevStatus": "inferred",
+      "jevConfidence": 56,
+      "top": 0.56,
+      "margin": 0.13,
+      "gptStatus": "inferred",
+      "gptConfidence": 95
+    },
+    {
+      "name": "Redis caching",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Redis rate limiting",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "gRPC",
+      "jevStatus": "inferred",
+      "jevConfidence": 82,
+      "top": 0.82,
+      "margin": 0.7,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Docker",
+      "jevStatus": "inferred",
+      "jevConfidence": 88,
+      "top": 0.88,
+      "margin": 0.81,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Kubernetes",
+      "jevStatus": "inferred",
+      "jevConfidence": 61,
+      "top": 0.61,
+      "margin": 0.23,
+      "gptStatus": "unverified",
+      "gptConfidence": 75
+    },
+    {
+      "name": "AWS",
+      "jevStatus": "unverified",
+      "jevConfidence": 98,
+      "top": 0.98,
+      "margin": 0.97,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "CI/CD",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 96,
+      "top": 0.96,
+      "margin": 0.93,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Payments / payment processing",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Transactional systems",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 86,
+      "top": 0.86,
+      "margin": 0.74,
+      "gptStatus": null,
+      "gptConfidence": null
+    }
+  ],
+  "summary": "Moderate fit (Jev) · Strong skill coverage · good keyword overlap. Jev handled 13/15 routable decisions; 2 escalated to GPT."
+}

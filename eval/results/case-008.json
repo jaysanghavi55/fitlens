@@ -1,0 +1,212 @@
+{
+  "fitLevel": {
+    "score": 100,
+    "label": "Strong",
+    "confidence": 99
+  },
+  "shouldApply": {
+    "value": "Yes",
+    "confidence": 93,
+    "source": "jev"
+  },
+  "skillMatch": {
+    "score": 96,
+    "label": "Strong"
+  },
+  "keywordMatch": {
+    "score": 95,
+    "label": "Excellent",
+    "confidence": 89
+  },
+  "cvTone": {
+    "value": "Technical",
+    "confidence": 72
+  },
+  "skills": [
+    {
+      "name": "Kubernetes",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Ran the production platform on Kubernetes, owning cluster upgrades, capacity planning, and incident response for 200+ services.",
+      "source": "jev"
+    },
+    {
+      "name": "Docker",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Authored the Dockerfiles and multi-stage build pipeline that produced every service image in the fleet.",
+      "source": "jev"
+    },
+    {
+      "name": "Terraform",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Managed all cloud infrastructure through Terraform modules, with remote state locking and peer-reviewed plans on every change.",
+      "source": "jev"
+    },
+    {
+      "name": "AWS",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Operated the full stack on AWS (EKS, RDS, S3, CloudWatch) across three regions.",
+      "source": "jev"
+    },
+    {
+      "name": "Prometheus",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Built the metrics and alerting stack on Prometheus, with Grafana dashboards tracking an SLO for every service.",
+      "source": "jev"
+    },
+    {
+      "name": "Grafana",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Built the metrics and alerting stack on Prometheus, with Grafana dashboards tracking an SLO for every service.",
+      "source": "jev"
+    },
+    {
+      "name": "Ansible",
+      "status": "inferred",
+      "confidence": 88,
+      "evidence": "- Ran configuration management across the fleet using version-controlled playbooks applied agentlessly over SSH.",
+      "source": "jev"
+    },
+    {
+      "name": "Python",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Wrote automation, operational tooling, and runbooks-as-code in Python.",
+      "source": "jev"
+    },
+    {
+      "name": "Helm",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Packaged and templated our Kubernetes applications with reusable Helm charts and a shared values convention.",
+      "source": "jev"
+    },
+    {
+      "name": "CI/CD",
+      "status": "demonstrated",
+      "confidence": 95,
+      "evidence": "Delivered every change through automated pipelines with staged rollouts and automatic rollback on failed health checks.",
+      "source": "llm",
+      "reasoning": "The CV explicitly states they delivered changes via automated pipelines with staged rollouts and automatic rollback, which directly describes CI/CD practices."
+    },
+    {
+      "name": "PostgreSQL",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Operated a managed Postgres fleet: backups, failover drills, and query-performance tuning.",
+      "source": "jev"
+    }
+  ],
+  "routing": {
+    "total": 11,
+    "escalated": 1,
+    "jevHandled": 10
+  },
+  "_jevRaw": [
+    {
+      "name": "Kubernetes",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Docker",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Terraform",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "AWS",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Prometheus",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Grafana",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Ansible",
+      "jevStatus": "inferred",
+      "jevConfidence": 88,
+      "top": 0.88,
+      "margin": 0.8,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Python",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Helm",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "CI/CD",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 69,
+      "top": 0.69,
+      "margin": 0.41,
+      "gptStatus": "demonstrated",
+      "gptConfidence": 95
+    },
+    {
+      "name": "PostgreSQL",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    }
+  ],
+  "summary": "Strong fit (Jev) · Strong skill coverage · excellent keyword overlap. Jev handled 10/11 routable decisions; 1 escalated to GPT."
+}

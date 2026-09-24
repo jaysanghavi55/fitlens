@@ -1,0 +1,277 @@
+{
+  "fitLevel": {
+    "score": 84,
+    "label": "Strong",
+    "confidence": 69
+  },
+  "shouldApply": {
+    "value": "No",
+    "confidence": 65,
+    "source": "jev"
+  },
+  "skillMatch": {
+    "score": 67,
+    "label": "Moderate"
+  },
+  "keywordMatch": {
+    "score": 52,
+    "label": "Good",
+    "confidence": 61
+  },
+  "cvTone": {
+    "value": "Technical",
+    "confidence": 84
+  },
+  "skills": [
+    {
+      "name": "Python",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Owned the internal ML platform end to end; Python was the primary language across every service, SDK, and CLI I built.",
+      "source": "jev"
+    },
+    {
+      "name": "PyTorch",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Built training utilities and evaluation harnesses on top of PyTorch, standardizing how research teams fine-tuned and benchmarked models.",
+      "source": "jev"
+    },
+    {
+      "name": "Docker",
+      "status": "inferred",
+      "confidence": 85,
+      "evidence": "- Packaged every model and service into containers before rollout, with a reproducible base image pinned per framework version.",
+      "source": "jev"
+    },
+    {
+      "name": "Kubernetes",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Operated model-serving workloads on K8s, including autoscaling, rolling upgrades, and GPU scheduling across node pools.",
+      "source": "jev"
+    },
+    {
+      "name": "Apache Spark",
+      "status": "unverified",
+      "confidence": 98,
+      "evidence": null,
+      "source": "jev"
+    },
+    {
+      "name": "Apache Kafka",
+      "status": "inferred",
+      "confidence": 85,
+      "evidence": "Streamed feature updates and inference events through a durable, partitioned event log with exactly-once delivery guarantees.",
+      "source": "llm",
+      "reasoning": "The description of a durable, partitioned event log with exactly-once delivery strongly implies use of a Kafka-like streaming/event-log system even though Kafka isn't named."
+    },
+    {
+      "name": "PostgreSQL",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Stored feature metadata, lineage, and run records in Postgres, with every schema migration gated in review.",
+      "source": "jev"
+    },
+    {
+      "name": "Terraform",
+      "status": "unverified",
+      "confidence": 91,
+      "evidence": null,
+      "source": "jev"
+    },
+    {
+      "name": "MLflow",
+      "status": "missing",
+      "confidence": 95,
+      "evidence": "- Built our own lightweight experiment tracker and model registry in-house rather than adopting MLflow, which the team evaluated but chose not to run.",
+      "source": "jev"
+    },
+    {
+      "name": "Experiment tracking",
+      "status": "demonstrated",
+      "confidence": 83,
+      "evidence": "- Built our own lightweight experiment tracker and model registry in-house rather than adopting MLflow, which the team evaluated but chose not to run.",
+      "source": "jev"
+    },
+    {
+      "name": "Model registry",
+      "status": "demonstrated",
+      "confidence": 82,
+      "evidence": "- Built our own lightweight experiment tracker and model registry in-house rather than adopting MLflow, which the team evaluated but chose not to run.",
+      "source": "jev"
+    },
+    {
+      "name": "CI/CD",
+      "status": "demonstrated",
+      "confidence": 99,
+      "evidence": "- Automated build, test, and deployment for every platform component with GitHub Actions.",
+      "source": "jev"
+    },
+    {
+      "name": "AWS",
+      "status": "missing",
+      "confidence": 100,
+      "evidence": "I have not worked hands-on with AWS.",
+      "source": "jev"
+    },
+    {
+      "name": "Model serving",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Operated model-serving workloads on K8s, including autoscaling, rolling upgrades, and GPU scheduling across node pools.",
+      "source": "jev"
+    },
+    {
+      "name": "Model monitoring",
+      "status": "unverified",
+      "confidence": 85,
+      "evidence": "Stored feature metadata, lineage, and run records in Postgres, with every schema migration gated in review.",
+      "source": "llm",
+      "reasoning": "The CV shows tracking of metadata and run records and streaming of inference events (implying data collection), but it never explicitly states production model monitoring or monitoring tooling, leaving the exact capability/tools ambiguous."
+    }
+  ],
+  "routing": {
+    "total": 15,
+    "escalated": 2,
+    "jevHandled": 13
+  },
+  "_jevRaw": [
+    {
+      "name": "Python",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "PyTorch",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Docker",
+      "jevStatus": "inferred",
+      "jevConfidence": 85,
+      "top": 0.85,
+      "margin": 0.74,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Kubernetes",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Apache Spark",
+      "jevStatus": "unverified",
+      "jevConfidence": 98,
+      "top": 0.98,
+      "margin": 0.97,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Apache Kafka",
+      "jevStatus": "inferred",
+      "jevConfidence": 67,
+      "top": 0.67,
+      "margin": 0.35,
+      "gptStatus": "inferred",
+      "gptConfidence": 85
+    },
+    {
+      "name": "PostgreSQL",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Terraform",
+      "jevStatus": "unverified",
+      "jevConfidence": 91,
+      "top": 0.91,
+      "margin": 0.86,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "MLflow",
+      "jevStatus": "missing",
+      "jevConfidence": 95,
+      "top": 0.95,
+      "margin": 0.92,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Experiment tracking",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 83,
+      "top": 0.83,
+      "margin": 0.73,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Model registry",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 82,
+      "top": 0.82,
+      "margin": 0.74,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "CI/CD",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 99,
+      "top": 0.99,
+      "margin": 0.98,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "AWS",
+      "jevStatus": "missing",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Model serving",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Model monitoring",
+      "jevStatus": "unverified",
+      "jevConfidence": 56,
+      "top": 0.56,
+      "margin": 0.16,
+      "gptStatus": "unverified",
+      "gptConfidence": 85
+    }
+  ],
+  "summary": "Strong fit (Jev) · Moderate skill coverage · good keyword overlap. Jev handled 13/15 routable decisions; 2 escalated to GPT."
+}

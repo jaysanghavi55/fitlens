@@ -1,0 +1,466 @@
+{
+  "fitLevel": {
+    "score": 35,
+    "label": "Moderate",
+    "confidence": 65
+  },
+  "shouldApply": {
+    "value": "No",
+    "confidence": 86,
+    "source": "jev"
+  },
+  "skillMatch": {
+    "score": 43,
+    "label": "Moderate"
+  },
+  "keywordMatch": {
+    "score": 43,
+    "label": "Good",
+    "confidence": 64
+  },
+  "cvTone": {
+    "value": "Professional",
+    "confidence": 92
+  },
+  "skills": [
+    {
+      "name": "Python",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Built a couple of small scheduled Python scripts to pull data from APIs into our warehouse; these ran nightly, though I did not own the broader pipeline platform.",
+      "source": "jev",
+      "requiredLevel": {
+        "kind": "experience-depth",
+        "requiredEvidence": "Strong Python and SQL",
+        "threshold": "Strong"
+      },
+      "candidateLevel": "Built small scheduled Python scripts (nightly)",
+      "candidateEvidence": "Built a couple of small scheduled Python scripts to pull data from APIs into our warehouse; these ran nightly, though I did not own the broader pipeline platform.",
+      "satisfaction": "insufficient",
+      "satisfactionConfidence": 85
+    },
+    {
+      "name": "SQL",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Wrote SQL queries and dashboards for the marketing and product teams.",
+      "source": "jev",
+      "requiredLevel": {
+        "kind": "experience-depth",
+        "requiredEvidence": "Strong Python and SQL",
+        "threshold": "Strong"
+      },
+      "candidateLevel": "Wrote SQL queries and dashboards for teams",
+      "candidateEvidence": "Wrote SQL queries and dashboards for the marketing and product teams.",
+      "satisfaction": "insufficient",
+      "satisfactionConfidence": 85
+    },
+    {
+      "name": "Apache Spark",
+      "status": "demonstrated",
+      "confidence": 99,
+      "evidence": "- Took an internal course on Apache Spark and completed the hands-on labs; used Spark on one proof-of-concept, not in production.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Apache Airflow",
+      "status": "demonstrated",
+      "confidence": 99,
+      "evidence": "Wrote a small Airflow DAG during a hackathon to learn orchestration.",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Snowflake",
+      "status": "demonstrated",
+      "confidence": 95,
+      "evidence": "Python, SQL, Snowflake (certified), Spark (coursework + one POC), Airflow (learning-level)",
+      "source": "llm",
+      "reasoning": "CV explicitly lists Snowflake (certified) and holds the SnowPro Core certification.",
+      "requiredLevel": null
+    },
+    {
+      "name": "BigQuery",
+      "status": "missing",
+      "confidence": 89,
+      "evidence": null,
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Redshift",
+      "status": "missing",
+      "confidence": 93,
+      "evidence": null,
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Batch data pipeline development",
+      "status": "demonstrated",
+      "confidence": 85,
+      "evidence": "Built a couple of small scheduled Python scripts to pull data from APIs into our warehouse; these ran nightly, though I did not own the broader pipeline platform.",
+      "source": "llm",
+      "reasoning": "Describes building scheduled nightly Python scripts that pulled data into the warehouse, which are batch pipelines.",
+      "requiredLevel": {
+        "kind": "experience-depth",
+        "requiredEvidence": "Build and operate batch and streaming data pipelines in production.",
+        "threshold": "production"
+      },
+      "candidateLevel": "Built small scheduled Python scripts that ran nightly (did not own broader pipeline platform)",
+      "candidateEvidence": "Built a couple of small scheduled Python scripts to pull data from APIs into our warehouse; these ran nightly, though I did not own the broader pipeline platform.",
+      "satisfaction": "insufficient",
+      "satisfactionConfidence": 90
+    },
+    {
+      "name": "Streaming data pipeline development",
+      "status": "missing",
+      "confidence": 92,
+      "evidence": null,
+      "source": "jev",
+      "requiredLevel": {
+        "kind": "experience-depth",
+        "requiredEvidence": "Build and operate batch and streaming data pipelines in production.",
+        "threshold": "production"
+      },
+      "candidateLevel": null,
+      "candidateEvidence": null,
+      "satisfaction": "unknown",
+      "satisfactionConfidence": 90
+    },
+    {
+      "name": "Production pipeline operations",
+      "status": "missing",
+      "confidence": 82,
+      "evidence": null,
+      "source": "jev",
+      "requiredLevel": {
+        "kind": "experience-depth",
+        "requiredEvidence": "Production pipeline operations and monitoring",
+        "threshold": "production"
+      },
+      "candidateLevel": "Did not own broader pipeline platform; limited pipeline ownership",
+      "candidateEvidence": "Built a couple of small scheduled Python scripts to pull data from APIs into our warehouse; these ran nightly, though I did not own the broader pipeline platform.",
+      "satisfaction": "insufficient",
+      "satisfactionConfidence": 90
+    },
+    {
+      "name": "Pipeline monitoring",
+      "status": "missing",
+      "confidence": 89,
+      "evidence": null,
+      "source": "jev",
+      "requiredLevel": {
+        "kind": "experience-depth",
+        "requiredEvidence": "Production pipeline operations and monitoring",
+        "threshold": "production"
+      },
+      "candidateLevel": "Did not own broader pipeline platform; no monitoring mentioned",
+      "candidateEvidence": "Built a couple of small scheduled Python scripts to pull data from APIs into our warehouse; these ran nightly, though I did not own the broader pipeline platform.",
+      "satisfaction": "insufficient",
+      "satisfactionConfidence": 85
+    },
+    {
+      "name": "Pipeline reliability",
+      "status": "missing",
+      "confidence": 90,
+      "evidence": null,
+      "source": "llm",
+      "reasoning": "No statements about owning, monitoring, operating, or ensuring reliability of production pipelines or data quality are present.",
+      "requiredLevel": null
+    },
+    {
+      "name": "Data warehouse modeling",
+      "status": "unverified",
+      "confidence": 75,
+      "evidence": "Wrote SQL queries and dashboards for the marketing and product teams.",
+      "source": "llm",
+      "reasoning": "Shows experience querying and creating dashboards from the warehouse but does not explicitly state designing or modeling the warehouse schema.",
+      "requiredLevel": null
+    },
+    {
+      "name": "Data quality",
+      "status": "missing",
+      "confidence": 88,
+      "evidence": null,
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Large-scale distributed processing",
+      "status": "unverified",
+      "confidence": 90,
+      "evidence": "Took an internal course on Apache Spark and completed the hands-on labs; used Spark on one proof-of-concept, not in production.",
+      "source": "llm",
+      "reasoning": "Has coursework and a single Spark proof-of-concept but no evidence of running large-scale distributed processing in production.",
+      "requiredLevel": null
+    },
+    {
+      "name": "dbt",
+      "status": "missing",
+      "confidence": 99,
+      "evidence": null,
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Apache Kafka",
+      "status": "missing",
+      "confidence": 99,
+      "evidence": null,
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "SnowPro Core",
+      "status": "demonstrated",
+      "confidence": 99,
+      "evidence": "- SnowPro Core Certification",
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Google Professional Data Engineer",
+      "status": "missing",
+      "confidence": 97,
+      "evidence": null,
+      "source": "jev",
+      "requiredLevel": null
+    },
+    {
+      "name": "Databricks Certified Data Engineer Associate",
+      "status": "demonstrated",
+      "confidence": 99,
+      "evidence": "- Databricks Certified Data Engineer Associate",
+      "source": "jev",
+      "requiredLevel": null
+    }
+  ],
+  "routing": {
+    "total": 20,
+    "escalated": 5,
+    "jevHandled": 15
+  },
+  "_jevRaw": [
+    {
+      "name": "Python",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "SQL",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Apache Spark",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 99,
+      "top": 0.99,
+      "margin": 0.98,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Apache Airflow",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 99,
+      "top": 0.99,
+      "margin": 0.98,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Snowflake",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 75,
+      "top": 0.75,
+      "margin": 0.55,
+      "gptStatus": "demonstrated",
+      "gptConfidence": 95
+    },
+    {
+      "name": "BigQuery",
+      "jevStatus": "missing",
+      "jevConfidence": 89,
+      "top": 0.89,
+      "margin": 0.78,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Redshift",
+      "jevStatus": "missing",
+      "jevConfidence": 93,
+      "top": 0.93,
+      "margin": 0.86,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Batch data pipeline development",
+      "jevStatus": "inferred",
+      "jevConfidence": 44,
+      "top": 0.44,
+      "margin": 0.06,
+      "gptStatus": "demonstrated",
+      "gptConfidence": 85
+    },
+    {
+      "name": "Streaming data pipeline development",
+      "jevStatus": "missing",
+      "jevConfidence": 92,
+      "top": 0.92,
+      "margin": 0.84,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Production pipeline operations",
+      "jevStatus": "missing",
+      "jevConfidence": 82,
+      "top": 0.82,
+      "margin": 0.65,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Pipeline monitoring",
+      "jevStatus": "missing",
+      "jevConfidence": 89,
+      "top": 0.89,
+      "margin": 0.78,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Pipeline reliability",
+      "jevStatus": "missing",
+      "jevConfidence": 69,
+      "top": 0.69,
+      "margin": 0.39,
+      "gptStatus": "missing",
+      "gptConfidence": 90
+    },
+    {
+      "name": "Data warehouse modeling",
+      "jevStatus": "missing",
+      "jevConfidence": 60,
+      "top": 0.6,
+      "margin": 0.21,
+      "gptStatus": "unverified",
+      "gptConfidence": 75
+    },
+    {
+      "name": "Data quality",
+      "jevStatus": "missing",
+      "jevConfidence": 88,
+      "top": 0.88,
+      "margin": 0.76,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Large-scale distributed processing",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 31,
+      "top": 0.31,
+      "margin": 0.07,
+      "gptStatus": "unverified",
+      "gptConfidence": 90
+    },
+    {
+      "name": "dbt",
+      "jevStatus": "missing",
+      "jevConfidence": 99,
+      "top": 0.99,
+      "margin": 0.98,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Apache Kafka",
+      "jevStatus": "missing",
+      "jevConfidence": 99,
+      "top": 0.99,
+      "margin": 0.98,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "SnowPro Core",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 99,
+      "top": 0.99,
+      "margin": 0.98,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Google Professional Data Engineer",
+      "jevStatus": "missing",
+      "jevConfidence": 97,
+      "top": 0.97,
+      "margin": 0.94,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Databricks Certified Data Engineer Associate",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 99,
+      "top": 0.99,
+      "margin": 0.98,
+      "gptStatus": null,
+      "gptConfidence": null
+    }
+  ],
+  "_satRaw": [
+    {
+      "name": "Python",
+      "rawSatisfaction": "insufficient",
+      "candidateLevel": "Built small scheduled Python scripts (nightly)",
+      "contractViolation": false
+    },
+    {
+      "name": "SQL",
+      "rawSatisfaction": "insufficient",
+      "candidateLevel": "Wrote SQL queries and dashboards for teams",
+      "contractViolation": false
+    },
+    {
+      "name": "Batch data pipeline development",
+      "rawSatisfaction": "insufficient",
+      "candidateLevel": "Built small scheduled Python scripts that ran nightly (did not own broader pipeline platform)",
+      "contractViolation": false
+    },
+    {
+      "name": "Streaming data pipeline development",
+      "rawSatisfaction": "unknown",
+      "candidateLevel": null,
+      "contractViolation": false
+    },
+    {
+      "name": "Production pipeline operations",
+      "rawSatisfaction": "insufficient",
+      "candidateLevel": "Did not own broader pipeline platform; limited pipeline ownership",
+      "contractViolation": false
+    },
+    {
+      "name": "Pipeline monitoring",
+      "rawSatisfaction": "insufficient",
+      "candidateLevel": "Did not own broader pipeline platform; no monitoring mentioned",
+      "contractViolation": false
+    }
+  ],
+  "summary": "Moderate fit (Jev) · Moderate skill coverage · good keyword overlap. Jev handled 15/20 routable decisions; 5 escalated to GPT."
+}

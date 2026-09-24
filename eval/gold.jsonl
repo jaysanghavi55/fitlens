@@ -1,0 +1,180 @@
+// gold.jsonl — one human-labeled (cv_id, skill, gold) per line.
+// `skill` MUST match the skill name the pipeline emits (case-insensitive join).
+// Labels are justified against rubric.md. `note` flags boundary/uncertain calls.
+// Cases: 004 Alex Moreno (ML Platform); 005 Priya Nadkarni (Data Platform);
+// 006 Marco Smith (GenAI); 007 Maya Okonkwo (Frontend); 008 Tomás Herrera (SRE);
+// 009 Hana Petrova (Backend/Payments); 010 Sang-woo Kim (Mobile); 011 Rahul Mehta (ServiceNow, added post-recapture).
+//
+// --- case-004 = "Alex Moreno" (ML Platform; labeled against emitted names) ---
+{"cv_id":"case-004","skill":"Python","gold":"demonstrated","note":"'Python was the primary language across every service'"}
+{"cv_id":"case-004","skill":"PyTorch","gold":"demonstrated","note":"'training utilities ... on top of PyTorch' named"}
+{"cv_id":"case-004","skill":"Docker","gold":"inferred","note":"'Packaged every model and service into containers ... base image' — container tooling, Docker dominant"}
+{"cv_id":"case-004","skill":"Kubernetes","gold":"demonstrated","note":"'model-serving workloads on K8s' named"}
+{"cv_id":"case-004","skill":"Apache Spark","gold":"unverified","note":"'distributed batch jobs across a shared compute cluster' — Spark? Beam? Flink? Ray? not pinned"}
+{"cv_id":"case-004","skill":"Apache Kafka","gold":"unverified","note":"BOUNDARY (pred=inferred): 'durable, partitioned event log with exactly-once' is Kafka-shaped but Pulsar/Kinesis also fit — not named. Consistent with case-005 streaming call."}
+{"cv_id":"case-004","skill":"PostgreSQL","gold":"demonstrated","note":"'in Postgres' alias"}
+{"cv_id":"case-004","skill":"Terraform","gold":"unverified","note":"'version-controlled infrastructure-as-code' — Terraform? Pulumi? CloudFormation? not named"}
+{"cv_id":"case-004","skill":"MLflow","gold":"missing","note":"stated gap: 'evaluated but chose not to run'"}
+{"cv_id":"case-004","skill":"Experiment tracking","gold":"demonstrated","note":"'Built our own lightweight experiment tracker' — capability demonstrated (product is in-house)"}
+{"cv_id":"case-004","skill":"Model registry","gold":"demonstrated","note":"'and model registry in-house' — capability demonstrated"}
+{"cv_id":"case-004","skill":"CI/CD","gold":"demonstrated","note":"'GitHub Actions' named"}
+{"cv_id":"case-004","skill":"AWS","gold":"missing","note":"stated gap: 'I have not worked hands-on with AWS'"}
+{"cv_id":"case-004","skill":"Model serving","gold":"demonstrated","note":"'Operated model-serving workloads on K8s' — capability named"}
+{"cv_id":"case-004","skill":"Model monitoring","gold":"missing","note":"BOUNDARY (pred=unverified): serving ops (autoscaling/rolling upgrades) present, but no drift/quality monitoring evidence — requirement not met"}
+//
+// --- case-005 = "Priya Nadkarni" (Data Platform; captured with OLD extractor — unchanged) ---
+{"cv_id":"case-005","skill":"Python","gold":"demonstrated"}
+{"cv_id":"case-005","skill":"SQL","gold":"demonstrated","note":"often merged into another entry by extraction — watch for extraction recall miss"}
+{"cv_id":"case-005","skill":"Apache Spark","gold":"unverified","note":"'distributed processing, shuffles/partitions' — leans Spark but Flink/Dask plausible"}
+{"cv_id":"case-005","skill":"Apache Kafka","gold":"unverified","note":"'real-time streaming, exactly-once' — Kafka? Kinesis? Pulsar?"}
+{"cv_id":"case-005","skill":"Apache Airflow","gold":"inferred","note":"'DAG scheduler + retries + backfills + SLA alerts' is tightly Airflow-shaped — the hard boundary case"}
+{"cv_id":"case-005","skill":"Snowflake","gold":"unverified","note":"'columnar cloud warehouse' — BigQuery/Redshift equally plausible"}
+{"cv_id":"case-005","skill":"dbt","gold":"unverified","note":"'modular tested transformation layers' — dbt-shaped but generic"}
+{"cv_id":"case-005","skill":"Docker","gold":"inferred","note":"'packaged services as containers' strongly implies container tooling"}
+{"cv_id":"case-005","skill":"Kubernetes","gold":"unverified","note":"'orchestrated cluster' — could be ECS/Nomad/managed"}
+{"cv_id":"case-005","skill":"Terraform","gold":"unverified","note":"'infrastructure as code, versioned config' — Pulumi/CloudFormation plausible"}
+{"cv_id":"case-005","skill":"AWS/GCP/Azure","gold":"demonstrated","note":"'all infrastructure ran on GCP'"}
+//
+// --- case-006 = "Marco Smith" (GenAI Engineer; captured with OLD extractor — unchanged) ---
+{"cv_id":"case-006","skill":"Python","gold":"demonstrated","note":"named repeatedly"}
+{"cv_id":"case-006","skill":"PyTorch","gold":"demonstrated","note":"'fine-tuned ... in PyTorch' named"}
+{"cv_id":"case-006","skill":"FastAPI","gold":"demonstrated","note":"'served models behind FastAPI endpoints' named"}
+{"cv_id":"case-006","skill":"LangChain","gold":"unverified","note":"'tool-calling, memory, prompt chaining' — LangChain? LlamaIndex? custom? not named"}
+{"cv_id":"case-006","skill":"Retrieval-Augmented Generation (RAG)","gold":"demonstrated","note":"'built RAG pipelines' named"}
+{"cv_id":"case-006","skill":"Pinecone / Vector databases","gold":"unverified","note":"'vector index for semantic search' — Pinecone? pgvector? FAISS? Weaviate? no product named"}
+{"cv_id":"case-006","skill":"Docker","gold":"inferred","note":"'packaged into containers' one dominant answer (Docker) — inferred, not unverified"}
+{"cv_id":"case-006","skill":"Kubernetes","gold":"unverified","note":"'orchestrated container cluster + autoscaling' — K8s? ECS? Nomad? several plausible → unverified (the Docker/K8s contrast is the story)"}
+{"cv_id":"case-006","skill":"AWS","gold":"demonstrated","note":"'shipped a few services to AWS (S3, Lambda)' named — GCP-primary but AWS is real, named experience"}
+{"cv_id":"case-006","skill":"Terraform","gold":"unverified","note":"'version-controlled, peer-reviewed config' — IaC-flavored but Terraform? Pulumi? CloudFormation? not named"}
+//
+// --- case-007 = "Maya Okonkwo" (Senior Frontend; labeled against emitted names) ---
+{"cv_id":"case-007","skill":"React","gold":"demonstrated","note":"'rebuild ... in React' named"}
+{"cv_id":"case-007","skill":"TypeScript","gold":"demonstrated","note":"'React and TypeScript' named"}
+{"cv_id":"case-007","skill":"Next.js","gold":"demonstrated","note":"'Migrated ... to Next.js' named"}
+{"cv_id":"case-007","skill":"Tailwind CSS","gold":"demonstrated","note":"'Styled ... with Tailwind CSS' named"}
+{"cv_id":"case-007","skill":"GraphQL","gold":"inferred","note":"'typed graph API with a published schema and resolvers' — GraphQL dominant, not named"}
+{"cv_id":"case-007","skill":"Redux","gold":"unverified","note":"BOUNDARY (pred=inferred): 'centralized store with dispatched actions and reducers' fits Redux but also Zustand/NgRx/Vuex/Recoil — flux vocabulary is shared, product not named"}
+{"cv_id":"case-007","skill":"State management library","gold":"demonstrated","note":"the generic capability IS demonstrated (centralized store, actions, reducers) — only the specific product (Redux) is unverified"}
+{"cv_id":"case-007","skill":"Jest","gold":"demonstrated","note":"'unit tests in Jest' named"}
+{"cv_id":"case-007","skill":"Playwright","gold":"demonstrated","note":"'end-to-end suites in Playwright' named"}
+{"cv_id":"case-007","skill":"Web accessibility (a11y)","gold":"demonstrated","note":"'strong focus on WCAG accessibility and keyboard navigation'"}
+{"cv_id":"case-007","skill":"Component-driven UI","gold":"demonstrated","note":"'owning the component library and its design-system integration'"}
+{"cv_id":"case-007","skill":"Webpack","gold":"unverified","note":"'Bundled and code-split ... tuning chunk boundaries' — bundler used but Webpack/Vite/Rollup/esbuild not pinned"}
+{"cv_id":"case-007","skill":"Modern bundler (esbuild/Vite/Rollup)","gold":"unverified","note":"same evidence as Webpack — generic bundling, product not named"}
+{"cv_id":"case-007","skill":"Node.js","gold":"demonstrated","note":"'Built a Node.js backend-for-frontend' named"}
+{"cv_id":"case-007","skill":"CI/CD","gold":"demonstrated","note":"'GitHub Actions on every pull request' named"}
+//
+// --- case-008 = "Tomás Herrera" (SRE; strong-fit contrast case — labeled against emitted names) ---
+{"cv_id":"case-008","skill":"Kubernetes","gold":"demonstrated","note":"'production platform on Kubernetes' named"}
+{"cv_id":"case-008","skill":"Docker","gold":"demonstrated","note":"'Authored the Dockerfiles' named"}
+{"cv_id":"case-008","skill":"Terraform","gold":"demonstrated","note":"'through Terraform modules' named"}
+{"cv_id":"case-008","skill":"AWS","gold":"demonstrated","note":"'on AWS (EKS, RDS, S3, CloudWatch)' named"}
+{"cv_id":"case-008","skill":"Prometheus","gold":"demonstrated","note":"'metrics and alerting stack on Prometheus' named"}
+{"cv_id":"case-008","skill":"Grafana","gold":"demonstrated","note":"'Grafana dashboards' named"}
+{"cv_id":"case-008","skill":"Ansible","gold":"inferred","note":"'version-controlled playbooks applied agentlessly over SSH' — agentless-over-SSH is Ansible's signature; not named"}
+{"cv_id":"case-008","skill":"Python","gold":"demonstrated","note":"'automation ... in Python' named"}
+{"cv_id":"case-008","skill":"Helm","gold":"demonstrated","note":"'reusable Helm charts' named"}
+{"cv_id":"case-008","skill":"CI/CD","gold":"demonstrated","note":"'automated pipelines with staged rollouts and automatic rollback'"}
+{"cv_id":"case-008","skill":"PostgreSQL","gold":"demonstrated","note":"'managed Postgres fleet' alias"}
+//
+// --- case-009 = "Hana Petrova" (Backend/Payments; rich boundary set — labeled against emitted names) ---
+{"cv_id":"case-009","skill":"Java","gold":"demonstrated","note":"'core payment services in Java' named"}
+{"cv_id":"case-009","skill":"Spring Boot","gold":"demonstrated","note":"'using Spring Boot' named"}
+{"cv_id":"case-009","skill":"REST APIs","gold":"demonstrated","note":"'Exposed REST APIs' named"}
+{"cv_id":"case-009","skill":"PostgreSQL","gold":"demonstrated","note":"'ledger and account data in PostgreSQL' named"}
+{"cv_id":"case-009","skill":"Apache Kafka","gold":"inferred","note":"'partitioned, replayable log with consumer groups and committed offsets' — 'consumer groups'/'committed offsets' are Kafka terms of art; one dominant answer"}
+{"cv_id":"case-009","skill":"Event streaming","gold":"demonstrated","note":"BOUNDARY (pred=inferred): the capability IS demonstrated ('Published and consumed domain events') — only the product (Kafka) is inferred"}
+{"cv_id":"case-009","skill":"Redis caching","gold":"demonstrated","note":"'Cached hot account state ... with Redis' named"}
+{"cv_id":"case-009","skill":"Redis rate limiting","gold":"demonstrated","note":"'enforced per-tenant rate limits with Redis' named"}
+{"cv_id":"case-009","skill":"gRPC","gold":"inferred","note":"'binary, schema-first RPC protocol with generated client and server stubs' — gRPC dominant (Thrift/Cap'n Proto adjacent); not named"}
+{"cv_id":"case-009","skill":"Docker","gold":"inferred","note":"'Packaged services into containers' — Docker dominant, not named"}
+{"cv_id":"case-009","skill":"Kubernetes","gold":"unverified","note":"'orchestrated container platform with rolling updates' — K8s? ECS? Nomad? not pinned"}
+{"cv_id":"case-009","skill":"AWS","gold":"unverified","note":"'Ran the services on a major public cloud' — deliberately vague, not named"}
+{"cv_id":"case-009","skill":"CI/CD","gold":"demonstrated","note":"'automated releases with a CI server on every merge to main'"}
+{"cv_id":"case-009","skill":"Payments / payment processing","gold":"demonstrated","note":"domain: 'payments domain', 'core payment services'"}
+{"cv_id":"case-009","skill":"Transactional systems","gold":"demonstrated","note":"'transactional, high-throughput services', 'ledger and account data ... under contention'"}
+//
+// --- case-010 = "Sang-woo Kim" (Mobile; both missing sub-cases + a key over-call — labeled against emitted names) ---
+{"cv_id":"case-010","skill":"Swift","gold":"missing","note":"KEY DISAGREEMENT (pred=demonstrated 95% llm): stated gap — 'wouldn't call myself a Swift developer yet', only 'small maintenance fixes'. JD requires 'Swift for native iOS development'; that requirement is NOT demonstrated. Model over-called (touched-Swift ≠ native-iOS-dev). Calibration failure to surface."}
+{"cv_id":"case-010","skill":"Kotlin","gold":"demonstrated","note":"'Built and shipped the Android app in Kotlin end to end' named"}
+{"cv_id":"case-010","skill":"React Native","gold":"demonstrated","note":"'shared cross-platform features in React Native' named"}
+{"cv_id":"case-010","skill":"REST APIs","gold":"demonstrated","note":"'versioned REST endpoints with typed client models' named"}
+{"cv_id":"case-010","skill":"Firebase Analytics","gold":"unverified","note":"'analytics ... through a hosted mobile backend platform' — Firebase not named (Amplify/Appwrite fit too)"}
+{"cv_id":"case-010","skill":"Firebase Cloud Messaging (FCM)","gold":"unverified","note":"'push notifications through a hosted mobile backend platform' — product not named"}
+{"cv_id":"case-010","skill":"SQLite","gold":"inferred","note":"'lightweight embedded relational database' on-device (mobile) — SQLite dominant; not named"}
+{"cv_id":"case-010","skill":"CI/CD (mobile builds)","gold":"demonstrated","note":"'Automated builds, code signing, and store uploads ... on every tagged commit'"}
+{"cv_id":"case-010","skill":"Automated UI testing","gold":"missing","note":"not mentioned anywhere (silent absence) — correctly caught by model"}
+{"cv_id":"case-010","skill":"Git","gold":"demonstrated","note":"'Managed all source in Git with trunk-based development' named"}
+{"cv_id":"case-010","skill":"Apple App Store release","gold":"unverified","note":"'store uploads' via pipeline is generic; Android-first CV, Apple-specific release not pinned"}
+{"cv_id":"case-010","skill":"Google Play Store release","gold":"demonstrated","note":"Android app 'shipped end to end' + automated 'store uploads' — Play release evidenced"}
+//
+// --- case-011 = "Rahul Mehta" (ServiceNow ITOM/Discovery; captured with cert/language fix — labeled against emitted names) ---
+{"cv_id":"case-011","skill":"ServiceNow Discovery","gold":"demonstrated","note":"basic/limited Discovery admin evidenced ('Monitor scheduled Discovery jobs', 'Discovery schedules'). JD wants strong/experienced Discovery — that PROFICIENCY gap is not expressible in the evidence status (cf. Swift/German)"}
+{"cv_id":"case-011","skill":"ServiceNow CMDB","gold":"demonstrated","note":"CMDB is a core strong skill; 'Maintain CMDB configuration items', 'data-quality issues'"}
+{"cv_id":"case-011","skill":"MID Server configuration","gold":"unverified","note":"candidate does MID Server MONITORING + connectivity troubleshooting, not configuration — config not pinned (depth split vs troubleshooting)"}
+{"cv_id":"case-011","skill":"MID Server troubleshooting","gold":"demonstrated","note":"'Perform basic troubleshooting of MID Server connectivity issues' — evidenced (basic). The designed config-vs-troubleshooting depth contrast."}
+{"cv_id":"case-011","skill":"ServiceNow (platform)","gold":"demonstrated","note":"5 years ServiceNow dev/admin"}
+{"cv_id":"case-011","skill":"ServiceNow scripting (JavaScript)","gold":"demonstrated","note":"'scripts ... using ServiceNow JavaScript', Business Rules, Client Scripts"}
+{"cv_id":"case-011","skill":"ServiceNow Discovery Patterns","gold":"missing","note":"stated gap: 'No significant production experience: Discovery Pattern development'"}
+{"cv_id":"case-011","skill":"Identification and Reconciliation Engine (IRE)","gold":"missing","note":"stated gap: 'IRE configuration' under no-experience"}
+{"cv_id":"case-011","skill":"ServiceNow Service Mapping","gold":"missing","note":"stated gap: 'Service Mapping' under no-experience"}
+{"cv_id":"case-011","skill":"CMDB health monitoring","gold":"unverified","note":"candidate does CMDB data-quality/dedup work — adjacent to but not clearly 'health monitoring' (dashboards/compliance metrics)"}
+{"cv_id":"case-011","skill":"Windows","gold":"demonstrated","note":"'Assisted infrastructure teams with Windows and Linux CI information'; listed under basic experience"}
+{"cv_id":"case-011","skill":"Linux","gold":"demonstrated","note":"same — Windows/Linux CI information, basic"}
+{"cv_id":"case-011","skill":"DNS","gold":"missing","note":"no DNS evidence anywhere"}
+{"cv_id":"case-011","skill":"TCP/IP","gold":"missing","note":"no networking-protocol evidence"}
+{"cv_id":"case-011","skill":"SSH","gold":"missing","note":"no SSH evidence"}
+{"cv_id":"case-011","skill":"REST","gold":"demonstrated","note":"'REST-based integrations', 'REST integrations' named"}
+{"cv_id":"case-011","skill":"SOAP","gold":"missing","note":"CV names only REST integrations; zero SOAP evidence (not merely unpinned) → missing"}
+{"cv_id":"case-011","skill":"AWS","gold":"missing","note":"stated gap: 'AWS/Azure Discovery' under no-experience; no cloud work"}
+{"cv_id":"case-011","skill":"Azure","gold":"missing","note":"stated gap: same"}
+{"cv_id":"case-011","skill":"ServiceNow CIS-Discovery certification","gold":"missing","note":"stated gap: 'Not currently certified in: CIS-Discovery' — the decisive cert gap the case was built to surface"}
+{"cv_id":"case-011","skill":"ServiceNow CSA certification","gold":"demonstrated","note":"'ServiceNow Certified System Administrator (CSA)' held"}
+{"cv_id":"case-011","skill":"English","gold":"demonstrated","note":"'Languages: English, German A2'; CV authored in English"}
+{"cv_id":"case-011","skill":"German","gold":"demonstrated","note":"'German A2' named. A2 is elementary and likely below the JD's implied working level, but the 4-state EVIDENCE model cannot express 'present but below required level' — proficiency gap belongs to presentation, not this label (cf. case-010/Swift)"}
+{"cv_id":"case-011","skill":"ITIL","gold":"demonstrated","note":"'ITIL 4 Foundation' held"}
+//
+// --- case-012 = "Lukas Weber" (Cloud Platform; cert/language stress — product-vs-certification split) ---
+{"cv_id":"case-012","skill":"AWS","gold":"demonstrated","note":"'multi-account AWS estate' named, 8 yrs"}
+{"cv_id":"case-012","skill":"AWS multi-account architecture","gold":"demonstrated","note":"'multi-account AWS estate ... for 40+ product teams'"}
+{"cv_id":"case-012","skill":"AWS IAM","gold":"demonstrated","note":"'compute, VPC networking, and IAM' named"}
+{"cv_id":"case-012","skill":"AWS networking","gold":"demonstrated","note":"'VPC networking' named"}
+{"cv_id":"case-012","skill":"AWS compute","gold":"demonstrated","note":"'compute' named"}
+{"cv_id":"case-012","skill":"Kubernetes","gold":"demonstrated","note":"'Operate production Kubernetes clusters end to end'"}
+{"cv_id":"case-012","skill":"Production Kubernetes operations","gold":"demonstrated","note":"'upgrades, capacity planning, on-call incident response'"}
+{"cv_id":"case-012","skill":"Kubernetes cluster hardening","gold":"unverified","note":"operates/upgrades clusters but 'hardening' specifically not evidenced"}
+{"cv_id":"case-012","skill":"Terraform","gold":"demonstrated","note":"'Manage all infrastructure as code in Terraform' named"}
+{"cv_id":"case-012","skill":"Infrastructure as Code (IaC)","gold":"demonstrated","note":"'infrastructure as code ... remote state, module registries, peer-reviewed plans'"}
+{"cv_id":"case-012","skill":"Docker","gold":"demonstrated","note":"'multi-stage Docker builds' named"}
+{"cv_id":"case-012","skill":"Container image management","gold":"demonstrated","note":"'Build and maintain the container images ... tune for size and cache reuse'"}
+{"cv_id":"case-012","skill":"CI/CD pipeline design","gold":"demonstrated","note":"'Design the GitLab CI pipelines that lint, test, and progressively deliver'"}
+{"cv_id":"case-012","skill":"Python","gold":"demonstrated","note":"'operational tooling and automation in Python' named"}
+{"cv_id":"case-012","skill":"Go","gold":"missing","note":"not mentioned (nice-to-have); silent absence"}
+{"cv_id":"case-012","skill":"Service mesh","gold":"missing","note":"not mentioned (nice-to-have); silent absence"}
+{"cv_id":"case-012","skill":"FinOps","gold":"unverified","note":"'cost reports' is FinOps-adjacent but not a named FinOps practice"}
+{"cv_id":"case-012","skill":"AWS Certified Solutions Architect – Professional","gold":"missing","note":"KEY cert-level distinction: candidate holds SA-ASSOCIATE (2022), NOT the required Professional. A related cert is not the required cert → missing"}
+{"cv_id":"case-012","skill":"Certified Kubernetes Administrator (CKA)","gold":"missing","note":"stated: 'working toward, but not yet certified'"}
+{"cv_id":"case-012","skill":"HashiCorp Certified: Terraform Associate","gold":"missing","note":"stated: 'I hold no HashiCorp certification, though Terraform is part of my daily work' — skill demonstrated, cert missing"}
+{"cv_id":"case-012","skill":"German","gold":"demonstrated","note":"'German (native)' — meets the business-fluent requirement"}
+{"cv_id":"case-012","skill":"English","gold":"demonstrated","note":"'English (C1, professional)'"}
+//
+// --- case-013 = "Deepa Rao" (Data Analyst → Senior ML Engineer; weak fit, missing-heavy) ---
+{"cv_id":"case-013","skill":"Python","gold":"demonstrated","note":"'Python with pandas and NumPy' named"}
+{"cv_id":"case-013","skill":"SQL","gold":"demonstrated","note":"'Wrote complex SQL' named"}
+{"cv_id":"case-013","skill":"PyTorch","gold":"missing","note":"stated gap: 'have not worked with deep-learning frameworks such as PyTorch or TensorFlow'"}
+{"cv_id":"case-013","skill":"TensorFlow","gold":"missing","note":"stated gap: same"}
+{"cv_id":"case-013","skill":"scikit-learn","gold":"demonstrated","note":"'built predictive churn and propensity models with scikit-learn'"}
+{"cv_id":"case-013","skill":"MLOps","gold":"missing","note":"stated gap: 'have not owned model deployment or the container and orchestration side of production'"}
+{"cv_id":"case-013","skill":"Model deployment pipelines","gold":"missing","note":"stated gap: 'hand trained models to the platform team, who owned deployment and serving'"}
+{"cv_id":"case-013","skill":"Model serving","gold":"missing","note":"stated gap: platform team 'owned deployment and serving'"}
+{"cv_id":"case-013","skill":"Model monitoring","gold":"missing","note":"no production model-monitoring evidence (never owned production)"}
+{"cv_id":"case-013","skill":"Docker","gold":"missing","note":"stated gap: 'container ... side of production' not done"}
+{"cv_id":"case-013","skill":"Kubernetes","gold":"missing","note":"stated gap: 'orchestration side of production' not done"}
+{"cv_id":"case-013","skill":"AWS","gold":"unverified","note":"'cloud data warehouse' — some cloud use, vendor not named (AWS? GCP? Azure?)"}
+{"cv_id":"case-013","skill":"GCP","gold":"unverified","note":"same 'cloud data warehouse' mention — vendor unpinned"}
+{"cv_id":"case-013","skill":"Azure","gold":"unverified","note":"same — vendor unpinned"}
+{"cv_id":"case-013","skill":"Apache Spark","gold":"unverified","note":"'Processed large event datasets' — Spark? warehouse SQL? not pinned"}
+{"cv_id":"case-013","skill":"Airflow","gold":"inferred","note":"'recurring data pipelines as DAGs with retries, backfills, and failure alerts' — tightly Airflow-shaped (cf. case-005)"}
+{"cv_id":"case-013","skill":"Feature pipelines","gold":"unverified","note":"builds data/metrics pipelines, not clearly ML feature pipelines — adjacent, not pinned"}
+{"cv_id":"case-013","skill":"Statistics","gold":"demonstrated","note":"'A/B tests ... power analysis and randomization to significance testing'"}
+{"cv_id":"case-013","skill":"Experimentation","gold":"demonstrated","note":"'Designed and ran A/B tests end to end'"}

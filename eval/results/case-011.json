@@ -1,0 +1,423 @@
+{
+  "fitLevel": {
+    "score": 14,
+    "label": "Weak",
+    "confidence": 72
+  },
+  "shouldApply": {
+    "value": "No",
+    "confidence": 82,
+    "source": "jev"
+  },
+  "skillMatch": {
+    "score": 53,
+    "label": "Moderate"
+  },
+  "keywordMatch": {
+    "score": 13,
+    "label": "Poor",
+    "confidence": 75
+  },
+  "cvTone": {
+    "value": "Professional",
+    "confidence": 83
+  },
+  "skills": [
+    {
+      "name": "ServiceNow Discovery",
+      "status": "demonstrated",
+      "confidence": 95,
+      "evidence": "- Monitor scheduled Discovery jobs and escalate Discovery failures to the ITOM team.",
+      "source": "jev"
+    },
+    {
+      "name": "ServiceNow CMDB",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "ServiceNow Developer and Administrator with 5 years of experience supporting enterprise ServiceNow environments, primarily within ITSM, CMDB, Incident, Change, and Request Management.",
+      "source": "jev"
+    },
+    {
+      "name": "MID Server configuration",
+      "status": "unverified",
+      "confidence": 84,
+      "evidence": null,
+      "source": "jev"
+    },
+    {
+      "name": "MID Server troubleshooting",
+      "status": "demonstrated",
+      "confidence": 89,
+      "evidence": "- Perform basic troubleshooting of MID Server connectivity issues.",
+      "source": "jev"
+    },
+    {
+      "name": "ServiceNow (platform)",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Administered ServiceNow ITSM platform for approximately 3,000 users.",
+      "source": "jev"
+    },
+    {
+      "name": "ServiceNow scripting (JavaScript)",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- Created scripts and automation using ServiceNow JavaScript.",
+      "source": "jev"
+    },
+    {
+      "name": "ServiceNow Discovery Patterns",
+      "status": "missing",
+      "confidence": 99,
+      "evidence": null,
+      "source": "jev"
+    },
+    {
+      "name": "Identification and Reconciliation Engine (IRE)",
+      "status": "missing",
+      "confidence": 97,
+      "evidence": null,
+      "source": "jev"
+    },
+    {
+      "name": "ServiceNow Service Mapping",
+      "status": "missing",
+      "confidence": 99,
+      "evidence": null,
+      "source": "jev"
+    },
+    {
+      "name": "CMDB health monitoring",
+      "status": "unverified",
+      "confidence": 90,
+      "evidence": "Maintain CMDB configuration items and investigate data-quality issues.",
+      "source": "llm",
+      "reasoning": "The CV shows CMDB maintenance and data-quality investigation experience but does not explicitly state 'CMDB health monitoring' or related tooling."
+    },
+    {
+      "name": "Windows",
+      "status": "demonstrated",
+      "confidence": 92,
+      "evidence": "- Windows infrastructure",
+      "source": "jev"
+    },
+    {
+      "name": "Linux",
+      "status": "demonstrated",
+      "confidence": 87,
+      "evidence": "- Linux infrastructure",
+      "source": "jev"
+    },
+    {
+      "name": "DNS",
+      "status": "missing",
+      "confidence": 86,
+      "evidence": null,
+      "source": "jev"
+    },
+    {
+      "name": "TCP/IP",
+      "status": "missing",
+      "confidence": 95,
+      "evidence": null,
+      "source": "llm",
+      "reasoning": "The CV does not mention TCP/IP or networking fundamentals explicitly."
+    },
+    {
+      "name": "SSH",
+      "status": "missing",
+      "confidence": 95,
+      "evidence": null,
+      "source": "llm",
+      "reasoning": "There is no explicit mention of SSH or SSH-based discovery/probing; only basic Linux/Windows CI assistance is noted."
+    },
+    {
+      "name": "REST",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- REST integrations",
+      "source": "jev"
+    },
+    {
+      "name": "SOAP",
+      "status": "missing",
+      "confidence": 95,
+      "evidence": null,
+      "source": "llm",
+      "reasoning": "The CV lists REST integrations but does not reference SOAP or SOAP-based integrations."
+    },
+    {
+      "name": "AWS",
+      "status": "missing",
+      "confidence": 97,
+      "evidence": "- AWS/Azure Discovery",
+      "source": "jev"
+    },
+    {
+      "name": "Azure",
+      "status": "missing",
+      "confidence": 92,
+      "evidence": "- AWS/Azure Discovery",
+      "source": "jev"
+    },
+    {
+      "name": "ServiceNow CIS-Discovery certification",
+      "status": "missing",
+      "confidence": 100,
+      "evidence": null,
+      "source": "jev"
+    },
+    {
+      "name": "ServiceNow CSA certification",
+      "status": "demonstrated",
+      "confidence": 100,
+      "evidence": "- ServiceNow Certified System Administrator (CSA)",
+      "source": "jev"
+    },
+    {
+      "name": "English",
+      "status": "demonstrated",
+      "confidence": 93,
+      "evidence": "Languages: English, German A2",
+      "source": "jev"
+    },
+    {
+      "name": "German",
+      "status": "demonstrated",
+      "confidence": 86,
+      "evidence": "Languages: English, German A2",
+      "source": "jev"
+    },
+    {
+      "name": "ITIL",
+      "status": "demonstrated",
+      "confidence": 96,
+      "evidence": "- ITIL 4 Foundation",
+      "source": "jev"
+    }
+  ],
+  "routing": {
+    "total": 24,
+    "escalated": 4,
+    "jevHandled": 20
+  },
+  "_jevRaw": [
+    {
+      "name": "ServiceNow Discovery",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 95,
+      "top": 0.95,
+      "margin": 0.92,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "ServiceNow CMDB",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "MID Server configuration",
+      "jevStatus": "unverified",
+      "jevConfidence": 84,
+      "top": 0.84,
+      "margin": 0.73,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "MID Server troubleshooting",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 89,
+      "top": 0.89,
+      "margin": 0.78,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "ServiceNow (platform)",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "ServiceNow scripting (JavaScript)",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "ServiceNow Discovery Patterns",
+      "jevStatus": "missing",
+      "jevConfidence": 99,
+      "top": 0.99,
+      "margin": 0.98,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Identification and Reconciliation Engine (IRE)",
+      "jevStatus": "missing",
+      "jevConfidence": 97,
+      "top": 0.97,
+      "margin": 0.94,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "ServiceNow Service Mapping",
+      "jevStatus": "missing",
+      "jevConfidence": 99,
+      "top": 0.99,
+      "margin": 0.98,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "CMDB health monitoring",
+      "jevStatus": "unverified",
+      "jevConfidence": 74,
+      "top": 0.74,
+      "margin": 0.49,
+      "gptStatus": "unverified",
+      "gptConfidence": 90
+    },
+    {
+      "name": "Windows",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 92,
+      "top": 0.92,
+      "margin": 0.84,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Linux",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 87,
+      "top": 0.87,
+      "margin": 0.74,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "DNS",
+      "jevStatus": "missing",
+      "jevConfidence": 86,
+      "top": 0.86,
+      "margin": 0.72,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "TCP/IP",
+      "jevStatus": "missing",
+      "jevConfidence": 48,
+      "top": 0.48,
+      "margin": 0.1,
+      "gptStatus": "missing",
+      "gptConfidence": 95
+    },
+    {
+      "name": "SSH",
+      "jevStatus": "missing",
+      "jevConfidence": 66,
+      "top": 0.66,
+      "margin": 0.34,
+      "gptStatus": "missing",
+      "gptConfidence": 95
+    },
+    {
+      "name": "REST",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "SOAP",
+      "jevStatus": "missing",
+      "jevConfidence": 67,
+      "top": 0.67,
+      "margin": 0.34,
+      "gptStatus": "missing",
+      "gptConfidence": 95
+    },
+    {
+      "name": "AWS",
+      "jevStatus": "missing",
+      "jevConfidence": 97,
+      "top": 0.97,
+      "margin": 0.94,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "Azure",
+      "jevStatus": "missing",
+      "jevConfidence": 92,
+      "top": 0.92,
+      "margin": 0.84,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "ServiceNow CIS-Discovery certification",
+      "jevStatus": "missing",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "ServiceNow CSA certification",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 100,
+      "top": 1,
+      "margin": 1,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "English",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 93,
+      "top": 0.93,
+      "margin": 0.87,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "German",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 86,
+      "top": 0.86,
+      "margin": 0.79,
+      "gptStatus": null,
+      "gptConfidence": null
+    },
+    {
+      "name": "ITIL",
+      "jevStatus": "demonstrated",
+      "jevConfidence": 96,
+      "top": 0.96,
+      "margin": 0.93,
+      "gptStatus": null,
+      "gptConfidence": null
+    }
+  ],
+  "summary": "Weak fit (Jev) · Moderate skill coverage · poor keyword overlap. Jev handled 20/24 routable decisions; 4 escalated to GPT."
+}
