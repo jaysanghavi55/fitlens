@@ -1,0 +1,6 @@
+{
+  "id": "case-021",
+  "label": "YEARS · SATISFIED. JD sets explicit years bar on a named tech (6+ years Java); CV clearly evidences 9 years → satisfied. Bare controls (Spring Boot, PostgreSQL, REST APIs, Docker) must stay requiredLevel:null.",
+  "jobDescription": "Senior Backend Engineer\n\nLocation: Berlin / Hybrid\n\nAbout the Role\nWe are hiring a Senior Backend Engineer to own our core services.\n\nRequired Skills\n- 6+ years of professional Java development\n- Spring Boot\n- PostgreSQL\n- REST APIs\n- Docker\n\nNice to Have\n- Kafka",
+  "resume": "Sam Rivera — Senior Backend Engineer\n\nProfile\nSenior backend engineer with 9 years building Java services in production (2015-2024).\n\nExperience\n- Backend Engineer, 2015-2024: designed and operated Java microservices handling millions of requests/day.\n- Built REST APIs with Spring Boot, backed by PostgreSQL.\n- Packaged and shipped services with Docker.\n\nSkills\nJava, Spring Boot, PostgreSQL, REST APIs, Docker."
+}

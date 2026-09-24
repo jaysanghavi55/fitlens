@@ -1,0 +1,6 @@
+{
+  "id": "case-023",
+  "label": "YEARS · UNKNOWN. JD requires 5+ years Go; CV clearly evidences Go (demonstrated) but states NO duration/dates anywhere → candidateLevel:null, unknown. Absence of duration is not proof the bar is unmet. Bare controls (gRPC, Redis, Kubernetes, PostgreSQL) stay null.",
+  "jobDescription": "Backend Engineer (Go)\n\nLocation: Remote (EU)\n\nRequired Skills\n- 5+ years of hands-on Go (Golang) experience\n- gRPC\n- Redis\n- Kubernetes\n- PostgreSQL",
+  "resume": "Alex Morgan — Backend Engineer\n\nProfile\nSeasoned Go engineer. I build high-throughput microservices in Go and care about clean concurrency.\n\nWhat I do\n- Design and ship Go services exposing gRPC APIs.\n- Use Redis for caching and PostgreSQL for storage.\n- Deploy to Kubernetes.\n\nSkills\nGo, gRPC, Redis, Kubernetes, PostgreSQL."
+}

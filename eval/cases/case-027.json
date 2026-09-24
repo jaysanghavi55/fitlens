@@ -1,0 +1,6 @@
+{
+  "id": "case-027",
+  "label": "SUBJECTIVE MIXED 2. Deep AWS: CV clearly deep → satisfied. Extensive Terraform: CV ambiguous (uses TF, no scope) → unknown. Strong CI/CD: CV weak (familiar, one internship pipeline) → insufficient. Bare controls (Docker, Bash, Linux, GitHub Actions) stay null.",
+  "jobDescription": "Cloud / DevOps Engineer\n\nLocation: Remote\n\nRequired Skills\n- Deep AWS experience\n- Extensive Terraform experience\n- Strong CI/CD background\n- Docker\n- Bash\n- Linux\n- GitHub Actions",
+  "resume": "Robin Shaw — Cloud / DevOps Engineer\n\nExperience\n- 9 years on AWS: architected multi-account landing zones, VPC design, EKS, RDS, and cost optimization across 40+ accounts.\n- Use Terraform to manage infrastructure.\n- Familiar with CI/CD concepts; set up one simple pipeline during an internship.\n- Comfortable with Docker, Bash, Linux, and GitHub Actions.\n\nSkills\nAWS, Terraform, CI/CD, Docker, Bash, Linux, GitHub Actions."
+}

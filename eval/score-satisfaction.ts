@@ -161,6 +161,17 @@ for (const { g, p } of satPairs) {
     hiFalseSatRows.push(`${g.cv_id}/${g.skill}: pred satisfied@${p.satisfactionConfidence}% but gold=${g.satisfaction}`);
   }
 }
+// (a2) high-confidence false-INSUFFICIENT (over-rejection) — the OPPOSITE risk to (a). In a
+// recruitment product this unfairly penalizes a candidate. Added because case-016 hinted that
+// subjective bars ("strong X") may over-reject (Python unknown→insufficient, SQL satisfied→insufficient).
+let hiFalseInsuff = 0;
+const hiFalseInsuffRows: string[] = [];
+for (const { g, p } of satPairs) {
+  if (p.satisfaction === "insufficient" && (p.satisfactionConfidence ?? 0) >= 90 && g.satisfaction !== "insufficient") {
+    hiFalseInsuff++;
+    hiFalseInsuffRows.push(`${g.cv_id}/${g.skill}: pred insufficient@${p.satisfactionConfidence}% but gold=${g.satisfaction}`);
+  }
+}
 // (b) contract violations (candidateLevel==null ⇒ satisfaction≠unknown), from raw pre-coercion output.
 const rawViolations = [...rawByKey.values()].filter((r) => r.contractViolation);
 // Post-coercion safety check: no emitted skill should have candidateLevel==null && satisfaction≠unknown.
@@ -205,6 +216,8 @@ for (const m of satMiss) console.log(`        · ${m}`);
 console.log(`\n  [4] RISK`);
 console.log(`      high-confidence (≥90%) FALSE-satisfied : ${hiFalseSat}${satPairs.length ? `  (${show(hiFalseSat / satPairs.length)} of activated)` : ""}`);
 for (const m of hiFalseSatRows) console.log(`        · ${m}`);
+console.log(`      high-confidence (≥90%) FALSE-insufficient (over-rejection) : ${hiFalseInsuff}${satPairs.length ? `  (${show(hiFalseInsuff / satPairs.length)} of activated)` : ""}`);
+for (const m of hiFalseInsuffRows) console.log(`        · ${m}`);
 console.log(`      contract violations (candidateLevel=null ⇒ ≠unknown), RAW pre-coercion : ${rawViolations.length}`);
 for (const r of rawViolations) console.log(`        · ${r.name}: raw=${r.rawSatisfaction} (coerced → unknown)`);
 console.log(`      guardrail leaks (post-coercion violations, should be 0) : ${postViolations.length}`);

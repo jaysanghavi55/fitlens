@@ -1,0 +1,6 @@
+{
+  "id": "case-025",
+  "label": "PRODUCTION/CONTEXT TRIO. Per-tool production bar. Kafka: CV operates production clusters → satisfied. Spark: CV bootcamp capstone, explicitly not production → insufficient. Airflow: CV bare \"experience\", no context → unknown. Bare controls (Python, SQL, Docker, S3) stay null. Also probes the tool-vs-activity trigger boundary observed in case-016.",
+  "jobDescription": "Data Platform Engineer\n\nLocation: Amsterdam\n\nRequired Skills\n- Production experience operating Apache Kafka\n- Must have run Apache Spark workloads in production\n- Production experience with Apache Airflow\n- Python\n- SQL\n- Docker\n- S3",
+  "resume": "Chris Doyle — Data Platform Engineer\n\nExperience\n- Operate production Apache Kafka clusters (3 brokers, ~50k messages/sec) powering our event pipeline.\n- Used Apache Spark for my data-engineering bootcamp capstone project; have not run Spark in production.\n- Have experience with Apache Airflow.\n- Write Python and SQL for data tooling; package jobs with Docker; store data in S3.\n\nSkills\nApache Kafka, Apache Spark, Apache Airflow, Python, SQL, Docker, S3."
+}

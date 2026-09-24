@@ -1,0 +1,6 @@
+{
+  "id": "case-026",
+  "label": "SUBJECTIVE MIXED. Strong Python: CV clearly strong → satisfied. Advanced SQL: CV basic/intro → insufficient. Expert Kubernetes: CV genuinely AMBIGUOUS (uses k8s but no depth/scope signal) → unknown (the ambiguity-absorption test; must NOT default to harsh insufficient). Bare controls (Docker, Git, Linux, Pandas) stay null.",
+  "jobDescription": "Machine Learning Engineer\n\nLocation: London\n\nRequired Skills\n- Strong Python skills\n- Advanced SQL\n- Expert-level Kubernetes\n- Docker\n- Git\n- Linux\n- Pandas",
+  "resume": "Dana Klein — Machine Learning Engineer\n\nExperience\n- 8 years of Python; authored two internal Python libraries used across teams; write and ship production ML services in Python daily.\n- Took an introductory SQL course; wrote a few basic SELECT queries.\n- Deployed our models to Kubernetes.\n- Day-to-day: Docker, Git, Linux, Pandas.\n\nSkills\nPython, SQL, Kubernetes, Docker, Git, Linux, Pandas."
+}

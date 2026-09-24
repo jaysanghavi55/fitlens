@@ -1,0 +1,6 @@
+{
+  "id": "case-030",
+  "label": "BARE-CONTROL PROTECTOR (FPR/precision). A JD full of plain skill names with NO level words, plus exactly ONE explicit years threshold (3+ years Python → satisfied via CV 5 years). Everything else (Django, Flask, PostgreSQL, Redis, Docker, AWS, Git, Linux, REST APIs, Celery) must stay requiredLevel:null. Protects the 100% threshold precision / 0% FPR result.",
+  "jobDescription": "Backend Engineer\n\nLocation: Remote\n\nRequired Skills\n- 3+ years of Python\n- Django\n- Flask\n- PostgreSQL\n- Redis\n- Docker\n- AWS\n- Git\n- Linux\n- REST APIs\n- Celery",
+  "resume": "Morgan Reed — Backend Engineer\n\nProfile\nBackend engineer with 5 years of Python (2019-2024).\n\nExperience\n- Build web backends with Django and Flask, backed by PostgreSQL and Redis.\n- Deploy on AWS with Docker; use Celery for async tasks.\n- Everyday tools: Git, Linux, REST APIs.\n\nSkills\nPython, Django, Flask, PostgreSQL, Redis, Docker, AWS, Git, Linux, REST APIs, Celery."
+}
