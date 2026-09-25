@@ -17,3 +17,7 @@ node_modules
 .DS_Store
 # TS incremental build cache
 tsconfig.tsbuildinfo
+
+# Next.js auto-generated AI-agent instruction files
+AGENTS.md
+CLAUDE.md

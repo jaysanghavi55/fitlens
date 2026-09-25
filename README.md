@@ -293,7 +293,7 @@ pnpm dev            # http://localhost:3000
 pnpm build && pnpm start
 ```
 
-Get a key at the [Vercel Dashboard](https://vercel.com/dashboard) → **AI Gateway** → **API Keys** (a card must be on file to unlock free credits; set a small daily spend limit).
+Get a key at the [Vercel Dashboard](https://vercel.com/dashboard) → **AI Gateway** → **API Keys**.
 
 ### Running the eval (offline — no API, no cost)
 
@@ -330,7 +330,7 @@ node eval/cefr.test.ts                             # deterministic CEFR unit tes
 - [x] PDF / DOCX ingestion · production build
 - [x] README · portfolio screenshots
 - [x] Architecture diagram
-- [ ] Final release tag · GitHub publication
+- [x] Final release tag · GitHub publication
 
 ## Disclaimer
 
