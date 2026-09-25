@@ -1,205 +1,343 @@
 # FitLens
 
-*Three lenses on your fit — a CV-to-job matching tool that returns **calibrated, typed decisions** instead of free-form text — powered by [Jev](https://www.typesafe.ai/), a System-One decision model, running through the [Vercel AI Gateway](https://vercel.com/docs/ai-gateway).*
+*Evidence-grounded CV-to-job matching with hybrid AI routing, requirement-level reasoning, and held-out evaluation.*
 
-Paste a job description and your CV (or upload a PDF), and the app scores your fit, classifies **how well the CV evidences each required skill**, and — crucially — tells you **how confident it is** in every judgment, abstaining when a call is genuinely too close.
+FitLens is an experimental GenAI decision-support system that compares a candidate CV with a job description. Instead of asking only *"does this CV mention the right skills?"*, it separates two fundamentally different questions:
 
-> **Why this exists:** most "AI resume checkers" wrap an LLM that outputs prose you can't measure. This project is an experiment in the opposite direction: a fast decision model that returns probabilities you *can* measure, calibrate, and benchmark. The [evaluation layer](#evaluation) is the point.
+1. **Is there evidence** that the candidate has this competency?
+2. **Does that evidence satisfy the level** this job actually requires?
 
-![FitLens — the Should Apply verdict, three fit lenses, and CV tone for a GenAI Engineer CV](docs/screenshots/Analysis.png)
+That distinction is the central design principle of the project — and the reason FitLens is built as a measurable experiment rather than another prose-generating "AI resume checker."
+
+> **Why the split matters.** A CV that says *"completed a Spark bootcamp capstone; have not used Spark in production"* against a job requiring *"production Apache Spark experience"* should not collapse to `Spark → Match`. FitLens reports both facts: **Evidence: Demonstrated** and **Requirement satisfaction: Below requirement**. Both are simultaneously correct.
+
+![FitLens — paste a job description and a CV; the pipeline extracts each requirement and assesses it against the evidence.](docs/screenshots/strong-01-input.png)
 
 ---
 
-## What it does
+## Architecture
 
-For a given job description + CV, it returns:
+A pipeline that mirrors a System-One / System-Two split, with a confidence router in the middle and a deterministic layer around the model where the domain allows it.
 
-| Output | What it means |
+```mermaid
+flowchart TD
+    A["Job Description + CV"]
+    A --> B["Requirement Extraction<br/>gpt-5-mini reads the JD and<br/>emits distinct atomic competencies"]
+    B --> C["Evidence Classification<br/>Jev — one batched decision call<br/>across every requirement"]
+    C --> D{"Confidence Router<br/>top prob below 0.80<br/>OR margin under 0.15?"}
+    D -->|confident| E["Accept Jev's call"]
+    D -->|uncertain| F["gpt-5-mini re-classifies<br/>status + confidence + CV quote"]
+    E --> G["Evidence label<br/>Demonstrated / Inferred /<br/>Not verified / Not demonstrated"]
+    F --> G
+    G --> H{"Explicit JD threshold?<br/>5+ years · production · C1 · advanced"}
+    H -->|no| I["Evidence label only"]
+    H -->|yes| J["Level / Satisfaction reasoning<br/>+ deterministic CEFR guardrail"]
+    J --> K(["Satisfied · Below requirement · Not established"])
+    classDef jev fill:#dbeafe,stroke:#3b82f6,color:#1e3a8a;
+    classDef llm fill:#ede9fe,stroke:#8b5cf6,color:#4c1d95;
+    classDef det fill:#dcfce7,stroke:#16a34a,color:#14532d;
+    class C jev;
+    class B,F llm;
+    class J det;
+```
+
+<details>
+<summary>Same pipeline as plain text</summary>
+
+```
+                Job Description + CV
+                         │
+                         ▼
+              Requirement Extraction         gpt-5-mini reads the JD,
+              (atomic requirements)          emits distinct competencies
+                         │
+                         ▼
+              Evidence Classification         Jev — one batched decision
+                    (Jev)                     call across every requirement
+                         │
+                  Confidence Router           top prob < 0.80 OR
+                  ┌──────┴──────┐             top-two margin < 0.15 → escalate
+              confident      uncertain
+                  │              │
+                accept        gpt-5-mini re-classifies
+                  │              (status + confidence + CV quote)
+                  └──────┬───────┘
+                         ▼
+              Evidence: Demonstrated / Inferred / Not verified / Not demonstrated
+                         │
+                         ▼
+              Explicit JD threshold?          "5+ years", "production",
+                  ┌──────┴──────┐             "C1", "advanced"…
+                  no            yes
+                  │              │
+                finish           ▼
+                         Level / Satisfaction reasoning
+                         (+ deterministic CEFR guardrail)
+                                 │
+                    Satisfied · Below requirement · Not established
+```
+
+</details>
+
+**Jev owns first-pass evidence classification. `gpt-5-mini` handles requirement extraction, ambiguous evidence cases escalated by the confidence router, and explicit level/satisfaction reasoning.** Only skills Jev is *unsure* about (winning-class probability below `0.80`, or a top-two probability margin under `0.15`) escalate to `gpt-5-mini`. Confident-but-unquoted skills get a cheap evidence-only backfill; Jev keeps ownership of the status. Every escalated skill is badged in the UI, so you can see exactly where the fast model deferred.
+
+---
+
+## Core design principles
+
+**1. Evidence is not qualification.** *"The candidate has this skill"* and *"the candidate meets this job's bar for it"* are different claims. A competency can be `Evidence: Demonstrated` **and** `Requirement: Below requirement` without contradiction.
+
+**2. Unknown is not insufficient.** If a job wants *5+ years Kubernetes* and the CV says *"experienced Kubernetes engineer"*, the CV neither establishes five years **nor** proves fewer. FitLens returns `Satisfaction: Unknown`. Absence of evidence that a threshold is met is not evidence that it is unmet.
+
+**3. Requirements are atomic.** Fusing *"ServiceNow ITOM / Discovery & CMDB"* into one competency produces false positives — strong CMDB evidence should not imply strong Discovery. Distinct competencies that can independently be present or absent are kept separate and independently auditable.
+
+**4. Use cheap classification where possible.** A cost-aware cascade (Jev first, GPT only on ambiguity) instead of routing every decision through the larger model. Router thresholds were chosen from an offline risk-coverage sweep, not intuition, then frozen before held-out testing.
+
+**5. Ground decisions in literal text.** A skill does not become `Demonstrated` because a *related* technology appears. JD `SNMP` + CV *"troubleshot MID Server connectivity"* → `Not verified`. Semantic similarity is not treated as evidence.
+
+---
+
+## Evidence classification
+
+Every required competency is classified into one of four evidence states. These answer only **what evidence exists in the CV** — not whether it meets the job's level.
+
+| Status | Meaning |
 |---|---|
-| **Fit Level** | Jev's holistic match (Strong / Moderate / Weak) as a 0–100 score + confidence |
-| **Should Apply** | A **three-state** recommendation — **Yes / Borderline / No** — with an abstention band so it says "Borderline" instead of faking a confident coin-flip |
-| **Skill Match** | A **deterministic** 0–100 score aggregated from the per-skill evidence statuses — a transparent, no-model baseline that sits alongside Jev's holistic take |
-| **Keyword Match** | Naive keyword overlap — deliberately included as a *foil* to show how little literal term-matching actually tells you |
-| **CV Tone** | Professional / Technical / Generic |
-| **Skill Breakdown** | Per required skill: a **4-state evidence status** + confidence %, and the exact CV sentence that justifies it |
+| **Demonstrated** | The CV directly supports the competency |
+| **Inferred** | The competency is strongly implied but not directly stated |
+| **Not verified** | Related evidence exists, but the specific capability can't be established |
+| **Not demonstrated** | The required competency is not supported by the CV |
 
-The skill list is **not hardcoded** — it's extracted from whatever job you paste, so the breakdown adapts to every role.
+The distinction between **Inferred** and **Not verified** is the crux — the difference between "one dominant tool fits this sentence" and "several plausible tools fit." (See [`eval/rubric.md`](eval/rubric.md).)
 
-### Three lenses on the same CV, on purpose
+![CV Evidence — every job-relevant competency classified into one of the four states, each with the CV quote that supports it and a badge showing whether Jev or the escalation model made the call.](docs/screenshots/strong-04-evidence-1.png)
 
-The app shows **Keyword Match**, **Skill Match**, and **Fit Level** side by side because they *disagree*, and the disagreement is the insight:
+## Requirement assessment
 
-- **Keyword Match** — dumb string overlap. A CV that parrots the job's vocabulary scores high here even with no real evidence.
-- **Skill Match** — a deterministic roll-up of the evidence statuses (no model, fully auditable).
-- **Fit Level / Should Apply** — Jev's holistic judgment.
+When the JD specifies an explicit threshold — *6+ years Python*, *production Kafka*, *German C1*, *advanced SQL* — FitLens adds a second assessment on top of the evidence label:
 
-When these three diverge, you're looking at exactly the cases keyword-matchers get wrong.
+- **Satisfied** — the CV positively establishes a level meeting the threshold.
+- **Below requirement** — the CV positively establishes a level below the threshold.
+- **Not established** — the CV has insufficient information to determine whether the threshold is met.
 
-### The 4-state evidence model
+*Implementation note:* internally the satisfaction states are `satisfied`, `insufficient`, and `unknown`; the UI presents these as **Satisfied**, **Below requirement**, and **Not established** respectively.
 
-Binary "has it / doesn't" throws away the most interesting cases. Every required skill is classified as one of:
+Requirements without an explicit threshold (*Python*, *Salesforce*, *HL7*) get an evidence label only — FitLens does not invent a bar the JD never stated.
 
-| Status | Meaning | Example |
-|---|---|---|
-| **demonstrated** | Named, direct experience | *"…fine-tuned models in **PyTorch**…"* |
-| **inferred** | The specific tool is unambiguously implied though not named | *"packaged into **containers**"* ⇒ Docker |
-| **unverified** | Only a general capability is present; the CV doesn't pin down the specific tool | *"stored embeddings in a **vector index**"* — Pinecone? pgvector? FAISS? |
-| **missing** | No evidence, or an explicit gap | *"I haven't worked with AWS"* |
+![Requirement Assessment — the three outcomes in a single run: Satisfied (the CV proves the required level) and Below requirement (the CV establishes a lower level).](docs/screenshots/weak-03-requirements-1.png)
 
-The distinction between **inferred** and **unverified** is the crux — it's the difference between "one dominant tool fits this sentence" and "several plausible tools fit." (See [`eval/rubric.md`](eval/rubric.md).)
+![The same run's Not established group — thresholds the CV does not provide enough information to decide, kept visibly separate from a genuine shortfall.](docs/screenshots/weak-04-requirements-2.png)
 
-![Skill Breakdown — every required skill classified demonstrated / inferred / unverified / gap, with the exact CV sentence and a badge showing whether Jev or the escalated GPT model decided it](docs/screenshots/Breakdown.png)
+### Worked example: one skill, two questions
+
+```
+JD:   Production experience running Apache Spark workloads
+CV:   Completed a data-engineering bootcamp capstone using
+      Apache Spark; have not run Spark in production.
+
+Evidence:                Apache Spark → Demonstrated      (the candidate really has used Spark)
+Requirement satisfaction: Production   → Below requirement (bootcamp, explicitly not production)
+```
+
+### CEFR language reasoning — a guardrail, not a guess
+
+Language requirements exposed a classic GenAI failure mode: an LLM will happily read *"Spanish – fluent"* as `≈ C1`, even though the CV establishes no CEFR level. FitLens uses **deterministic** CEFR comparison over the fixed ordering `A1 < A2 < B1 < B2 < C1 < C2`, and only compares when both sides carry an explicit CEFR token:
+
+```
+German   required C1, CV C1        → Satisfied
+French   required C1, CV B1        → Below requirement
+Spanish  required C1, CV "fluent"  → Not established   (Evidence: Demonstrated stands; the C1 requirement is simply unproven)
+```
+
+During held-out testing the satisfaction model once returned `"fluent" → satisfied`. FitLens preserves the raw model decision for evaluation, while the deterministic CEFR layer overrides the unsupported comparison to `Unknown`. **Use LLMs where semantic reasoning helps; prefer deterministic validation when the domain has explicit, machine-verifiable rules.**
+
+### Robust output identity — not every failure is a model failure
+
+A requirement can enter the model as `Go` and come back as `Golang` or `Go (Golang)`; a fragile string join would silently drop an otherwise-correct answer. The satisfaction layer was hardened so that **ID determines identity, name is metadata**: matching prioritizes stable IDs, then a conservative normalized-name / alias fallback, and unmatched results are made observable instead of silently discarded. Joins, schemas, and observability matter as much as model reasoning.
 
 ---
 
-## How it works
+## Three independent fit lenses
 
-A pipeline that mirrors the System-One / System-Two split, with a **confidence router** in the middle:
+FitLens deliberately does **not** collapse everything into one number. The interface shows three lenses that answer different questions and are *expected* to disagree:
+
+- **Overall Fit** — Jev's holistic candidate-job suitability.
+- **Skill Coverage** — how much relevant competency evidence appears in the CV.
+- **Keyword Overlap** — literal terminology overlap between CV and JD.
 
 ```
-Job Description + CV
-        │
-        ▼
-┌───────────────────────────────────┐
-│ STAGE 1 — LLM (generative)        │  "Read the job, list its required skills"
-│ openai/gpt-5-mini                 │  → [Python, PyTorch, LangChain, Docker, …]
-└───────────────────────────────────┘
-        │  each skill becomes a typed 4-way CHOICE question
-        ▼
-┌───────────────────────────────────┐
-│ STAGE 2 — Jev (decision)          │  ONE batched call answers everything:
-│ typesafe-ai/jev                   │  fit_level · should_apply · keyword_match ·
-│                                   │  cv_tone · a 4-state status per skill,
-│                                   │  each with a calibrated probability
-└───────────────────────────────────┘
-        │
-        ▼
-┌───────────────────────────────────┐
-│ CONFIDENCE ROUTER                 │  For each skill: is Jev's top choice shaky?
-│                                   │  (top prob < 0.8 OR top-two margin < 0.15)
-│                                   │        │ uncertain skills only
-│                                   │        ▼
-│                          ┌─────────────────────────────────┐
-│                          │ gpt-5-mini re-classifies them   │
-│                          │ → status + confidence + the     │
-│                          │   exact CV sentence, in 1 call   │
-│                          └─────────────────────────────────┘
-└───────────────────────────────────┘
-        │  confident Jev skills lacking a literal quote → 1 GPT backfill call for evidence
-        ▼
-┌───────────────────────────────────┐
-│ Normalization layer               │  raw probabilities → stable app schema;
-│ (app/api/analyze/route.ts)        │  deterministic Skill Match; 3-state apply band
-└───────────────────────────────────┘
-        │
-        ▼
-     Result card
+Overall Fit       53   Moderate
+Skill Coverage    96   Excellent
+Keyword Overlap   67   Good
 ```
 
-**Jev is the decision-maker; the LLM parses text and covers Jev's uncertainty.** Jev classifies every skill in one fast batched call; only the skills it's *unsure* about (top probability below 0.8, or a narrow margin to the runner-up) are escalated to gpt-5-mini — which returns its own status, confidence, and a grounded evidence quote. Confident-but-unquoted skills get a cheap evidence-only backfill (Jev keeps ownership of the status). Every escalated skill is badged in the UI, so you can see exactly where the fast model deferred.
+Excellent skill coverage does **not** mean every explicit requirement is satisfied — which is exactly why the Requirement Assessment panel exists alongside the scores. Satisfaction is a **separate decision-support lens**; it is intentionally *not* wired into Overall Fit, Skill Coverage, or the Application Outlook (see [Scope](#scope)).
 
-> **Score vs. confidence are distinct.** A fit *score* of 55 means "middling match." A *confidence* of 83% means "Jev is quite sure it's a Moderate match." Two different numbers measuring two different things — kept separate everywhere, on purpose, because it matters for calibration analysis.
+![A strong candidate — Application Outlook "Worth applying," with the three lenses reading independently high.](docs/screenshots/strong-02-outlook-lenses.png)
 
-> **Why "Borderline" exists.** `Should Apply` has a calibrated abstention band: apply-probability ≥ 0.60 → **Yes**, ≤ 0.40 → **No**, and anything in between → **Borderline**. A system that says "too close to call" when it genuinely is beats one that flip-flops between confident Yes and confident No on identical input.
+![The same three lenses on a weaker candidate — Application Outlook "Weak match." Note Skill Coverage can still read respectably while the outlook is negative: coverage is evidence of skills, not proof the required levels are met.](docs/screenshots/weak-02-outlook-lenses.png)
 
 ---
 
 ## Evaluation
 
-The interesting claim this project makes — *"this skill is `unverified`"* — is **checkable**. `unverified` isn't a guess about the candidate's true skill (unknowable from a CV); it's a claim about the **text**: does the CV pin down the specific tool? A second human reading the same CV can agree or disagree, which makes it a text-classification task with a ground truth.
+The interesting claim FitLens makes — *"this skill is Not verified"* — is **checkable**: it's a claim about the text, not about the candidate's true ability, so a second reader can agree or disagree. [`eval/`](eval/) is an offline harness (no API calls, no dependencies) that scores per-skill status against human gold labels.
 
-[`eval/`](eval/) is an offline harness that scores the pipeline's per-skill status against human gold labels — **no dependencies, no API calls**, just `node eval/score.ts`:
+### Methodology
 
-- **Accuracy, macro-F1, per-class precision/recall/F1**
-- **Confusion matrix** — where `inferred` and `unverified` get swapped
-- **Quadratic-weighted κ + ordinal MAE** — agreement that penalizes big ordinal jumps
-- **Expected Calibration Error** — is "85% confident" right ~85% of the time?
-- **Router slice** — do the GPT-escalated skills actually beat Jev on accuracy? (Does escalation earn its cost?)
+The project follows a pre-registration discipline to avoid fitting to the eval set:
 
-The current seed set is small — treat the numbers as illustrative, not significant. The methodology is the point; see [`eval/README.md`](eval/README.md).
+```
+hypothesis → author cases → write human gold labels BEFORE model output
+→ freeze the pre-registration → capture model responses → freeze outputs
+→ score → classify disagreements → identify coherent failure modes → only then change the system
+```
+
+It deliberately avoids the *run → see failure → tweak prompt → rerun same example → report improved accuracy* loop.
+
+### Results
+
+```
+Development set (influenced development — optimistic):
+  153 requirement pairs · 96.1% exact-status accuracy · QWK 0.968 · MAE 0.052 · ECE 1.2%
+
+Held-out Phase 2 (unseen, deliberately diverse):
+  103 requirement pairs · 86.4% exact-status accuracy · QWK 0.875 · MAE 0.204 · ECE 8.5%
+```
+
+The **lower held-out number was more informative than the higher dev number.** It exposed a coherent failure mode: the system modeled the *presence* of evidence well, but did not reliably model whether that evidence was *sufficient for the required level* — which directly motivated the Level / Satisfaction layer.
+
+**Router slice:** escalation earns its cost. On the uncertain slice, accepting Jev's shaky answers scored 51.9%; escalating them to `gpt-5-mini` scored 81.5% (**8 fixed, 0 broken**). Thresholds (`0.80` / `0.15`) were the best-performing observed setting on the eval set, then frozen. Full per-row disagreement analysis lives in [`eval/BASELINE.md`](eval/BASELINE.md) and [`eval/PREREG.md`](eval/PREREG.md).
+
+### Synthetic-data disclosure
+
+The evaluation corpus is **synthetic**, hand-constructed to probe specific matching behaviors and edge cases. The metrics are **not** a claim of production recruiting accuracy on a representative population.
+
+> A defensible statement: *FitLens achieved 86.4% exact evidence-status accuracy on a held-out synthetic benchmark of 103 requirement pairs across multiple domains and edge cases.* Production validation would require substantially larger, independently labeled real-world data plus fairness, reliability, and calibration studies.
+
+---
+
+## What failed (and what it taught)
+
+1. **Requirement conflation** — grouped competencies (`ITOM / Discovery / CMDB`) inflated coverage → *atomic extraction*.
+2. **Evidence confused with proficiency** — coursework/POC correctly *demonstrated* a tool while failing a *production* requirement → *separate Evidence from Level/Satisfaction*.
+3. **CEFR semantic overreach** — `"fluent" ≈ C1` → *deterministic CEFR comparison*.
+4. **Subjective thresholds** — *strong / advanced / expert / deep / extensive* are far less objective than *5+ years / C1 / production*, and held-out testing showed more uncertainty there. Subjective satisfaction judgments stay **report-only** and never auto-drive a rejection.
+5. **Activity-semantic alignment** — similar-looking experience isn't always equivalent: *"3+ years deploying applications to Kubernetes"* does not necessarily establish *"3+ years operating Kubernetes infrastructure in production."* FitLens can still struggle when the duration matches numerically but the underlying activity differs.
+6. **Model nondeterminism** — extraction/naming drift, mitigated with atomic extraction, stable IDs, alias handling, frozen eval artifacts, and regression tests.
+7. **Alternative requirements (A or B)** — atomic extraction can surface alternatives such as *"Power BI or Tableau"* or *"ACCA / CIMA / CPA / CFA"* as separate competencies. A candidate may satisfy the actual requirement through one alternative while the others still read as *Not demonstrated* in CV Evidence, which can make Skill Coverage look lower than the candidate's practical fit. Alternative-group semantics are not currently modeled explicitly.
+
+---
+
+## Scope
+
+**Supported:** JD requirement extraction · atomic competency decomposition · CV evidence classification · Jev-first hybrid routing with GPT escalation · certifications & languages · explicit threshold detection · duration / CEFR / experience-depth comparisons · Satisfied / Below requirement / Not established outcomes · deterministic CEFR guardrails · evidence grounding · raw-model-vs-guarded-system evaluation · PDF/DOCX ingestion · requirement-level UI explanations · collapsible CV evidence.
+
+**Intentionally out of scope:** Satisfaction does **not** automatically modify Overall Fit, Skill Coverage, or Application Outlook. That layer stays a separate lens until validation is strong enough to justify folding it into scoring. FitLens is built to **support human judgment, not automate hiring decisions.**
 
 ---
 
 ## Tech stack
 
-- **Next.js 16** (App Router) + **React 19** + **TypeScript**
-- **Vercel AI SDK 7** — `experimental_evaluate` (Jev) and `generateObject` (LLM), via the AI Gateway
-- **Tailwind CSS** + **shadcn/ui**
-- **Zod** for schema validation
-- **unpdf** + **mammoth** for PDF / DOCX text extraction
-- **pnpm**
+- **Next.js 16.3.3** (App Router) · **React 19** · **TypeScript 5.7.3**
+- **Vercel AI SDK 7** (`ai@7`) — Jev via `experimental_evaluate`, `gpt-5-mini` via `generateObject`, both through the [Vercel AI Gateway](https://vercel.com/docs/ai-gateway)
+- Models: **`typesafe-ai/jev`** (decision) · **`openai/gpt-5-mini`** (extraction / escalation)
+- **Tailwind CSS 4** + **shadcn/ui** (`@base-ui/react`)
+- **Zod 4** for schema validation; deterministic guardrails in `lib/cefr.ts`
+- **unpdf** + **mammoth** for PDF / DOCX extraction
+- **pnpm** · offline TypeScript eval harness (frozen JSONL gold sets, regression assertions, calibration analysis)
 
----
+## Repository structure
 
-## Running it locally
+```
+FitLens/
+├── app/
+│   └── api/
+│       ├── analyze/route.ts      # main pipeline: extract → Jev → router → assembly
+│       └── extract/route.ts      # PDF / DOCX text extraction
+├── components/
+│   ├── match-analyzer.tsx        # input + orchestration (client)
+│   ├── result-card.tsx           # result surface (server component — no eval telemetry leaks)
+│   └── collapsible-card.tsx      # progressive-disclosure wrapper (client)
+├── lib/
+│   ├── cefr.ts                   # deterministic CEFR comparator
+│   └── types.ts
+├── eval/
+│   ├── cases/                                # JD + CV fixtures
+│   ├── results/  results-phase3/             # frozen model outputs (do not overwrite)
+│   ├── BASELINE.md  PREREG.md  PHASE3.md  PHASE3-GEN.md  COVERAGE.md
+│   ├── gold.jsonl  gold-phase2.jsonl  gold-satisfaction.jsonl
+│   ├── score.ts  score-satisfaction.ts  sweep.ts  expect.ts  capture.ts  cefr.test.ts
+│   └── rubric.md
+└── README.md
+```
 
-### Prerequisites
-- Node.js 20+ for the app (the eval scorer uses native TS type-stripping — Node **22+**)
-- [pnpm](https://pnpm.io/installation) (`npm install -g pnpm`)
-- A **Vercel AI Gateway API key** — see below
+## Running locally
 
-### 1. Clone and install
+**Prerequisites:** Node.js **20+** for the app (the eval scorer uses native TypeScript type-stripping — Node **22+**), [pnpm](https://pnpm.io/installation), and a **Vercel AI Gateway API key** (one key powers both models).
+
 ```bash
+# 1. Clone and install
 git clone https://github.com/jaysanghavi55/fitlens.git
 cd fitlens
 pnpm install
+
+# 2. Add your API key
+cp .env.example .env.local
+#    then set AI_GATEWAY_API_KEY=your_actual_key   (.env.local is gitignored)
+
+# 3. Run
+pnpm dev            # http://localhost:3000
+
+# Production build
+pnpm build && pnpm start
 ```
 
-### 2. Add your API key
-The app calls Jev and gpt-5-mini through the Vercel AI Gateway, so you need your own key:
+Get a key at the [Vercel Dashboard](https://vercel.com/dashboard) → **AI Gateway** → **API Keys** (a card must be on file to unlock free credits; set a small daily spend limit).
 
-1. Go to the [Vercel Dashboard](https://vercel.com/dashboard) → **AI Gateway** → **API Keys** → create a key.
-   *(A credit or debit card must be on file to unlock the free credits; set a small daily spend limit to stay safe.)*
-2. Copy the template and paste your key:
-   ```bash
-   cp .env.example .env.local
-   ```
-3. Open `.env.local` and set:
-   ```
-   AI_GATEWAY_API_KEY=your_actual_key_here
-   ```
-   `.env.local` is gitignored — your key stays local and is never committed.
+### Running the eval (offline — no API, no cost)
 
-### 3. Run
 ```bash
-pnpm dev
-```
-Open http://localhost:3000, paste a job description and CV (or upload a PDF/DOCX), and hit **Analyze Match**.
-
-![The FitLens input screen — paste a job description and your CV, or upload a PDF/DOCX](docs/screenshots/Start.png)
-
-### Run the eval
-```bash
-node eval/score.ts        # scores eval/results/ against eval/gold.jsonl — no deps, no API calls
+node eval/score.ts                                 # dev set   → gold.jsonl
+node eval/score.ts gold-phase2.jsonl               # held-out  → Phase 2 benchmark
+node eval/score-satisfaction.ts gold-satisfaction.jsonl   # requirement satisfaction
+node eval/sweep.ts                                 # router threshold risk-coverage sweep
+node eval/expect.ts                                # range-based regression assertions (non-zero exit on failure)
+node eval/cefr.test.ts                             # deterministic CEFR unit tests
 ```
 
----
-
-## A note on determinism
-
-Every score is the output of a model call (Jev + up to three gpt-5-mini calls), and models are stochastic — the same input can drift a point or two between runs. Unambiguous judgments (a named skill → `demonstrated` at 100%) are rock-solid; only **boundary cases** flicker — a fit score near the Strong/Moderate cutoff, or a skill on the `inferred`/`unverified` line. That's not noise to hide, it's signal: it's precisely why the abstention band and calibration analysis exist.
+`eval/capture.ts` re-runs the **live** pipeline and spends gateway budget — run it only intentionally, and never over the frozen `results/` or `results-phase3/` namespaces.
 
 ---
 
-## Roadmap
+## Key lessons
 
-The working demo is done. The research layer is where this becomes a real evaluation of a decision model — some of it now shipped:
+1. **Model output is not evaluation** — a plausible response is not evidence the system generalizes.
+2. **Evidence is not qualification** — demonstrating a technology ≠ meeting the required level.
+3. **Unknown is valuable** — a trustworthy system abstains when the source doesn't establish an answer.
+4. **Not everything should be an LLM** — closed, deterministic domains (CEFR) belong to explicit guardrails.
+5. **GenAI failures are often software failures** — identity joins, schemas, serialization, and UI semantics matter as much as model reasoning.
+6. **Held-out failures beat high benchmark scores** — the most important improvements came from experiments where performance *dropped*.
 
-- [x] **4-state evidence model** — `demonstrated / inferred / unverified / missing`, not binary has-it/doesn't
-- [x] **Confidence-based routing** — Jev handles what it's sure of; uncertain skills escalate to an LLM. Thresholds are explicit hypotheses, tuned against eval evidence.
-- [x] **Abstention band** — `Should Apply` returns Borderline in the coin-flip zone instead of forcing Yes/No.
-- [x] **Evaluation harness** — offline scorer with confusion matrix, per-class F1, weighted κ, ECE, and a router slice.
-- [ ] **Larger labeled dataset** — 200+ cases across an edge-case taxonomy (explicit / synonym / transferable / negation / ambiguous).
-- [ ] **Second annotator + inter-annotator agreement** (Cohen's κ) on the `inferred`/`unverified` boundary.
-- [ ] **Baselines** — TF-IDF, sentence-embedding similarity, and an LLM judge, to measure what Jev actually buys you.
-- [ ] **Risk–coverage curve** for the router — how much can be decided autonomously at each confidence threshold.
+## Status — portfolio release
+
+- [x] Atomic requirement extraction
+- [x] Evidence classifier + Jev → GPT confidence routing
+- [x] Held-out evidence evaluation
+- [x] Level / Satisfaction reasoning with abstention (Unknown)
+- [x] Deterministic CEFR guardrail + robust satisfaction identity joins
+- [x] Requirement Assessment UI + collapsible CV Evidence view
+- [x] PDF / DOCX ingestion · production build
+- [x] README · portfolio screenshots
+- [x] Architecture diagram
+- [ ] Final release tag · GitHub publication
+
+## Disclaimer
+
+FitLens is an experimental, educational project. It is **not** intended to make autonomous hiring decisions, rank individuals for employment, or replace human evaluation. CVs omit relevant experience, job descriptions contain ambiguous requirements, and language-model outputs can be wrong. Treat FitLens as an explainable decision-support tool, not a hiring authority.
+
 
 ---
 
-## Project status
-
-**v1** — working demo: two-stage pipeline with a confidence router, 4-state evidence model, three-lens scoring, calibrated abstention, dynamic skill breakdown, PDF/DOCX upload, model-agnostic normalization layer, and an offline eval harness. Research phase in progress.
-
-## License
-
-MIT
+<sub>**Suggested GitHub description:** Evidence-grounded CV/job matching with hybrid LLM routing, explicit requirement satisfaction, abstention, deterministic guardrails, and held-out evaluation.</sub>
+<sub>**Topics:** `generative-ai` `llm` `machine-learning` `llm-evaluation` `responsible-ai` `typescript` `nextjs` `model-routing` `ai-engineering` `evaluation`</sub>

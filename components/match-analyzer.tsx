@@ -18,6 +18,8 @@ import {
   FileSearch,
   CheckCircle2,
   Circle,
+  Minimize2,
+  Maximize2,
 } from "lucide-react"
 
 // Keep in sync with the guard in app/api/extract/route.ts.
@@ -97,6 +99,7 @@ function AnalysisProgress() {
 export function MatchAnalyzer() {
   const [jobDescription, setJobDescription] = useState("")
   const [resume, setResume] = useState("")
+  const [cvExpanded, setCvExpanded] = useState(true)
   const [analysis, setAnalysis] = useState<MatchAnalysis | null>(null)
   const [isLoading, setIsLoading] = useState(false)
   const [isUploading, setIsUploading] = useState(false)
@@ -166,31 +169,49 @@ export function MatchAnalyzer() {
               />
             </div>
 
-            <div className="flex flex-col gap-2">
-              <div className="flex items-center justify-between">
-                <Label htmlFor="resume">My CV / Resume</Label>
-                <label className="inline-flex cursor-pointer items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground">
-                  {isUploading ? (
-                    <Loader2 className="h-3.5 w-3.5 animate-spin" />
-                  ) : (
-                    <Upload className="h-3.5 w-3.5" />
+            <div className="flex flex-col gap-2 self-start">
+              <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
+                <div className="flex items-center gap-2">
+                  <Label htmlFor="resume">My CV / Resume</Label>
+                  {resume.length > 0 && (
+                    <span className="text-xs tabular-nums text-muted-foreground/70">
+                      {resume.length.toLocaleString()} chars
+                    </span>
                   )}
-                  {isUploading ? "Reading…" : "Upload PDF / DOCX"}
-                  <input
-                    type="file"
-                    accept=".pdf,.docx,.txt"
-                    className="hidden"
-                    onChange={handleFileUpload}
-                    disabled={isUploading}
-                  />
-                </label>
+                </div>
+                <div className="flex items-center gap-3">
+                  <button
+                    type="button"
+                    onClick={() => setCvExpanded((v) => !v)}
+                    aria-expanded={cvExpanded}
+                    className="inline-flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    {cvExpanded ? <Minimize2 className="h-3.5 w-3.5" /> : <Maximize2 className="h-3.5 w-3.5" />}
+                    {cvExpanded ? "Minimize" : "Expand"}
+                  </button>
+                  <label className="inline-flex cursor-pointer items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground">
+                    {isUploading ? (
+                      <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                    ) : (
+                      <Upload className="h-3.5 w-3.5" />
+                    )}
+                    {isUploading ? "Reading…" : "Upload PDF / DOCX"}
+                    <input
+                      type="file"
+                      accept=".pdf,.docx,.txt"
+                      className="hidden"
+                      onChange={handleFileUpload}
+                      disabled={isUploading}
+                    />
+                  </label>
+                </div>
               </div>
               <Textarea
                 id="resume"
                 value={resume}
                 onChange={(e) => setResume(e.target.value)}
                 placeholder="Paste your CV or resume here…"
-                className="min-h-56 resize-y leading-relaxed"
+                className={cn("resize-y leading-relaxed", cvExpanded ? "min-h-56" : "min-h-24")}
               />
             </div>
           </div>
